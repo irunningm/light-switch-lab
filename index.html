@@ -252,6 +252,15 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
 @media(max-height:600px){#reading-title,#experiment-title{scroll-margin-top:0}.course-sidebar:not([hidden]){top:0;min-height:100dvh;max-height:100dvh}}
 .reading-table-hint{color:var(--muted);font-size:.8125rem;line-height:1.8}
 
+.analytics-panel{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted)}
+.analytics-counts{display:flex;gap:12px 28px;flex-wrap:wrap;font-size:.8125rem;line-height:1.8}
+.analytics-counts>span{display:flex;align-items:baseline;gap:10px;min-width:0}
+.analytics-counts strong{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.page-footer .analytics-status{min-height:3.6em;margin:8px 0 0;font-size:.75rem;line-height:1.8}
+.page-footer .analytics-provider{margin:0;font-size:.75rem;line-height:1.8}
+.analytics-provider a{display:inline-flex;align-items:center;min-height:44px;margin:0 3px;color:var(--blue);text-underline-offset:3px}
+@media(hover:hover){.analytics-provider a:hover{color:#124b8c}}
+
 </style>
 </head>
 <body>
@@ -514,7 +523,13 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
     <a class="chapter-pager-link chapter-pager-prev" id="chapter-prev" href="#home"><span>上一章</span><strong>课程首页</strong></a>
     <a class="chapter-pager-link chapter-pager-next" id="chapter-next" href="#chapter-2"><span>下一章</span><strong>智能灯为何需要待机</strong></a>
   </nav>
-  <footer class="page-footer"><p>简化教学示意，非施工图。能力与按键用法以实际型号说明为准；转无线不能替代负载兼容确认。本课所述 Pro 2026 单火接线不支持智能灯。</p></footer>
+  <footer class="page-footer"><p>简化教学示意，非施工图。能力与按键用法以实际型号说明为准；转无线不能替代负载兼容确认。本课所述 Pro 2026 单火接线不支持智能灯。</p>
+    <section class="analytics-panel" id="analytics-panel" aria-label="课程访问统计" hidden>
+      <div class="analytics-counts"><span>访问次数 <strong id="analytics-pv">—</strong></span><span>估算访客 <strong id="analytics-uv">—</strong></span></div>
+      <p id="analytics-status" class="analytics-status" aria-live="polite">正在获取访问统计…</p>
+      <p class="analytics-provider">由<a href="https://www.busuanzi.cc/doc.php" target="_blank" rel="noopener noreferrer">不蒜子统计服务</a>提供；页面访问会向该服务上报。</p>
+    </section>
+  </footer>
 </main>
 </div>
 <dialog id="explanation-dialog" aria-labelledby="result-title" aria-describedby="result-text">
@@ -1699,6 +1714,59 @@ window.courseReading = [
   } catch (error) { roomUnavailable = true; }
   render();
   if (initial?.[2] && chapterIndex < 5) focusTitle(true, initial[2] === 'reading' ? 'reading-title' : 'experiment-title');
+})();
+
+</script><script>
+// Page-level statistics; local copies and chapter changes never send visits.
+(async () => {
+  'use strict';
+  const panel = document.getElementById('analytics-panel');
+  if (!panel) return;
+  const page = new URL(window.location.href);
+  const paths = ['/light-switch-lab/', '/light-switch-lab', '/light-switch-lab/index.html'];
+  if (page.protocol !== 'https:' || page.hostname !== 'irunningm.github.io' || !paths.includes(page.pathname)) return;
+  if (window.__lightLabAnalyticsStarted) return;
+  window.__lightLabAnalyticsStarted = true;
+  panel.hidden = false;
+  const status = document.getElementById('analytics-status');
+  const privacyOptOut = typeof navigator !== 'undefined' && (navigator.doNotTrack === '1' || navigator.globalPrivacyControl === true);
+  if (page.searchParams.get('analytics') === 'off' || privacyOptOut) {
+    status.textContent = '本次访问未计入统计。';
+    return;
+  }
+  const controller = new AbortController();
+  let timer;
+  try {
+    const deadline = new Promise((_, reject) => {
+      timer = setTimeout(() => { controller.abort(); reject(new Error('Statistics timed out')); }, 7000);
+    });
+    const request = fetch('https://cdn.busuanzi.cc/api.php', {
+      method: 'POST',
+      credentials: 'omit',
+      referrerPolicy: 'no-referrer',
+      signal: controller.signal,
+      body: JSON.stringify({ url: 'https://irunningm.github.io/light-switch-lab/', referrer: '' })
+    }).then(response => {
+      if (!response.ok) throw new Error('Statistics unavailable');
+      return response.json();
+    });
+    const data = await Promise.race([request, deadline]);
+    const count = value => {
+      if (typeof value !== 'number' && !(typeof value === 'string' && /^\d+$/.test(value))) throw new Error('Invalid count');
+      const number = Number(value);
+      if (!Number.isSafeInteger(number) || number < 0) throw new Error('Invalid count');
+      return number;
+    };
+    const pv = count(data?.busuanzi_page_pv), uv = count(data?.busuanzi_page_uv);
+    const format = new Intl.NumberFormat('zh-CN');
+    document.getElementById('analytics-pv').textContent = format.format(pv);
+    document.getElementById('analytics-uv').textContent = format.format(uv);
+    status.textContent = '接入后累计；访客按统计服务规则估算，并非精确人数。';
+  } catch (_) {
+    status.textContent = '统计暂不可用，课程仍可正常使用。';
+  } finally {
+    clearTimeout(timer);
+  }
 })();
 
 </script>
