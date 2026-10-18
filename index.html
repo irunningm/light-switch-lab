@@ -153,6 +153,105 @@ main[data-phase="home"] #lesson-location,main[data-phase="home"] #course-heading
 .large-text .header-navigation{flex-wrap:wrap}.large-text .home-intro{grid-template-columns:minmax(0,1fr)}.large-text .home-concepts dl{grid-template-columns:minmax(0,1fr)}.large-text .home-concepts dl>div{display:flex;flex-direction:row;align-items:center;gap:16px;text-align:left}.large-text .home-concepts dt{flex-direction:row;text-align:left;flex:1 1 50%;font-size:.875rem}.large-text .home-concepts dd{padding:0;flex:1 1 50%;font-size:.8125rem;text-align:left}.large-text .home-chapters{grid-template-columns:minmax(0,1fr)}
 @media(prefers-reduced-motion:reduce){.home-chapter{transition:none}}
 
+/* A document to read, followed by an experiment to try. */
+.doc-shell{max-width:1440px;margin:0 auto}
+.course-sidebar{display:none;min-width:0}
+body:has(#main:not([data-phase="home"])){background:#fff}
+.doc-shell #main{min-width:0;padding-bottom:0}
+.doc-shell #main:not([data-phase="home"]){max-width:1080px;padding-top:30px}
+main[data-phase="home"] #chapter-sections,main[data-phase="home"] #chapter-reading,main[data-phase="home"] #experiment-heading,main[data-phase="home"] #chapter-pagination{display:none!important}
+body:has(#main[data-phase="home"]) #course-sidebar{display:none!important}
+#main:not([data-phase="home"]) .course-heading{max-width:800px;margin-bottom:18px}
+.chapter-sections{display:flex;align-items:center;flex-wrap:wrap;gap:5px 20px;max-width:800px;margin:0 0 30px;padding:10px 0 12px;border-bottom:1px solid #e5e7eb}
+.chapter-sections>span{color:var(--muted);font-size:.75rem;line-height:1.7}
+.chapter-sections a{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:8px 0;color:var(--blue);font-size:.875rem;line-height:1.7;text-decoration:none;text-underline-offset:4px}
+.chapter-sections a svg{width:16px;height:16px}
+.doc-reading{max-width:800px;color:#303740;font-size:1rem;line-height:1.95}
+.doc-reading h2{margin:0 0 20px;color:var(--ink);font-size:1.375rem;line-height:1.5;font-weight:600;letter-spacing:-.02em}
+.doc-reading h3{margin:26px 0 10px;color:var(--ink);font-size:1.0625rem;line-height:1.65;font-weight:600;letter-spacing:-.01em}
+.doc-reading p{margin:0 0 16px}
+.doc-reading strong{font-weight:600;color:#222830}
+.doc-reading ul,.doc-reading ol{margin:14px 0 20px;padding-left:1.5em}
+.doc-reading li{margin:7px 0;padding-left:3px;overflow-wrap:anywhere}
+.doc-reading a{color:var(--blue);text-underline-offset:3px}
+.doc-reading dl{margin:18px 0 22px}
+.doc-reading dl>div{display:grid;grid-template-columns:minmax(100px,.3fr) minmax(0,1fr);gap:14px;padding:12px 0;border-bottom:1px solid #e9eaed}
+.doc-reading dt{font-weight:550;color:#303740;overflow-wrap:anywhere}
+.doc-reading dd{margin:0;color:#515963;overflow-wrap:anywhere}
+.doc-reading dl>dt{margin-top:16px;margin-bottom:4px}
+.doc-reading aside,.doc-reading blockquote,.doc-reading .doc-note{margin:20px 0;padding:14px 18px;border-left:3px solid #ce9a64;border-radius:0 8px 8px 0;background:#faf6f0;color:#66523e;font-size:.9375rem;line-height:1.9}
+.doc-reading aside p:last-child,.doc-reading blockquote p:last-child{margin-bottom:0}
+.doc-reading .table-scroll,.doc-reading .reading-table-wrap{max-width:100%;margin:20px 0 24px;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;border:1px solid #dfe3e7;border-radius:10px;scrollbar-width:thin}
+.doc-reading table{width:100%;min-width:30rem;border-collapse:collapse;font-size:.875rem;line-height:1.85;text-align:left}
+.doc-reading caption{padding:11px 15px;background:#f8f9fa;color:#46505b;text-align:left;font-weight:550}
+.doc-reading th,.doc-reading td{padding:12px 15px;border-top:1px solid #e1e5e9;vertical-align:top;overflow-wrap:anywhere}
+.doc-reading th{font-weight:550;background:#f8f9fa;color:#303740}
+.doc-reading td{color:#515963}
+.doc-reading tbody th{min-width:7em;background:#fcfcfd}
+.experiment-heading{margin:30px 0 18px;padding-top:24px;border-top:1px solid #e3e6ea}
+.experiment-heading h2{margin:0 0 6px;font-size:1.375rem;line-height:1.5;font-weight:600;letter-spacing:-.02em}
+.experiment-heading p{margin:0;color:var(--muted);font-size:.875rem;line-height:1.8}
+#reading-title,#experiment-title{scroll-margin-top:0}
+.doc-shell #main:not([data-phase="home"]) .lesson-layout{gap:28px}
+.doc-shell #action-dock{position:static;inset:auto;z-index:auto;margin:18px 0 0;padding:14px 18px;border:1px solid #e0e4e8;border-radius:13px;background:#f8f9fa;box-shadow:none;backdrop-filter:none;display:flex;align-items:center;gap:12px 18px;flex-wrap:wrap}
+.doc-shell #action-dock .step-meta{flex:1 1 150px}
+.doc-shell #action-dock .action-buttons{flex:1 1 320px;justify-content:flex-end;flex-wrap:wrap}
+.doc-shell #action-dock .step-count{width:auto}
+.chapter-pagination{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:30px 0 22px;padding-top:24px;border-top:1px solid #e1e5e9}
+.chapter-pager-link{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;min-width:0;min-height:84px;padding:14px 17px;border:1px solid #dfe3e7;border-radius:11px;background:#fff;color:var(--blue);font-size:.9375rem;line-height:1.7;text-decoration:none;overflow-wrap:anywhere}
+.chapter-pager-link>span{color:var(--muted);font-size:.75rem;line-height:1.65}
+.chapter-pager-link>strong{font-size:.9375rem;font-weight:550;line-height:1.7}
+.chapter-pager-next{align-items:flex-end;text-align:right}
+.chapter-pager-link[aria-disabled="true"]{color:var(--muted);background:#f8f9fa}
+html:has(.doc-shell){scroll-padding-block-end:24px}
+@media(hover:hover){.chapter-sections a:hover{text-decoration:underline}.chapter-pager-link:hover{border-color:#adc0d2;background:#f8fbfd}}
+@media(min-width:1100px){
+  body:has(#main:not([data-phase="home"])) .masthead-inner{max-width:1440px;padding-left:28px;padding-right:36px}
+  .doc-shell:has(> #course-sidebar:not([hidden])):has(> #main:not([data-phase="home"])){display:grid;grid-template-columns:238px minmax(0,1fr);align-items:start}
+  .course-sidebar:not([hidden]){display:block;position:sticky;top:var(--course-nav-height);align-self:start;max-height:calc(100dvh - var(--course-nav-height));min-height:calc(100dvh - var(--course-nav-height));padding:25px 17px 28px 21px;overflow-y:auto;overscroll-behavior:contain;background:#fafafa;border-right:1px solid #e7e8eb;scrollbar-width:thin}
+  .doc-shell:has(> #course-sidebar:not([hidden])) #main:not([data-phase="home"]){max-width:none;margin:0;padding:30px 36px 0}
+  .sidebar-home{display:inline-flex;align-items:center;gap:6px;min-height:44px;margin-bottom:18px;padding:8px 4px;color:var(--muted);font-size:.8125rem;line-height:1.7;text-decoration:none}
+  .sidebar-home svg{width:16px;height:16px}
+  .sidebar-course-title{margin:0 8px 3px;font-size:.9375rem;font-weight:600;line-height:1.6}
+  .sidebar-description{margin:0 8px 25px;color:var(--muted);font-size:.75rem;line-height:1.8}
+  .sidebar-group{margin:0 0 23px}
+  .sidebar-group-title,#sidebar-list h2{margin:0 10px 7px;color:#59616b;font-size:.75rem;font-weight:600;line-height:1.7}
+  #sidebar-list a{display:flex;align-items:flex-start;gap:9px;min-width:0;min-height:48px;margin:3px 0;padding:10px 10px 10px 8px;border-left:2px solid transparent;border-radius:0 8px 8px 0;color:#4d5661;font-size:.8125rem;line-height:1.7;text-decoration:none}
+  #sidebar-list a>span:not(.sidebar-number){min-width:0;flex:1}
+  .sidebar-number{flex:0 0 18px;color:#626b75;font-size:.75rem;line-height:1.85;font-variant-numeric:tabular-nums}
+  #sidebar-list a strong{display:block;font-size:.8125rem;line-height:1.7;font-weight:500;overflow-wrap:anywhere}
+  #sidebar-list a small{display:block;margin-top:2px;color:#626b75;font-size:.6875rem;line-height:1.65;overflow-wrap:anywhere}
+  #sidebar-list a[aria-current="page"],#sidebar-list a[aria-current="step"]{color:var(--accent);border-left-color:var(--brand);background:#fff1e5}
+  #sidebar-list a[aria-current] .sidebar-number,#sidebar-list a[aria-current] small{color:#8b5b3a}
+  body:has(#course-sidebar:not([hidden])):has(#main:not([data-phase="home"])) #open-outline{display:none}
+}
+@media(min-width:1100px) and (max-width:1270px){
+  .doc-shell:has(> #course-sidebar:not([hidden])):has(> #main:not([data-phase="home"])){grid-template-columns:220px minmax(0,1fr)}
+  .doc-shell:has(> #course-sidebar:not([hidden])) #main:not([data-phase="home"]){padding-left:28px;padding-right:28px}
+  .doc-shell #main:not([data-phase="home"]) .lesson-layout{gap:22px;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr)}
+}
+@media(hover:hover) and (min-width:1100px){.sidebar-home:hover{color:var(--accent)}#sidebar-list a:hover{background:#f0f1f3}#sidebar-list a[aria-current]:hover{background:#ffead7}}
+@media(max-width:760px){
+  .doc-shell #main:not([data-phase="home"]){padding-top:23px}
+  .chapter-sections{gap:4px 18px;margin-bottom:24px;padding:6px 0 9px}.chapter-sections>span{font-size:.6875rem}.chapter-sections a{font-size:.8125rem}
+  .doc-reading{font-size:1rem;line-height:1.95}.doc-reading h2{font-size:1.25rem;margin-bottom:17px}.doc-reading h3{font-size:1.0625rem;margin-top:23px}.doc-reading p{margin-bottom:15px}
+  .doc-reading dl>div{grid-template-columns:minmax(84px,.32fr) minmax(0,1fr);gap:12px;padding:11px 0}
+  .doc-reading aside,.doc-reading blockquote,.doc-reading .doc-note{padding:12px 14px;font-size:.9375rem}
+  .experiment-heading{margin:25px 0 12px;padding-top:21px}.experiment-heading h2{font-size:1.25rem;margin-bottom:5px}.experiment-heading p{font-size:.8125rem}
+  .doc-shell #main:not([data-phase="home"]) .visual-heading{margin-bottom:7px;min-height:44px}
+  .doc-shell #main:not([data-phase="home"]) .lesson-card{padding-top:16px}
+  .doc-shell #main:not([data-phase="home"]) #step-title{font-size:1.25rem;line-height:1.5;margin-bottom:9px}
+  .doc-shell #main:not([data-phase="home"]) .step-description{margin-bottom:16px}
+  .doc-shell #action-dock{padding:11px 13px;margin-top:15px;gap:8px;border-radius:11px}
+  .doc-shell #action-dock .step-meta{flex-basis:100%}.doc-shell #action-dock .action-buttons{flex-basis:100%;width:100%;gap:8px}.doc-shell #action-dock .step-count{width:auto;font-size:.6875rem}
+  .chapter-pagination{gap:10px;margin-top:25px;padding-top:20px}.chapter-pager-link{padding:13px;min-height:88px;font-size:.875rem}.chapter-pager-link>strong{font-size:.875rem}
+}
+@media(max-width:580px){.doc-reading dl>div{grid-template-columns:minmax(0,1fr);gap:3px}.doc-reading dd{line-height:1.9}}
+@media(max-width:370px){.chapter-sections{column-gap:15px}.chapter-pagination{grid-template-columns:minmax(0,1fr)}.chapter-pager-link{min-height:76px}.chapter-pager-next{align-items:flex-start;text-align:left}}
+.large-text .doc-shell{display:block!important}.large-text #course-sidebar{display:none!important}.large-text .doc-shell #main:not([data-phase="home"]){max-width:1080px;margin:auto}.large-text #open-outline{display:inline-flex!important}.large-text .doc-reading dl>div{grid-template-columns:minmax(0,1fr);gap:4px}.large-text .doc-shell #main:not([data-phase="home"]) .lesson-layout{grid-template-columns:minmax(0,1fr)}.large-text .chapter-pagination{grid-template-columns:minmax(0,1fr)}.large-text .chapter-pager-next{align-items:flex-start;text-align:left}.large-text #reading-title,.large-text #experiment-title{scroll-margin-top:0}
+@media(max-height:600px){#reading-title,#experiment-title{scroll-margin-top:0}.course-sidebar:not([hidden]){top:0;min-height:100dvh;max-height:100dvh}}
+.reading-table-hint{color:var(--muted);font-size:.8125rem;line-height:1.8}
+
 </style>
 </head>
 <body>
@@ -171,13 +270,20 @@ main[data-phase="home"] #lesson-location,main[data-phase="home"] #course-heading
   <nav class="header-navigation" aria-label="课程导航"><a class="home-link" id="home-link" href="#home" aria-current="page">课程首页</a>
   <button id="open-outline" class="outline-trigger" aria-haspopup="dialog" aria-controls="outline-dialog"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg><span>课程目录</span></button></nav>
 </div></header>
+<div class="doc-shell">
+<aside class="course-sidebar" id="course-sidebar" aria-label="课程章节" hidden>
+  <a class="sidebar-home" id="sidebar-home" href="#home"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg>课程首页</a>
+  <p class="sidebar-course-title">灯与开关</p>
+  <p class="sidebar-description">读懂原理，再动手验证。</p>
+  <nav id="sidebar-list" aria-label="全部章节"></nav>
+</aside>
 <main id="main" tabindex="-1" data-phase="home">
   <section class="home-section" id="home-section" aria-labelledby="home-title">
     <div class="home-intro">
       <div class="home-intro-copy">
         <p class="home-eyebrow">小米 · 灯与开关交互课程</p>
         <h1 id="home-title" tabindex="-1">先弄懂灯，<br class="home-title-break">再选对开关。</h1>
-        <p class="home-lead">按一下墙上开关，点一下模拟米家。亲手分清供电、发光和智能控制，理解三种搭配。</p>
+        <p class="home-lead">每章先读原理，再按一下墙上开关、点一下模拟米家。分清供电、发光与智能控制，理解三种搭配。</p>
         <div class="home-start-area">
           <button class="primary-button home-start" id="home-start" type="button" aria-describedby="home-start-caption">从基础开始<svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
           <p id="home-start-caption" class="home-start-caption">第一次来，建议从普通开关开始。</p>
@@ -194,7 +300,7 @@ main[data-phase="home"] #lesson-location,main[data-phase="home"] #course-heading
     </div>
     <section class="home-route" aria-labelledby="home-route-title">
       <div class="home-route-heading">
-        <div><h2 id="home-route-title">选择学习入口</h2><p>按顺序学，也可以直接进入想看的章节。</p></div>
+        <div><h2 id="home-route-title">选择学习入口</h2><p>先读基础，再做实验；也可以直接进入想看的章节。</p></div>
         <p class="home-progress" id="home-progress">6 个章节 · 20 个操作小步</p>
       </div>
       <div class="home-chapters">
@@ -244,6 +350,17 @@ main[data-phase="home"] #lesson-location,main[data-phase="home"] #course-heading
     <h1 id="lesson-title" tabindex="-1">先从按一下开关开始。</h1>
     <p id="lesson-lead">跟着每一步操作，观察供电和发光有什么变化。</p>
     <div class="course-progress" aria-hidden="true"><div id="progress-fill"></div></div>
+  </section>
+  <nav class="chapter-sections" id="chapter-sections" aria-label="本章内容">
+    <span>本章内容</span><a id="jump-reading" href="#reading-title">阅读原理</a><a id="jump-lab" href="#experiment-title">动手实验<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </nav>
+  <section class="doc-reading" id="chapter-reading" aria-labelledby="reading-title">
+    <h2 id="reading-title" tabindex="-1">本章原理</h2>
+    <div id="reading-content"></div>
+  </section>
+  <section class="experiment-heading" id="experiment-heading" aria-labelledby="experiment-title">
+    <h2 id="experiment-title" tabindex="-1">动手实验</h2>
+    <p>按提示操作，结果会在当前屏幕解释。</p>
   </section>
   <div class="lesson-layout" id="lesson-layout">
     <section class="visual-column" aria-label="观察区域">
@@ -393,8 +510,13 @@ main[data-phase="home"] #lesson-location,main[data-phase="home"] #course-heading
   </section>
   <section id="quiz-panel" class="quiz-panel" hidden aria-labelledby="quiz-title"><p id="quiz-progress" class="quiz-progress"></p><h2 id="quiz-title" tabindex="-1"></h2><div id="quiz-options"></div><p id="quiz-feedback" tabindex="-1" aria-live="polite"></p></section>
   <div class="action-dock" id="action-dock"><div class="step-meta"><span id="step-count" class="step-count">本章第 1 步</span><button id="show-explanation" class="explanation-link" hidden>查看解释</button></div><div class="action-buttons"><button id="lesson-back" class="back-button">上一步</button><button id="step-replay" class="replay-button" hidden>重做本步</button><button id="lesson-action" class="primary-button">按一下墙上开关</button></div></div>
+  <nav class="chapter-pagination" id="chapter-pagination" aria-label="章节导航">
+    <a class="chapter-pager-link chapter-pager-prev" id="chapter-prev" href="#home"><span>上一章</span><strong>课程首页</strong></a>
+    <a class="chapter-pager-link chapter-pager-next" id="chapter-next" href="#chapter-2"><span>下一章</span><strong>智能灯为何需要待机</strong></a>
+  </nav>
   <footer class="page-footer"><p>简化教学示意，非施工图。能力与按键用法以实际型号说明为准；转无线不能替代负载兼容确认。本课所述 Pro 2026 单火接线不支持智能灯。</p></footer>
 </main>
+</div>
 <dialog id="explanation-dialog" aria-labelledby="result-title" aria-describedby="result-text">
   <div class="explanation-heading"><span>本步解释</span><button id="close-explanation" class="back-button">返回观察 <span aria-hidden="true">×</span></button></div>
   <section id="step-result" class="step-result" hidden tabindex="0"><span class="result-mark" aria-hidden="true"><svg><use href="#i-check"/></svg></span><div><h3 id="result-title" tabindex="-1"></h3><p id="result-text"></p></div></section>
@@ -1010,6 +1132,92 @@ main[data-phase="home"] #lesson-location,main[data-phase="home"] #course-heading
 }());
 
 </script><script>
+window.courseReading = [
+  {
+    title: '普通开关怎样控灯',
+    html: `
+      <h3 id="read-1-circuit">普通开关控制的是供电</h3>
+      <p>本例普通灯接通供电回路后发光。机械开关里的触点接通，电源才能经过开关和灯形成回路；触点断开，灯的供电被切断，灯随之熄灭。开关改变的是通路，普通灯本身没有获得接收智能指令的能力。</p>
+      <h3 id="read-1-wires">分清三类线的作用</h3>
+      <dl>
+        <dt>火线 L</dt><dd>进入开关的电源进线。</dd>
+        <dt>灯线 L1</dt><dd>从开关通往灯的受控火线，由触点决定是否接通。</dd>
+        <dt>零线 N</dt><dd>直接连到灯，与火线配合形成供电回路。</dd>
+      </dl>
+      <h3 id="read-1-boundary">灯灭不代表所有位置都没电</h3>
+      <p>普通机械开关靠触点通断，不需要自身供电，因此本例没有开关自己的零线支路。触点断开后，进线 L 仍有电，N 仍连着灯。零线 N 不是保护地线 PE，不能混为一谈。</p>
+      <p class="doc-note">这里只解释功能关系；示意图不是施工图，线条颜色也不能用来判断现场是否带电。</p>
+    `
+  },
+  {
+    title: '智能灯为何需要待机',
+    html: `
+      <h3 id="read-2-difference">智能的是接收和处理指令的能力</h3>
+      <p>普通 LED 灯也可能有电子驱动，并非没有电路。智能灯的区别是增加了接收和处理智能指令的能力，可以按支持的方式控制发光。智能灯不一定支持冷暖或彩色，具体能力由型号决定。</p>
+      <h3 id="read-2-standby">关掉发光，控制部分仍要工作</h3>
+      <p>本例 App 直接控制智能灯。点关灯后，发光部分停止，接收与控制部分继续待机，才能响应下一条开灯指令。待机也耗电，功率按型号；图中的两部分只是功能划分，不代表具体灯具的内部电路。</p>
+      <h3 id="read-2-conditions">有电之外，还要有正常连接</h3>
+      <p>供电是接收指令的必要条件，还需设备已配网、支持相应控制方式、控制链路正常。机械开关断电后，接收与控制也停止，App 指令不能替代实际供电。阅读和操作时都要分别看灯有没有电、是否发光、能否接收指令。</p>
+    `
+  },
+  {
+    title: '普通灯＋智能开关',
+    html: `
+      <h3 id="read-3-target">App 发给开关，开关接通灯</h3>
+      <p>这组仍是一盏普通灯，改变的是墙上的开关。本例使用零火智能开关，能够接收 App 指令，再通过触点通断 L 到灯线 L1 的通路，让普通灯亮灭。控制对象是智能开关，普通灯并没有直接接收 App 指令。</p>
+      <h3 id="read-3-branches">灯的支路与开关本体分开</h3>
+      <p>灯经由 L、开关触点、L1 和 N 获得供电；开关自身的电子部分另有 L／N 供电支路。按键关灯时，只断开灯的支路，开关自身的 L／N 供电仍接通。因此本例灯已经没电，开关仍在线，可以接收下一条 App 开灯指令。</p>
+      <h3 id="read-3-capability">远程开关不等于灯获得调光能力</h3>
+      <p>本例假设开关已配网、连接正常。这只通断型开关控制供电，不提供亮度或冷暖调节。灯的类型、功率和线路仍须符合开关要求；不能把所有智能开关都当成具备相同能力，也不能把灯灭误认为开关离线。</p>
+    `
+  },
+  {
+    title: '智能灯＋普通开关',
+    html: `
+      <h3 id="read-4-off">同样不发光，状态可能不同</h3>
+      <p>App 直接控制本例智能灯时，关掉的是发光，灯仍有电，接收与控制继续待机。墙上的普通机械开关则通断实际供电；即使灯已经灭了，再断开开关，控制部分也会停止工作。</p>
+      <div class="reading-table-wrap" tabindex="0" role="region" aria-label="两种关灯方式的区别"><table>
+        <caption>两种关灯方式的区别</caption>
+        <thead><tr><th scope="col">动作</th><th scope="col">灯的供电</th><th scope="col">接收指令</th></tr></thead>
+        <tbody><tr><th scope="row">App 关智能灯</th><td>保留</td><td>链路正常时可接收</td></tr><tr><th scope="row">机械开关断电</th><td>切断</td><td>不能接收</td></tr></tbody>
+      </table></div>
+      <p class="reading-table-hint">表格可左右滚动查看。</p>
+      <h3 id="read-4-recovery">恢复供电后，还要恢复连接</h3>
+      <p>给无电的灯发开灯指令，不能把电送回灯里。要先恢复实际供电，再等待相应连接恢复。本演示省略重连等待，并假设恢复后灯亮；真实设备的来电亮灭和重连时间取决于型号、设置及网络，不能由有电推定立即在线。</p>
+      <h3 id="read-4-tuning">调光由支持的智能灯完成</h3>
+      <p>本例灯支持亮度与冷暖调节，指令由灯内控制部分处理，机械开关不负责调光。其他智能灯是否支持这些能力，要看对应型号。</p>
+    `
+  },
+  {
+    title: '智能灯＋智能开关',
+    html: `
+      <h3 id="read-5-conditions">先确认能配合，再设置按键</h3>
+      <p>都能加入米家，不代表两台设备一定兼容。本例假设灯和开关符合搭配条件，已经各自入网、持续供电且连接正常。设备入网与按键控制对象是两件事，负载、协议和网关要求仍需按具体型号确认。</p>
+      <h3 id="read-5-path">在开关设备页选择控制对象</h3>
+      <p>以小米智能开关（三开）为例：开关设备页 → 设置 → 功能设置 → 控制设备 → 选择客厅智能灯。本例选择后自动开启“转无线”，按键从通断灯线改为发送控制指令。这是教学路径，不是所有型号通用的菜单。</p>
+      <h3 id="read-5-power">按键发指令，灯仍须有电</h3>
+      <p>本例触点保持接通，L1 持续向灯供电；按键、App 和联动只改变发光。关灯后控制部分仍待机，才能继续响应。转无线不证明负载兼容，也不能给原本断电的灯恢复供电。</p>
+      <p class="doc-note">本课所述 Pro 2026 单火接线不支持智能灯。这里不连接真实设备，也不提供施工指导。</p>
+    `
+  },
+  {
+    title: '搭配总结与小测',
+    html: `
+      <h3 id="read-6-compare">先问指令发给谁</h3>
+      <dl>
+        <dt>普通灯＋智能开关</dt><dd>App 控制开关，再由开关通断灯的供电；灯没有直接接收智能指令。</dd>
+        <dt>智能灯＋普通开关</dt><dd>机械开关控制供电；App 控制灯的发光。断电后，灯不能接收指令。</dd>
+        <dt>智能灯＋智能开关</dt><dd>先确认兼容、供电和连接，再调整按键用途，让按键发指令并保留灯的供电。</dd>
+      </dl>
+      <h3 id="read-6-questions">用三个问题判断当前状态</h3>
+      <p>灯有没有电？现在是否发光？接收指令的是灯还是开关？灯不发光不一定是断电；A 中灯断电后开关仍可在线，B／C 中灯待机时也可继续接收指令，但都以正常连接为前提。</p>
+      <h3 id="read-6-review">结论可以直接读，小测按需做</h3>
+      <p>亮度、冷暖与彩色能力看灯的型号，转无线不能替代兼容确认，恢复供电不保证立即在线。可随时回看相关章节，也可选择三题小测检验理解；阅读这些结论不需要先完成任何操作。所有演示均不等于真实设备的配对或兼容性测试。</p>
+    `
+  }
+];
+
+</script><script>
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
@@ -1069,7 +1277,7 @@ main[data-phase="home"] #lesson-location,main[data-phase="home"] #course-heading
     { name: '搭配总结与小测', group: '课程总结', title: '先分清供电，再看谁听指令。', lead: '三种搭配的关键区别都在这里。随时可以打开课程目录回看。', visual: 'summary', steps: [] }
   ];
   const saved = chapters.map(c => ({ index: 0, records: c.steps.map(() => ({ done: false, value: null, reviewed: false })) }));
-  let chapterIndex = 0, home = true, hasVisited = false, principle = false, room, wiring, roomUnavailable = false, quiz = null, pausedQuiz = null;
+  let chapterIndex = 0, home = true, hasVisited = false, principle = false, room, wiring, roomUnavailable = false, quiz = null, pausedQuiz = null, renderedReading = -1;
   const chapter = () => chapters[chapterIndex];
   const progress = () => saved[chapterIndex];
   const step = () => chapter().steps[progress().index];
@@ -1126,7 +1334,7 @@ main[data-phase="home"] #lesson-location,main[data-phase="home"] #course-heading
     if (chapterIndex === 5) { startQuiz(); return; }
     if (observed()) {
       if (['brightness', 'temperature'].includes(step().kind) && !record().reviewed) { showExplanation(); return; }
-      if (progress().index < chapter().steps.length - 1) { progress().index++; principle = false; $('wire-details').open = false; render(); focusTitle(true); }
+      if (progress().index < chapter().steps.length - 1) { progress().index++; principle = false; $('wire-details').open = false; render(); focusTitle(true, 'experiment-title'); }
       else openChapter(chapterIndex + 1);
       return;
     }
@@ -1147,7 +1355,7 @@ main[data-phase="home"] #lesson-location,main[data-phase="home"] #course-heading
     if (home) return;
     if (quiz) { pausedQuiz = quiz.index < questions.length ? quiz : null; quiz = null; render(); focusTitle(navigate); return; }
     if (chapterIndex === 5) { openChapter(4); return; }
-    if (progress().index > 0) { progress().index--; principle = false; $('wire-details').open = false; render(); focusTitle(navigate); }
+    if (progress().index > 0) { progress().index--; principle = false; $('wire-details').open = false; render(); focusTitle(navigate, 'experiment-title'); }
     else if (chapterIndex > 0) openChapter(chapterIndex - 1);
   }
   function updateBasics(s) {
@@ -1206,7 +1414,46 @@ main[data-phase="home"] #lesson-location,main[data-phase="home"] #course-heading
       : allDone ? '已完成全部操作，可回看或做小测'
       : hasVisited ? `${chapter().name}${chapterIndex < 5 ? ` · 第 ${progress().index + 1} / ${chapter().steps.length} 步` : ''}` : '从基础知识开始，也可以直接选择下面的实验';
   }
+  function buildSidebar() {
+    const groups = [['基础知识', [0, 1]], ['三种搭配实验', [2, 3, 4]], ['总结与自测', [5]]];
+    $('sidebar-list').innerHTML = groups.map(([name, indices]) => `<div class="sidebar-group"><h2 class="sidebar-group-title">${name}</h2>${indices.map(i => `<a class="sidebar-link" href="#chapter-${i + 1}" data-sidebar-chapter="${i}"><span class="sidebar-number" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span><span><strong>${chapters[i].name}</strong><small data-sidebar-status="${i}"></small></span></a>`).join('')}</div>`).join('');
+    document.querySelectorAll('[data-sidebar-chapter]').forEach(link => link.addEventListener('click', event => {
+      if (ordinaryLink(event)) { event.preventDefault(); openChapter(Number(link.dataset.sidebarChapter)); }
+    }));
+  }
+  function renderDocument() {
+    const summary = chapterIndex === 5;
+    $('course-sidebar').hidden = home;
+    $('chapter-reading').hidden = home || summary;
+    $('experiment-heading').hidden = home || summary;
+    $('chapter-sections').hidden = home || summary;
+    $('chapter-pagination').hidden = home || !!quiz;
+    document.querySelectorAll('[data-sidebar-chapter]').forEach(link => {
+      if (!home && Number(link.dataset.sidebarChapter) === chapterIndex) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
+    });
+    document.querySelectorAll('[data-sidebar-status]').forEach(node => {
+      const i = Number(node.dataset.sidebarStatus);
+      node.textContent = i === 5 ? '对照表与 3 题小测' : finished(i) ? '已完成' : saved[i].records.some(r => r.done) ? '进行中' : `${chapters[i].steps.length} 个操作步骤`;
+    });
+    if (home) return;
+    if (!summary && renderedReading !== chapterIndex) {
+      const reading = window.courseReading[chapterIndex];
+      $('reading-title').textContent = reading.title;
+      $('reading-content').innerHTML = reading.html;
+      renderedReading = chapterIndex;
+    }
+    $('jump-reading').setAttribute('href', `#chapter-${chapterIndex + 1}-reading`);
+    $('jump-lab').setAttribute('href', `#chapter-${chapterIndex + 1}-experiment`);
+    const previous = chapterIndex === 0 ? null : chapterIndex - 1, next = chapterIndex === 5 ? null : chapterIndex + 1;
+    $('chapter-prev').setAttribute('href', previous === null ? '#home' : `#chapter-${previous + 1}`);
+    $('chapter-prev').innerHTML = `<span>${previous === null ? '返回' : '上一章'}</span><strong>${previous === null ? '课程首页' : chapters[previous].name}</strong>`;
+    $('chapter-prev').setAttribute('aria-label', previous === null ? '返回课程首页' : `上一章：${chapters[previous].name}`);
+    $('chapter-next').setAttribute('href', next === null ? '#home' : `#chapter-${next + 1}`);
+    $('chapter-next').innerHTML = `<span>${next === null ? '返回' : '下一章'}</span><strong>${next === null ? '课程首页' : chapters[next].name}</strong>`;
+    $('chapter-next').setAttribute('aria-label', next === null ? '回到课程首页' : `下一章：${chapters[next].name}`);
+  }
   function render() {
+    renderDocument();
     $('home-section').hidden = !home;
     $('course-heading').hidden = home; $('lesson-location').hidden = home; $('action-dock').hidden = home;
     for (const id of ['home-link', 'brand-home']) {
@@ -1355,15 +1602,27 @@ main[data-phase="home"] #lesson-location,main[data-phase="home"] #course-heading
     $('outline-dialog').showModal(); $('outline-dialog').scrollTop = 0; $('outline-title').focus({ preventScroll: true });
   }
   function ordinaryLink(event) { return !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && !(event.button > 0); }
-  for (const id of ['home-link', 'brand-home']) $(id).addEventListener('click', event => { if (ordinaryLink(event)) { event.preventDefault(); openHome(); } });
+  for (const id of ['home-link', 'brand-home', 'sidebar-home']) $(id).addEventListener('click', event => { if (ordinaryLink(event)) { event.preventDefault(); openHome(); } });
   document.querySelectorAll('[data-home-chapter]').forEach(link => link.addEventListener('click', event => {
     if (ordinaryLink(event)) { event.preventDefault(); openChapter(Number(link.dataset.homeChapter)); }
   }));
   $('home-start').addEventListener('click', () => {
     const resumeQuiz = !!pausedQuiz && chapterIndex === 5;
     const target = saved.slice(0, 5).every((_, i) => finished(i)) ? 5 : hasVisited ? chapterIndex : 0;
-    openChapter(target, false, !resumeQuiz); if (resumeQuiz) startQuiz();
+    const resumeExperiment = hasVisited && target < 5;
+    openChapter(target, false, !resumeQuiz && !resumeExperiment);
+    if (resumeQuiz) startQuiz(); else if (resumeExperiment) focusTitle(true, 'experiment-title');
   });
+  for (const [id, title] of [['jump-reading', 'reading-title'], ['jump-lab', 'experiment-title']]) $(id).addEventListener('click', event => {
+    if (ordinaryLink(event) && !home && chapterIndex < 5) { event.preventDefault(); focusTitle(true, title); }
+  });
+  for (const [id, direction] of [['chapter-prev', -1], ['chapter-next', 1]]) $(id).addEventListener('click', event => {
+    if (!ordinaryLink(event) || home) return;
+    event.preventDefault();
+    const target = chapterIndex + direction;
+    if (target < 0 || target >= chapters.length) openHome(); else openChapter(target);
+  });
+  buildSidebar();
   $('lesson-action').addEventListener('click', act); $('lesson-back').addEventListener('click', back); $('step-replay').addEventListener('click', replay);
   $('app-power').addEventListener('click', () => { if (!home && chapterIndex < 5 && step().kind === 'app') observed() ? showExplanation() : act(); });
   $('show-explanation').addEventListener('click', showExplanation);
@@ -1405,8 +1664,13 @@ main[data-phase="home"] #lesson-location,main[data-phase="home"] #course-heading
       adjust(kind, e);
     });
   }
-  addEventListener('popstate', () => { const match = /^#chapter-([1-6])$/.exec(location.hash); if (match) openChapter(Number(match[1]) - 1, true); else if (!location.hash || location.hash === '#home') openHome(true); });
-  const initial = /^#chapter-([1-6])$/.exec(location.hash); if (initial) { chapterIndex = Number(initial[1]) - 1; home = false; hasVisited = true; } else syncHash(true);
+  const chapterRoute = () => /^#chapter-([1-6])(?:-(reading|experiment))?$/.exec(location.hash);
+  addEventListener('popstate', () => {
+    const match = chapterRoute();
+    if (match) { openChapter(Number(match[1]) - 1, true, !match[2]); if (match[2] && chapterIndex < 5) focusTitle(true, match[2] === 'reading' ? 'reading-title' : 'experiment-title'); }
+    else if (!location.hash || location.hash === '#home') openHome(true);
+  });
+  const initial = chapterRoute(); if (initial) { chapterIndex = Number(initial[1]) - 1; home = false; hasVisited = true; } else syncHash(true);
   if (typeof ResizeObserver === 'function') {
     const dock = document.querySelector('.action-dock'), header = document.querySelector('.masthead');
     let lastDockHeight = 0;
@@ -1434,6 +1698,7 @@ main[data-phase="home"] #lesson-location,main[data-phase="home"] #course-heading
     });
   } catch (error) { roomUnavailable = true; }
   render();
+  if (initial?.[2] && chapterIndex < 5) focusTitle(true, initial[2] === 'reading' ? 'reading-title' : 'experiment-title');
 })();
 
 </script>
