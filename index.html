@@ -82,6 +82,77 @@ button.phone-row{width:100%;text-align:left;font:inherit;min-height:64px;touch-a
 @media(hover:hover){.app-power.review-action:hover{background:#dfe8ee}.phone-review:hover,.explanation-link:hover{color:#174d7b;background:#edf3f7}}
 @media(max-height:600px){#explanation-dialog{padding:12px}#explanation-dialog[open]{gap:10px}#explanation-dialog .step-result{padding:14px}#explanation-dialog .step-result h3{font-size:1.125rem;line-height:1.6;margin-bottom:10px}#explanation-dialog .step-result p{line-height:1.75}}
 
+/* Course home and persistent navigation. Navigation stays separate from lesson actions. */
+html{--course-nav-height:80px;scroll-padding-block-start:calc(var(--course-nav-height) + 20px)}
+.masthead{position:sticky;top:0;z-index:20}
+.outline-home{display:block;width:100%;margin:12px 0 5px;padding:12px 14px;text-align:left;border:1px solid var(--line);border-radius:10px;color:var(--blue);background:#f5f8fa;font-size:.9375rem;line-height:1.6}
+.outline-home[aria-current="page"]{border-color:#dca16a;background:#fff4e9;color:var(--accent)}
+.large-text .masthead{position:static}html.large-text{scroll-padding-block-start:24px}
+@media(max-height:600px){.masthead{position:static}html{scroll-padding-block-start:24px}}
+.brand{color:var(--ink);text-decoration:none;flex-shrink:0}
+.masthead-inner{flex-wrap:wrap;gap:10px 20px}
+.header-navigation{display:flex;align-items:center;justify-content:flex-end;gap:8px;min-width:0;margin-left:auto}
+.home-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 12px;border-radius:10px;color:var(--muted);font-size:.875rem;line-height:1.5;text-decoration:none;text-align:center}
+.home-link[aria-current="page"]{color:var(--accent);background:#fff4e9}
+.lesson-location{margin:0 0 12px;color:var(--muted);font-size:.8125rem;line-height:1.65}
+main[data-phase="home"]{padding-bottom:0}
+main[data-phase="home"] #lesson-location,main[data-phase="home"] #course-heading,main[data-phase="home"] #lesson-layout,main[data-phase="home"] #summary-section,main[data-phase="home"] #quiz-panel,main[data-phase="home"] #action-dock{display:none!important}
+.home-section{padding-bottom:8px}
+.home-intro{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.8fr);align-items:center;gap:36px;padding:30px 32px;border:1px solid #e5e5e7;border-radius:22px;background:#fff}
+.home-intro-copy{min-width:0}
+.home-eyebrow{margin:0 0 12px;color:var(--accent);font-size:.8125rem;line-height:1.65;font-weight:550}
+#home-title{margin:0 0 15px;font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.24;font-weight:650;letter-spacing:-.045em}
+.home-lead{margin:0;max-width:35em;color:#525963;font-size:1rem;line-height:1.8}
+.home-start-area{display:flex;align-items:center;gap:12px 18px;flex-wrap:wrap;margin-top:23px}
+.home-start.primary-button{display:inline-flex;align-items:center;justify-content:center;gap:18px;flex:0 1 auto;min-width:170px;max-width:100%;padding:12px 20px}
+.home-start svg{flex:0 0 20px;width:20px;height:20px}
+.home-start-caption{margin:0;color:var(--muted);font-size:.8125rem;line-height:1.65;flex:1 1 165px}
+.home-concepts{align-self:stretch;display:flex;flex-direction:column;justify-content:center;min-width:0;padding:24px;border-radius:16px;background:#faf8f5}
+.home-concepts-title{margin:0 0 16px;color:#696058;font-size:.8125rem;line-height:1.6}
+.home-concepts dl{display:grid;gap:18px;margin:0}
+.home-concepts dl>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;gap:12px;min-width:0}
+.home-concepts dt{display:flex;align-items:center;gap:9px;min-width:0;font-size:.875rem;font-weight:550;line-height:1.5}
+.home-concepts dd{margin:0;color:#696058;font-size:.8125rem;line-height:1.65}
+.home-concept-icon{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;flex:0 0 30px;color:var(--accent);background:#fff;border-radius:9px}
+.home-concept-icon svg{width:19px;height:19px}
+.home-route{margin-top:28px}
+.home-route-heading{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;margin-bottom:16px}
+.home-route-heading h2{margin:0 0 5px;font-size:1.2rem;line-height:1.5;font-weight:600;letter-spacing:-.015em}
+.home-route-heading>div>p{margin:0;color:var(--muted);font-size:.875rem;line-height:1.7}
+.home-progress{margin:0;padding:7px 11px;border:1px solid #e1e3e6;border-radius:8px;background:#fff;color:var(--muted);font-size:.75rem;line-height:1.65}
+.home-chapters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.home-chapter{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:21px 22px 18px;border:1px solid #e0e2e5;border-radius:16px;background:#fff;color:var(--ink);text-decoration:none;transition:border-color .16s ease,box-shadow .16s ease,background-color .16s ease}
+.home-chapter-meta{display:flex;align-items:center;gap:10px;width:100%;margin-bottom:17px;color:var(--muted);font-size:.75rem;line-height:1.6}
+.home-chapter-index{color:var(--accent);font-size:.875rem;font-weight:600;font-variant-numeric:tabular-nums}
+.home-chapter-meta svg{width:18px;height:18px;flex:0 0 18px;margin-left:auto;color:#77808a}
+.home-chapter h3{margin:0 0 8px;font-size:1.0625rem;line-height:1.6;font-weight:600;letter-spacing:-.015em}
+.home-chapter>p{flex:1;margin:0 0 18px;color:var(--muted);font-size:.875rem;line-height:1.8}
+.home-chapter-status{display:inline-flex;align-items:center;gap:7px;color:#616a73;font-size:.75rem;line-height:1.65}
+.home-chapter-status::before{content:"";display:block;width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:#a4abb3}
+.home-chapter[aria-current="step"]{border-color:#dca16a;background:#fffaf5;box-shadow:0 0 0 1px #dca16a}
+.home-chapter[aria-current="step"] .home-chapter-status{color:var(--accent)}
+.home-chapter[aria-current="step"] .home-chapter-status::before{background:var(--brand)}
+.home-simulation-note{margin:20px 0 0;color:var(--muted);font-size:.75rem;line-height:1.8}
+@media(hover:hover){.brand:hover{color:var(--accent)}.home-link:hover{color:var(--accent);background:#fff4e9}.home-chapter:hover{border-color:#d8ac85;box-shadow:0 4px 15px #3e2b1a08}.home-chapter:hover .home-chapter-meta svg{color:var(--accent)}}
+@media(max-width:960px){.home-intro{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;padding:26px}.home-concepts{padding:20px}.home-concepts dl>div{grid-template-columns:1fr;gap:4px}.home-concepts dd{padding-left:39px}.home-chapters{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+  .masthead-inner{gap:8px 12px}.header-navigation{gap:4px}.home-link{padding:10px 8px;font-size:.8125rem}
+  .home-intro{grid-template-columns:minmax(0,1fr);gap:22px;padding:23px;border-radius:18px}
+  #home-title{font-size:2rem;line-height:1.3;margin-bottom:12px}.home-title-break{display:initial}
+  .home-eyebrow{margin-bottom:9px;font-size:.75rem}.home-lead{font-size:.9375rem;line-height:1.8}.home-start-area{margin-top:18px;gap:10px 14px}
+  .home-start.primary-button{min-width:165px;font-size:.9375rem}.home-start-caption{font-size:.75rem}
+  .home-concepts{padding:16px;background:#faf8f5;border-radius:12px}.home-concepts-title{font-size:.75rem;margin-bottom:12px}
+  .home-concepts dl{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.home-concepts dl>div{display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;min-width:0}
+  .home-concepts dt{flex-direction:column;gap:7px;font-size:.8125rem;line-height:1.5;text-align:center}.home-concepts dd{padding:0;font-size:.75rem;line-height:1.7;overflow-wrap:anywhere}
+  .home-route{margin-top:24px}.home-route-heading{align-items:flex-start;gap:10px;margin-bottom:14px}.home-route-heading h2{font-size:1.125rem}.home-route-heading>div>p{font-size:.8125rem}
+  .home-chapter{padding:19px 20px 17px}.home-chapter-meta{margin-bottom:12px}.home-chapter h3{font-size:1rem}.home-chapter>p{font-size:.8125rem;margin-bottom:14px}
+  .home-simulation-note{margin-top:17px}
+}
+@media(max-width:580px){.home-chapters{grid-template-columns:minmax(0,1fr)}.home-intro{padding:21px}.home-start-area{align-items:stretch}.home-start.primary-button{width:100%;flex:1 1 100%;gap:16px}.home-start-caption{flex-basis:100%;text-align:center}.home-chapter-meta{margin-bottom:10px}.home-chapter>p{margin-bottom:12px}}
+@media(max-width:370px){.masthead-inner{column-gap:7px}.header-navigation{gap:0}.home-link{padding-inline:6px}.home-intro{padding:19px 17px}#home-title{font-size:1.8rem}.home-concepts{padding:14px 10px}.home-concept-icon{width:27px;height:27px;flex-basis:27px}.home-chapter{padding:18px}.home-concepts dd{font-size:.75rem}}
+.large-text .header-navigation{flex-wrap:wrap}.large-text .home-intro{grid-template-columns:minmax(0,1fr)}.large-text .home-concepts dl{grid-template-columns:minmax(0,1fr)}.large-text .home-concepts dl>div{display:flex;flex-direction:row;align-items:center;gap:16px;text-align:left}.large-text .home-concepts dt{flex-direction:row;text-align:left;flex:1 1 50%;font-size:.875rem}.large-text .home-concepts dd{padding:0;flex:1 1 50%;font-size:.8125rem;text-align:left}.large-text .home-chapters{grid-template-columns:minmax(0,1fr)}
+@media(prefers-reduced-motion:reduce){.home-chapter{transition:none}}
+
 </style>
 </head>
 <body>
@@ -96,11 +167,79 @@ button.phone-row{width:100%;text-align:left;font:inherit;min-height:64px;touch-a
     <symbol id="i-link" viewBox="0 0 24 24"><path d="m9 15 6-6m-5-3 2-2a5 5 0 0 1 7 7l-2 2M7 11l-2 2a5 5 0 0 0 7 7l2-2"/></symbol>
   </defs></svg>
 <header class="masthead"><div class="masthead-inner">
-  <div class="brand"><span class="xiaomi-mark"><!-- xiaomi-logo:start --><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 112" role="img" aria-label="Xiaomi"><path fill="#ff6900" d="M100.326,11.702 C89.76,1.176 74.566,0 56,0 C37.41,0 22.194,1.19 11.632,11.744 C1.072,22.294 0,37.486 0,56.054 C0,74.626 1.072,89.822 11.636,100.376 C22.198,110.932 37.412,112 56,112 C74.588,112 89.8,110.932 100.362,100.376 C110.926,89.82 112,74.626 112,56.054 C112,37.462 110.914,22.254 100.326,11.702 L100.326,11.702 Z"/><path fill="#fff" transform="translate(-112 0)" d="M200.6006,34.56 C200.9866,34.56 201.3066,34.87 201.3066,35.252 L201.3066,76.754 C201.3066,77.13 200.9866,77.442 200.6006,77.442 L191.5066,77.442 C191.1166,77.442 190.8006,77.13 190.8006,76.754 L190.8006,35.252 C190.8006,34.87 191.1166,34.56 191.5066,34.56 L200.6006,34.56 Z M161.1406,34.56 C168.0006,34.56 175.1726,34.874 178.7086,38.414 C182.188558,41.897875 182.564028,48.8333125 182.578162,55.5684076 L182.5786,76.754 C182.5786,77.13 182.2626,77.442 181.8726,77.442 L172.7826,77.442 C172.3926,77.442 172.0746,77.13 172.0746,76.754 L172.0746,55.204 C172.0646,51.442 171.8486,47.576 169.9086,45.63 C168.2386,43.956 165.1226,43.572 161.8826,43.492 L145.4026,43.492 C145.0146,43.492 144.6986,43.804 144.6986,44.18 L144.6986,76.754 C144.6986,77.13 144.3786,77.442 143.9906,77.442 L134.8926,77.442 C134.5046,77.442 134.1906,77.13 134.1906,76.754 L134.1906,35.252 C134.1906,34.87 134.5046,34.56 134.8926,34.56 L161.1406,34.56 Z M163.1766,51.088 C163.5626,51.088 163.8766,51.398 163.8766,51.776 L163.8766,76.754 C163.8766,77.13 163.5626,77.442 163.1766,77.442 L153.6246,77.442 C153.2326,77.442 152.9166,77.13 152.9166,76.754 L152.9166,51.776 C152.9166,51.398 153.2326,51.088 153.6246,51.088 L163.1766,51.088 Z"/></svg><!-- xiaomi-logo:end --></span><span>灯与开关<small>交互课程</small></span></div>
-  <button id="open-outline" class="outline-trigger" aria-haspopup="dialog" aria-controls="outline-dialog"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg><span>课程目录</span></button>
+  <a class="brand" id="brand-home" href="#home"><span class="xiaomi-mark"><!-- xiaomi-logo:start --><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 112" role="img" aria-label="Xiaomi"><path fill="#ff6900" d="M100.326,11.702 C89.76,1.176 74.566,0 56,0 C37.41,0 22.194,1.19 11.632,11.744 C1.072,22.294 0,37.486 0,56.054 C0,74.626 1.072,89.822 11.636,100.376 C22.198,110.932 37.412,112 56,112 C74.588,112 89.8,110.932 100.362,100.376 C110.926,89.82 112,74.626 112,56.054 C112,37.462 110.914,22.254 100.326,11.702 L100.326,11.702 Z"/><path fill="#fff" transform="translate(-112 0)" d="M200.6006,34.56 C200.9866,34.56 201.3066,34.87 201.3066,35.252 L201.3066,76.754 C201.3066,77.13 200.9866,77.442 200.6006,77.442 L191.5066,77.442 C191.1166,77.442 190.8006,77.13 190.8006,76.754 L190.8006,35.252 C190.8006,34.87 191.1166,34.56 191.5066,34.56 L200.6006,34.56 Z M161.1406,34.56 C168.0006,34.56 175.1726,34.874 178.7086,38.414 C182.188558,41.897875 182.564028,48.8333125 182.578162,55.5684076 L182.5786,76.754 C182.5786,77.13 182.2626,77.442 181.8726,77.442 L172.7826,77.442 C172.3926,77.442 172.0746,77.13 172.0746,76.754 L172.0746,55.204 C172.0646,51.442 171.8486,47.576 169.9086,45.63 C168.2386,43.956 165.1226,43.572 161.8826,43.492 L145.4026,43.492 C145.0146,43.492 144.6986,43.804 144.6986,44.18 L144.6986,76.754 C144.6986,77.13 144.3786,77.442 143.9906,77.442 L134.8926,77.442 C134.5046,77.442 134.1906,77.13 134.1906,76.754 L134.1906,35.252 C134.1906,34.87 134.5046,34.56 134.8926,34.56 L161.1406,34.56 Z M163.1766,51.088 C163.5626,51.088 163.8766,51.398 163.8766,51.776 L163.8766,76.754 C163.8766,77.13 163.5626,77.442 163.1766,77.442 L153.6246,77.442 C153.2326,77.442 152.9166,77.13 152.9166,76.754 L152.9166,51.776 C152.9166,51.398 153.2326,51.088 153.6246,51.088 L163.1766,51.088 Z"/></svg><!-- xiaomi-logo:end --></span><span>灯与开关<small>交互课程</small></span></a>
+  <nav class="header-navigation" aria-label="课程导航"><a class="home-link" id="home-link" href="#home" aria-current="page">课程首页</a>
+  <button id="open-outline" class="outline-trigger" aria-haspopup="dialog" aria-controls="outline-dialog"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg><span>课程目录</span></button></nav>
 </div></header>
-<main id="main" tabindex="-1">
-  <section class="course-heading" aria-labelledby="lesson-title">
+<main id="main" tabindex="-1" data-phase="home">
+  <section class="home-section" id="home-section" aria-labelledby="home-title">
+    <div class="home-intro">
+      <div class="home-intro-copy">
+        <p class="home-eyebrow">小米 · 灯与开关交互课程</p>
+        <h1 id="home-title" tabindex="-1">先弄懂灯，<br class="home-title-break">再选对开关。</h1>
+        <p class="home-lead">按一下墙上开关，点一下模拟米家。亲手分清供电、发光和智能控制，理解三种搭配。</p>
+        <div class="home-start-area">
+          <button class="primary-button home-start" id="home-start" type="button" aria-describedby="home-start-caption">从基础开始<svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <p id="home-start-caption" class="home-start-caption">第一次来，建议从普通开关开始。</p>
+        </div>
+      </div>
+      <aside class="home-concepts" aria-label="课程中的三个关键概念">
+        <p class="home-concepts-title">先分清这三件事</p>
+        <dl>
+          <div><dt><span class="home-concept-icon"><svg aria-hidden="true"><use href="#i-bolt"/></svg></span>供电</dt><dd>灯是否有电</dd></div>
+          <div><dt><span class="home-concept-icon"><svg aria-hidden="true"><use href="#i-bulb"/></svg></span>发光</dt><dd>灯现在亮不亮</dd></div>
+          <div><dt><span class="home-concept-icon"><svg aria-hidden="true"><use href="#i-link"/></svg></span>智能控制</dt><dd>能不能接收指令</dd></div>
+        </dl>
+      </aside>
+    </div>
+    <section class="home-route" aria-labelledby="home-route-title">
+      <div class="home-route-heading">
+        <div><h2 id="home-route-title">选择学习入口</h2><p>按顺序学，也可以直接进入想看的章节。</p></div>
+        <p class="home-progress" id="home-progress">6 个章节 · 20 个操作小步</p>
+      </div>
+      <div class="home-chapters">
+        <a class="home-chapter" href="#chapter-1" data-home-chapter="0">
+          <div class="home-chapter-meta"><span class="home-chapter-index">01</span><span>基础知识</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></div>
+          <h3>普通开关怎样控灯</h3>
+          <p>认识火线、灯线、零线，观察开关怎样通断供电。</p>
+          <span class="home-chapter-status" data-home-status="0">未开始</span>
+        </a>
+        <a class="home-chapter" href="#chapter-2" data-home-chapter="1">
+          <div class="home-chapter-meta"><span class="home-chapter-index">02</span><span>基础知识</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></div>
+          <h3>智能灯为何需要待机</h3>
+          <p>比较关闭发光与切断供电，理解智能灯如何继续听指令。</p>
+          <span class="home-chapter-status" data-home-status="1">未开始</span>
+        </a>
+        <a class="home-chapter" href="#chapter-3" data-home-chapter="2">
+          <div class="home-chapter-meta"><span class="home-chapter-index">03</span><span>实验 A</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></div>
+          <h3>普通灯＋智能开关</h3>
+          <p>灯断电后，智能开关为什么还能接收 App 指令？</p>
+          <span class="home-chapter-status" data-home-status="2">未开始</span>
+        </a>
+        <a class="home-chapter" href="#chapter-4" data-home-chapter="3">
+          <div class="home-chapter-meta"><span class="home-chapter-index">04</span><span>实验 B</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></div>
+          <h3>智能灯＋普通开关</h3>
+          <p>试试 App 关灯、墙上断电，以及亮度和冷暖调节。</p>
+          <span class="home-chapter-status" data-home-status="3">未开始</span>
+        </a>
+        <a class="home-chapter" href="#chapter-5" data-home-chapter="4">
+          <div class="home-chapter-meta"><span class="home-chapter-index">05</span><span>实验 C</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></div>
+          <h3>智能灯＋智能开关</h3>
+          <p>模拟米家设置，理解按键控制对象与持续供电的关系。</p>
+          <span class="home-chapter-status" data-home-status="4">未开始</span>
+        </a>
+        <a class="home-chapter" href="#chapter-6" data-home-chapter="5">
+          <div class="home-chapter-meta"><span class="home-chapter-index">06</span><span>总结与小测</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></div>
+          <h3>把三种搭配放在一起</h3>
+          <p>对照供电、离线和控制方式，做 3 道题检查理解。</p>
+          <span class="home-chapter-status" data-home-status="5">随时查看</span>
+        </a>
+      </div>
+    </section>
+    <p class="home-simulation-note">所有操作均为教学模拟，不连接真实设备。学习进度在本次页面打开期间保留，刷新后重新开始。</p>
+  </section>
+  <p class="lesson-location" id="lesson-location">基础知识 · 第 1 章</p>
+  <section class="course-heading" id="course-heading" aria-labelledby="lesson-title">
     <div class="chapter-meta"><span id="chapter-kicker">基础知识</span><span id="chapter-progress">1 / 6 章</span></div>
     <h1 id="lesson-title" tabindex="-1">先从按一下开关开始。</h1>
     <p id="lesson-lead">跟着每一步操作，观察供电和发光有什么变化。</p>
@@ -253,7 +392,7 @@ button.phone-row{width:100%;text-align:left;font:inherit;min-height:64px;touch-a
     </div><p class="summary-takeaway">灯不发光了，不一定是断电了。<br><strong>想继续听指令，必要的供电与连接就要保留。</strong></p>
   </section>
   <section id="quiz-panel" class="quiz-panel" hidden aria-labelledby="quiz-title"><p id="quiz-progress" class="quiz-progress"></p><h2 id="quiz-title" tabindex="-1"></h2><div id="quiz-options"></div><p id="quiz-feedback" tabindex="-1" aria-live="polite"></p></section>
-  <div class="action-dock"><div class="step-meta"><span id="step-count" class="step-count">本章第 1 步</span><button id="show-explanation" class="explanation-link" hidden>查看解释</button></div><div class="action-buttons"><button id="lesson-back" class="back-button">上一步</button><button id="step-replay" class="replay-button" hidden>重做本步</button><button id="lesson-action" class="primary-button">按一下墙上开关</button></div></div>
+  <div class="action-dock" id="action-dock"><div class="step-meta"><span id="step-count" class="step-count">本章第 1 步</span><button id="show-explanation" class="explanation-link" hidden>查看解释</button></div><div class="action-buttons"><button id="lesson-back" class="back-button">上一步</button><button id="step-replay" class="replay-button" hidden>重做本步</button><button id="lesson-action" class="primary-button">按一下墙上开关</button></div></div>
   <footer class="page-footer"><p>简化教学示意，非施工图。能力与按键用法以实际型号说明为准；转无线不能替代负载兼容确认。本课所述 Pro 2026 单火接线不支持智能灯。</p></footer>
 </main>
 <dialog id="explanation-dialog" aria-labelledby="result-title" aria-describedby="result-text">
@@ -930,7 +1069,7 @@ button.phone-row{width:100%;text-align:left;font:inherit;min-height:64px;touch-a
     { name: '搭配总结与小测', group: '课程总结', title: '先分清供电，再看谁听指令。', lead: '三种搭配的关键区别都在这里。随时可以打开课程目录回看。', visual: 'summary', steps: [] }
   ];
   const saved = chapters.map(c => ({ index: 0, records: c.steps.map(() => ({ done: false, value: null, reviewed: false })) }));
-  let chapterIndex = 0, principle = false, room, wiring, roomUnavailable = false, quiz = null, pausedQuiz = null;
+  let chapterIndex = 0, home = true, hasVisited = false, principle = false, room, wiring, roomUnavailable = false, quiz = null, pausedQuiz = null;
   const chapter = () => chapters[chapterIndex];
   const progress = () => saved[chapterIndex];
   const step = () => chapter().steps[progress().index];
@@ -954,16 +1093,22 @@ button.phone-row{width:100%;text-align:left;font:inherit;min-height:64px;touch-a
     if (navigate) $(id).scrollIntoView({ block: 'start', behavior: 'instant' });
     $(id).focus({ preventScroll: true });
   }
-  function syncHash(replace = false) { const hash = `#chapter-${chapterIndex + 1}`; if (location.hash !== hash) history[replace ? 'replaceState' : 'pushState'](null, '', hash); }
-  function openChapter(i, fromHistory = false) {
+  function syncHash(replace = false) { const hash = home ? '#home' : `#chapter-${chapterIndex + 1}`; if (location.hash !== hash) history[replace ? 'replaceState' : 'pushState'](null, '', hash); }
+  function openHome(fromHistory = false) {
     if ($('explanation-dialog').open) $('explanation-dialog').close('navigate');
     if (quiz && quiz.index < questions.length) pausedQuiz = quiz;
-    chapterIndex = Math.max(0, Math.min(5, i)); quiz = null; principle = false; $('wire-details').open = false;
-    if (!fromHistory) syncHash(); render(); focusTitle(!fromHistory);
+    quiz = null; home = true; principle = false; $('wire-details').open = false;
+    if (!fromHistory) syncHash(); render(); focusTitle(!fromHistory, 'home-title');
+  }
+  function openChapter(i, fromHistory = false, focus = true) {
+    if ($('explanation-dialog').open) $('explanation-dialog').close('navigate');
+    if (quiz && quiz.index < questions.length) pausedQuiz = quiz;
+    chapterIndex = Math.max(0, Math.min(5, i)); home = false; hasVisited = true; quiz = null; principle = false; $('wire-details').open = false;
+    if (!fromHistory) syncHash(); render(); if (focus) focusTitle(!fromHistory);
   }
   function nextLabel() { return progress().index < chapter().steps.length - 1 ? '继续下一步' : '进入下一章'; }
   function showExplanation() {
-    if (chapterIndex === 5 || !observed() || $('explanation-dialog').open) return;
+    if (home || chapterIndex === 5 || !observed() || $('explanation-dialog').open) return;
     record().reviewed = true;
     $('lesson-action').textContent = nextLabel();
     $('explanation-next').textContent = nextLabel();
@@ -976,6 +1121,7 @@ button.phone-row{width:100%;text-align:left;font:inherit;min-height:64px;touch-a
     (target || $('lesson-action')).focus({ preventScroll: true });
   }
   function act() {
+    if (home) return;
     if (quiz) { advanceQuiz(); return; }
     if (chapterIndex === 5) { startQuiz(); return; }
     if (observed()) {
@@ -992,11 +1138,13 @@ button.phone-row{width:100%;text-align:left;font:inherit;min-height:64px;touch-a
     } else { render(); showExplanation(); }
   }
   function replay() {
+    if (home) return;
     if (quiz) { startQuiz(true); return; }
     if (chapterIndex === 5) return;
     record().done = false; record().value = null; record().reviewed = false; render();
   }
   function back(navigate = true) {
+    if (home) return;
     if (quiz) { pausedQuiz = quiz.index < questions.length ? quiz : null; quiz = null; render(); focusTitle(navigate); return; }
     if (chapterIndex === 5) { openChapter(4); return; }
     if (progress().index > 0) { progress().index--; principle = false; $('wire-details').open = false; render(); focusTitle(navigate); }
@@ -1042,7 +1190,33 @@ button.phone-row{width:100%;text-align:left;font:inherit;min-height:64px;touch-a
     $('mijia-back')?.addEventListener('click', () => back(false));
     $('mijia-review')?.addEventListener('click', showExplanation);
   }
+  function renderHome() {
+    $('main').dataset.chapter = 'home'; $('main').dataset.phase = 'home'; $('main').dataset.mode = 'home';
+    const complete = saved.reduce((sum, entry) => sum + entry.records.filter(r => r.done).length, 0);
+    const total = saved.reduce((sum, entry) => sum + entry.records.length, 0);
+    $('home-progress').textContent = complete ? `本次已完成 ${complete} / ${total} 步` : `${total} 个操作步骤 · 按自己的节奏学习`;
+    document.querySelectorAll('[data-home-status]').forEach(node => {
+      const i = Number(node.dataset.homeStatus);
+      node.textContent = i === 5 ? pausedQuiz ? `小测待继续 · 第 ${pausedQuiz.index + 1} 题` : '随时查看 · 含 3 题小测'
+        : finished(i) ? '已完成 · 可回看' : saved[i].records.some(r => r.done) || saved[i].index > 0 ? `进行中 · 第 ${saved[i].index + 1} / ${chapters[i].steps.length} 步` : '未开始';
+    });
+    const allDone = saved.slice(0, 5).every((_, i) => finished(i));
+    $('home-start').textContent = pausedQuiz && chapterIndex === 5 ? '继续小测' : allDone ? '回看搭配总结' : hasVisited ? '继续学习' : '开始学习';
+    $('home-start-caption').textContent = pausedQuiz && chapterIndex === 5 ? `接着完成第 ${pausedQuiz.index + 1} / ${questions.length} 题`
+      : allDone ? '已完成全部操作，可回看或做小测'
+      : hasVisited ? `${chapter().name}${chapterIndex < 5 ? ` · 第 ${progress().index + 1} / ${chapter().steps.length} 步` : ''}` : '从基础知识开始，也可以直接选择下面的实验';
+  }
   function render() {
+    $('home-section').hidden = !home;
+    $('course-heading').hidden = home; $('lesson-location').hidden = home; $('action-dock').hidden = home;
+    for (const id of ['home-link', 'brand-home']) {
+      if (home) $(id).setAttribute('aria-current', 'page'); else $(id).removeAttribute('aria-current');
+    }
+    $('lesson-location').textContent = `课程 / ${chapter().name}`;
+    if (home) {
+      for (const id of ['lesson-layout', 'summary-section', 'quiz-panel']) $(id).hidden = true;
+      $('action-dock').classList.remove('menu-pending'); renderHome(); return;
+    }
     const c = chapter(), summary = chapterIndex === 5;
     $('main').dataset.chapter = String(chapterIndex);
     $('main').dataset.phase = quiz ? 'quiz' : summary ? 'summary' : observed() ? 'result' : 'action';
@@ -1119,7 +1293,7 @@ button.phone-row{width:100%;text-align:left;font:inherit;min-height:64px;touch-a
     if (c.scene !== undefined) { wiring?.setState({ ...s, scene: c.scene }); room?.setState({ ...s, scene: c.scene, principle: false }); }
   }
   function adjust(kind, event) {
-    if (chapterIndex === 5 || step().kind !== kind) return;
+    if (home || chapterIndex === 5 || step().kind !== kind) return;
     const raw = event.target.value; if (raw.trim() === '' || !Number.isFinite(Number(raw))) return;
     const min = kind === 'brightness' ? 10 : 0;
     const invalid = Number(raw) < min || Number(raw) > 100;
@@ -1168,17 +1342,30 @@ button.phone-row{width:100%;text-align:left;font:inherit;min-height:64px;touch-a
     quiz.index++; renderQuiz(); focusTitle(true, 'quiz-title');
   }
   function openOutline() {
-    $('outline-list').replaceChildren(...chapters.map((c, i) => {
+    const homeButton = document.createElement('button'); homeButton.id = 'outline-home'; homeButton.className = 'outline-home';
+    homeButton.textContent = '课程首页'; if (home) homeButton.setAttribute('aria-current', 'page');
+    homeButton.addEventListener('click', () => { $('outline-dialog').close('navigate'); openHome(); });
+    $('outline-list').replaceChildren(homeButton, ...chapters.map((c, i) => {
       const button = document.createElement('button'); button.className = 'outline-item';
-      const status = i === chapterIndex ? '当前章节' : finished(i) ? '已完成' : i === 5 ? '随时查看' : saved[i].records.some(r => r.done) ? '已开始' : '未开始';
+      const status = !home && i === chapterIndex ? '当前章节' : finished(i) ? '已完成' : i === 5 ? '随时查看' : saved[i].records.some(r => r.done) ? '已开始' : '未开始';
       button.innerHTML = `<span class="outline-number">${String(i + 1).padStart(2, '0')}</span><span><strong>${c.name}</strong><small>${status}</small></span><span aria-hidden="true">${finished(i) ? '✓' : '›'}</span>`;
-      if (i === chapterIndex) button.setAttribute('aria-current', 'step');
+      if (!home && i === chapterIndex) button.setAttribute('aria-current', 'step');
       button.addEventListener('click', () => { $('outline-dialog').close('navigate'); openChapter(i); }); return button;
     }));
     $('outline-dialog').showModal(); $('outline-dialog').scrollTop = 0; $('outline-title').focus({ preventScroll: true });
   }
+  function ordinaryLink(event) { return !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && !(event.button > 0); }
+  for (const id of ['home-link', 'brand-home']) $(id).addEventListener('click', event => { if (ordinaryLink(event)) { event.preventDefault(); openHome(); } });
+  document.querySelectorAll('[data-home-chapter]').forEach(link => link.addEventListener('click', event => {
+    if (ordinaryLink(event)) { event.preventDefault(); openChapter(Number(link.dataset.homeChapter)); }
+  }));
+  $('home-start').addEventListener('click', () => {
+    const resumeQuiz = !!pausedQuiz && chapterIndex === 5;
+    const target = saved.slice(0, 5).every((_, i) => finished(i)) ? 5 : hasVisited ? chapterIndex : 0;
+    openChapter(target, false, !resumeQuiz); if (resumeQuiz) startQuiz();
+  });
   $('lesson-action').addEventListener('click', act); $('lesson-back').addEventListener('click', back); $('step-replay').addEventListener('click', replay);
-  $('app-power').addEventListener('click', () => { if (chapterIndex < 5 && step().kind === 'app') observed() ? showExplanation() : act(); });
+  $('app-power').addEventListener('click', () => { if (!home && chapterIndex < 5 && step().kind === 'app') observed() ? showExplanation() : act(); });
   $('show-explanation').addEventListener('click', showExplanation);
   $('close-explanation').addEventListener('click', () => $('explanation-dialog').close());
   $('explanation-next').addEventListener('click', () => { $('explanation-dialog').close('navigate'); act(); });
@@ -1197,7 +1384,7 @@ button.phone-row{width:100%;text-align:left;font:inherit;min-height:64px;touch-a
     if (event.shiftKey && (active === first || active === $('result-title'))) { event.preventDefault(); last.focus({ preventScroll: true }); }
     else if (!event.shiftKey && (active === last || active === $('result-title'))) { event.preventDefault(); first.focus({ preventScroll: true }); }
   });
-  $('view-toggle').addEventListener('click', () => { principle = !principle; $('wire-details').open = principle; render(); });
+  $('view-toggle').addEventListener('click', () => { if (home) return; principle = !principle; $('wire-details').open = principle; render(); });
   $('reset-view').addEventListener('click', () => room?.resetView());
   $('open-outline').addEventListener('click', openOutline); $('close-outline').addEventListener('click', () => $('outline-dialog').close());
   $('outline-dialog').addEventListener('close', () => { if ($('outline-dialog').returnValue !== 'navigate') $('open-outline').focus({ preventScroll: true }); $('outline-dialog').returnValue = ''; });
@@ -1218,27 +1405,31 @@ button.phone-row{width:100%;text-align:left;font:inherit;min-height:64px;touch-a
       adjust(kind, e);
     });
   }
-  addEventListener('popstate', () => { const match = /^#chapter-([1-6])$/.exec(location.hash); if (match) openChapter(Number(match[1]) - 1, true); });
-  const initial = /^#chapter-([1-6])$/.exec(location.hash); if (initial) chapterIndex = Number(initial[1]) - 1; else syncHash(true);
+  addEventListener('popstate', () => { const match = /^#chapter-([1-6])$/.exec(location.hash); if (match) openChapter(Number(match[1]) - 1, true); else if (!location.hash || location.hash === '#home') openHome(true); });
+  const initial = /^#chapter-([1-6])$/.exec(location.hash); if (initial) { chapterIndex = Number(initial[1]) - 1; home = false; hasVisited = true; } else syncHash(true);
   if (typeof ResizeObserver === 'function') {
-    const dock = document.querySelector('.action-dock');
+    const dock = document.querySelector('.action-dock'), header = document.querySelector('.masthead');
     let lastDockHeight = 0;
     const measureDock = new ResizeObserver(entries => {
-      const box = entries[0]?.borderBoxSize;
-      const height = (Array.isArray(box) ? box[0] : box)?.blockSize;
-      if (height && Math.abs(height - lastDockHeight) > 1) {
-        lastDockHeight = height;
-        document.documentElement.style.setProperty('--action-dock-height', `${Math.ceil(height)}px`);
+      for (const entry of entries) {
+        const box = entry.borderBoxSize;
+        const height = (Array.isArray(box) ? box[0] : box)?.blockSize;
+        if (entry.target === header && height) document.documentElement.style.setProperty('--course-nav-height', `${Math.ceil(height)}px`);
+        if (entry.target === dock && height && Math.abs(height - lastDockHeight) > 1) {
+          lastDockHeight = height;
+          document.documentElement.style.setProperty('--action-dock-height', `${Math.ceil(height)}px`);
+        }
       }
       document.documentElement.classList.toggle('large-text', parseFloat(getComputedStyle(document.documentElement).fontSize) >= 24);
     });
     if (dock) measureDock.observe(dock);
+    if (header) measureDock.observe(header);
   }
   wiring = window.createWiring(); render();
   try {
     if (typeof window.createRoom !== 'function') throw new Error('3D unavailable');
     room = window.createRoom($('room'), {
-      onSwitch() { if (chapter().visual === 'lab' && chapterIndex < 5 && step().kind === 'wall' && !record().done) act(); },
+      onSwitch() { if (!home && chapter().visual === 'lab' && chapterIndex < 5 && step().kind === 'wall' && !record().done) act(); },
       onProject(points) { for (const [key, id] of [['switch', 'room-switch'], ['lamp', 'lamp-tag']]) if (points[key]) { $(id).style.left = `${points[key].x}px`; $(id).style.top = `${points[key].y}px`; } }
     });
   } catch (error) { roomUnavailable = true; }
