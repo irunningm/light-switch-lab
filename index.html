@@ -775,7 +775,84 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
 .large-text .explore-inline-feedback{position:static}
 @media(max-width:760px){.visual-course .scene-target.scene-app{width:44px;height:72px}.visual-course .scene-target.scene-lamp{width:48px;height:80px}}
 @media(max-width:760px){.visual-course .scene-target.scene-app{min-width:44px}}
+@media(min-width:761px) and (max-width:1099px){.visual-course .scene-target.scene-app{width:44px;min-width:44px;height:72px}}
 @media(max-width:370px){.visual-course .scene-target.scene-app{margin-left:1px}}
+
+/* Synchronized comparison: one action, three visible consequences. */
+.home-compare-link{display:inline-flex;gap:14px;align-items:center;justify-content:center;min-height:48px;padding:10px 18px;border:1px solid #c4b4a0;border-radius:12px;color:#854719;text-decoration:none;font-weight:650;background:#fffaf2}
+.home-start-area{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}.home-start-caption{flex-basis:100%;margin:0}
+.learning-mode a{min-height:44px;display:flex;align-items:center;justify-content:center;padding:7px 12px;color:#895023;font-size:.82rem;text-decoration:none}
+.doc-shell[data-comparing="true"]{display:block;max-width:1440px}
+.visual-course .doc-shell #main[data-comparing="true"]{width:100%;max-width:none;margin:auto;padding:28px 28px 32px}
+.comparison-heading{margin-bottom:20px}.comparison-heading .home-eyebrow{margin:0 0 8px}
+#comparison-title{font-size:clamp(1.5rem,2.6vw,2.3rem);line-height:1.3;letter-spacing:-.035em;margin:0 0 10px;scroll-margin-top:calc(var(--course-nav-height,80px) + 16px)}
+.comparison-heading>p:last-child{margin:0;color:#616970;font-size:.94rem;line-height:1.6}
+.comparison-controls{position:sticky;top:var(--course-nav-height,80px);z-index:12;background:#f7f5efed;backdrop-filter:blur(14px);padding:12px 0 10px;border-block:1px solid #d9d4ca;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.comparison-buttons{display:flex;gap:8px;flex-wrap:wrap}.comparison-buttons button{min-height:48px;padding:10px 18px;border:1px solid #ccc4b7;border-radius:10px;color:#3d4246;background:#fffdf8;font-size:.9rem;font-weight:650;line-height:1.4}
+#comparison-wall{background:#b95419;color:white;border-color:#b95419}#comparison-app-on,#comparison-app-off{border-color:#cfc4df;color:#5c4380;background:#f8f5fd}#comparison-reset{font-weight:500}
+#comparison-summary{flex:1 1 230px;font-size:.82rem;line-height:1.65;color:#515a60;margin:0;font-variant-numeric:tabular-nums}
+.comparison-target-note{font-size:.8rem;color:#626970;line-height:1.7;margin:12px 0 18px}
+.comparison-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.comparison-card{min-width:0;border:1px solid #d7d2c8;border-radius:17px;background:#fffdf8;box-shadow:0 6px 18px #332b1a06;overflow:hidden;display:flex;flex-direction:column}
+.comparison-card-heading{padding:18px 18px 10px}.comparison-card-heading h2,.comparison-card-heading h3{font-size:1rem;line-height:1.6;letter-spacing:-.025em;margin:0;font-weight:700}.comparison-target{font-size:.76rem;color:#705985;margin:3px 0 0;line-height:1.6}
+.comparison-canvas-wrap{position:relative;height:280px;background:#e8e3d8;isolation:isolate}
+.comparison-canvas{display:block;width:100%;height:100%;touch-action:pan-y}
+.comparison-leaders{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+.comparison-leaders g{stroke-width:1.3;opacity:.95}.comparison-leaders [data-wire="L"]{stroke:#ac3540;fill:#ac3540}.comparison-leaders [data-wire="L1"]{stroke:#9d6017;fill:#9d6017}.comparison-leaders [data-wire="N"]{stroke:#1f6689;fill:#1f6689}
+.comparison-hit{position:absolute;z-index:3;min-width:44px;min-height:44px;padding:0;border:0;border-radius:6px;background:transparent;cursor:pointer;touch-action:pan-y;box-shadow:none}
+.comparison-hit:focus-visible{outline:3px solid #126cc5;outline-offset:3px;background:#126cc514}
+.comparison-wire-labels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));text-align:center;background:#eee9df;padding:10px 2px;font-size:.8rem;font-weight:650;line-height:1.5}
+.comparison-wire-labels [data-wire="L"]{color:#a02e38}.comparison-wire-labels [data-wire="L1"]{color:#875212}.comparison-wire-labels [data-wire="N"]{color:#195a7a}
+.comparison-status{display:grid;grid-template-columns:.7fr .7fr 1.6fr;gap:8px;padding:14px 16px 12px;border-bottom:1px solid #e8e3da}
+.comparison-metric{min-width:0}.comparison-metric small{display:block;color:#626970;font-size:.68rem;line-height:1.6;margin-bottom:3px}.comparison-metric strong{display:block;font-size:.78rem;line-height:1.6;color:#343c42;font-weight:650}
+.comparison-card[data-powered="false"] .comparison-metric:nth-child(2) strong{color:#8b3b27}.comparison-card[data-powered="true"][data-emitting="false"] .comparison-metric:last-child strong{color:#655083}
+.comparison-reason{margin:0;padding:14px 16px 18px;font-size:.9rem;line-height:1.75;flex:1;color:#3d484e}
+.comparison-fallback{padding:26px 18px;font-size:.92rem;color:#4f5b62;line-height:1.8}
+.comparison-more{margin-top:22px;border-top:1px solid #d7d2c8;padding:12px 0}.comparison-more>summary{min-height:48px;align-content:center;cursor:pointer;font-weight:600;font-size:.9rem;line-height:1.7}.comparison-more>p{font-size:.83rem;color:#616b71;line-height:1.8;margin:10px 0}
+.comparison-more-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.comparison-action-group{min-width:0;border:1px solid #dad5cc;border-radius:12px;padding:10px 12px 12px;margin:0}.comparison-action-group legend{font-size:.82rem;font-weight:650;padding:0 6px}.comparison-action-buttons{display:flex;flex-wrap:wrap;gap:8px}.comparison-action-buttons button{min-height:44px;padding:9px 12px;border:1px solid #cfc8bd;border-radius:8px;background:#fffdf8;font-size:.8rem;line-height:1.5;color:#454e55}
+.comparison-footer{font-size:.82rem;line-height:1.8;color:#626970;margin:12px 0 20px}.comparison-footer a{color:#88501f;display:inline-flex;align-items:center;min-height:44px;padding:0 3px}
+.comparison-section button:focus-visible,.comparison-section a:focus-visible,.home-compare-link:focus-visible{outline:3px solid #126cc5;outline-offset:3px}
+@media(hover:hover){.comparison-hit:hover{background:#ffffff18;box-shadow:inset 0 0 0 1px #ffffff80}.comparison-buttons button:hover,.comparison-action-buttons button:hover{filter:brightness(.96)}}
+@media(max-width:1099px){.comparison-grid{gap:12px}.comparison-canvas-wrap{height:240px}.comparison-card-heading{padding:14px 12px 9px}.comparison-card-heading h2,.comparison-card-heading h3{font-size:.89rem}.comparison-status{padding-inline:12px;gap:5px}.comparison-reason{padding:12px;font-size:.84rem}}
+@media(max-width:800px){
+ .visual-course .doc-shell #main[data-comparing="true"]{padding:20px 16px 24px}.comparison-grid{grid-template-columns:minmax(0,1fr);gap:18px}.comparison-canvas-wrap{height:250px}.comparison-card-heading{padding:14px 16px 9px}.comparison-card-heading h2,.comparison-card-heading h3{font-size:1rem}.comparison-status{padding:12px 16px}.comparison-reason{padding:12px 16px 16px;font-size:.9rem}.comparison-controls{gap:8px;padding:9px 0}.comparison-buttons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;width:100%}.comparison-buttons button{padding:8px 5px;font-size:.8rem;min-height:48px}.comparison-target-note{margin:12px 0}.comparison-more-actions{grid-template-columns:repeat(2,minmax(0,1fr))}#comparison-summary{flex-basis:100%;font-size:.75rem}.comparison-heading{margin-bottom:14px}
+}
+@media(max-width:600px){.masthead-inner{flex-wrap:wrap}.header-navigation{margin-left:auto}.brand{flex-shrink:0}.comparison-nav-link{white-space:nowrap}.learning-mode{flex-wrap:wrap}.learning-mode a{flex:1 1 100%}.comparison-canvas-wrap{height:235px}.comparison-more-actions{grid-template-columns:1fr}.home-compare-link{width:100%}}
+@media(max-width:370px){.masthead-inner{padding-block:9px;justify-content:space-between}.header-navigation{width:100%;justify-content:space-between}.visual-course .doc-shell #main[data-comparing="true"]{padding-inline:12px}.comparison-canvas-wrap{height:215px}.comparison-buttons button{font-size:.72rem}.comparison-status{padding-inline:12px}.comparison-heading>p:last-child{font-size:.83rem}}
+@media(max-height:500px){.comparison-controls{position:static}}
+.large-text .comparison-controls{position:static}.large-text .comparison-grid{grid-template-columns:1fr}.large-text .comparison-more-actions{grid-template-columns:1fr}.large-text .comparison-buttons{display:flex}.large-text .comparison-buttons button{flex:1 1 140px}.large-text .comparison-status{grid-template-columns:1fr 1fr}.large-text .comparison-metric:last-child{grid-column:1/-1}.large-text .comparison-card-heading h2{font-size:1rem}
+@media(prefers-reduced-motion:reduce){.comparison-section *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.comparison-cutaway{display:flex;align-items:center;gap:14px;padding:8px 16px 0;background:#fffdf8}
+.comparison-cutaway-caption{font-size:.68rem;color:#626970;line-height:1.5;margin:0;flex:0 0 4em}
+.comparison-contact-diagram{width:100%;height:48px;min-width:0;overflow:visible}
+.comparison-contact-feed,.comparison-contact-blade{stroke:#b63840;fill:#fffdf8;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.comparison-contact-output{stroke:#b47820;fill:#fffdf8;stroke-width:4;stroke-linecap:round}
+.comparison-contact-blade{transform-origin:75px 32px;transform-box:view-box;transition:transform .45s ease}
+.comparison-contact-gap{stroke:#9b4939;stroke-width:1.5;fill:none;opacity:0}
+.comparison-card[data-relay="false"] .comparison-contact-blade{transform:rotate(-30deg)}
+.comparison-card[data-relay="false"] .comparison-contact-gap{opacity:1}
+.comparison-card[data-powered="false"] .comparison-contact-output{stroke:#63717b}
+.comparison-card[data-mains="false"] .comparison-contact-feed,.comparison-card[data-mains="false"] .comparison-contact-blade{stroke:#63717b}
+@media(prefers-reduced-motion:reduce){.comparison-contact-blade{transition:none}}
+.comparison-contact-pivot{stroke:#b63840}.comparison-contact-fixed{stroke:#b47820}
+.comparison-card[data-mains="false"] .comparison-contact-pivot,.comparison-card[data-powered="false"] .comparison-contact-fixed{stroke:#63717b}
+.comparison-reason{min-height:80px}
+@media(max-width:800px){.comparison-reason{min-height:106px}}
+.comparison-contact-diagram{flex:1 1 0;width:0;min-width:0}
+.comparison-card,.comparison-hit,.comparison-action-buttons button{scroll-margin-top:calc(var(--course-nav-height,80px) + 130px);scroll-margin-bottom:24px}
+/* The app reports its selected device, not whether the light emits. */
+.app-device-status{padding:12px 14px;border:1px solid #b8d4c5;border-radius:11px;background:#f0f8f3;color:#285b46;min-width:0}
+.app-status-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.84rem;line-height:1.65}
+.app-status-heading>strong{white-space:nowrap;padding:1px 9px;border-radius:5px;background:#d6eee0;font-weight:750}
+.app-device-status p{margin:5px 0 0;font-size:.78rem;line-height:1.65;color:#4d6259}
+.app-device-status[data-online="false"]{border-color:#dbaea2;background:#fff2ed;color:#963d2b}
+.app-device-status[data-online="false"] .app-status-heading>strong{background:#f8d9ce;color:#963d2b}
+.app-device-status[data-online="false"] p{color:#864e40}
+.comparison-app-status{margin:12px 14px 4px;padding:10px 12px;min-height:78px}
+.comparison-app-status .app-status-heading{font-size:.78rem}.comparison-app-status p{font-size:.72rem}
+@media(max-width:760px){.scene-app-status{padding:10px 12px}.scene-app-status .app-status-heading{font-size:.8rem}.comparison-app-status{min-height:80px}}
+.comparison-card-heading .comparison-app-status{margin:7px 0 0;padding:5px 8px;min-height:0;border-radius:7px}
+.comparison-card-heading .comparison-app-status p{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:0}
 
 </style>
 </head>
@@ -805,6 +882,7 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
 <header class="masthead"><div class="masthead-inner">
   <a class="brand" id="brand-home" href="#home"><span class="xiaomi-mark"><!-- xiaomi-logo:start --><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 112" role="img" aria-label="Xiaomi"><path fill="#ff6900" d="M100.326,11.702 C89.76,1.176 74.566,0 56,0 C37.41,0 22.194,1.19 11.632,11.744 C1.072,22.294 0,37.486 0,56.054 C0,74.626 1.072,89.822 11.636,100.376 C22.198,110.932 37.412,112 56,112 C74.588,112 89.8,110.932 100.362,100.376 C110.926,89.82 112,74.626 112,56.054 C112,37.462 110.914,22.254 100.326,11.702 L100.326,11.702 Z"/><path fill="#fff" transform="translate(-112 0)" d="M200.6006,34.56 C200.9866,34.56 201.3066,34.87 201.3066,35.252 L201.3066,76.754 C201.3066,77.13 200.9866,77.442 200.6006,77.442 L191.5066,77.442 C191.1166,77.442 190.8006,77.13 190.8006,76.754 L190.8006,35.252 C190.8006,34.87 191.1166,34.56 191.5066,34.56 L200.6006,34.56 Z M161.1406,34.56 C168.0006,34.56 175.1726,34.874 178.7086,38.414 C182.188558,41.897875 182.564028,48.8333125 182.578162,55.5684076 L182.5786,76.754 C182.5786,77.13 182.2626,77.442 181.8726,77.442 L172.7826,77.442 C172.3926,77.442 172.0746,77.13 172.0746,76.754 L172.0746,55.204 C172.0646,51.442 171.8486,47.576 169.9086,45.63 C168.2386,43.956 165.1226,43.572 161.8826,43.492 L145.4026,43.492 C145.0146,43.492 144.6986,43.804 144.6986,44.18 L144.6986,76.754 C144.6986,77.13 144.3786,77.442 143.9906,77.442 L134.8926,77.442 C134.5046,77.442 134.1906,77.13 134.1906,76.754 L134.1906,35.252 C134.1906,34.87 134.5046,34.56 134.8926,34.56 L161.1406,34.56 Z M163.1766,51.088 C163.5626,51.088 163.8766,51.398 163.8766,51.776 L163.8766,76.754 C163.8766,77.13 163.5626,77.442 163.1766,77.442 L153.6246,77.442 C153.2326,77.442 152.9166,77.13 152.9166,76.754 L152.9166,51.776 C152.9166,51.398 153.2326,51.088 153.6246,51.088 L163.1766,51.088 Z"/></svg><!-- xiaomi-logo:end --></span><span>灯与开关<small>交互课程</small></span></a>
   <nav class="header-navigation" aria-label="课程导航"><a class="home-link" id="home-link" href="#home" aria-current="page">课程首页</a>
+  <a class="home-link comparison-nav-link" id="comparison-link" href="#compare" data-open-comparison>三组同屏</a>
   <button id="open-outline" class="outline-trigger" aria-haspopup="dialog" aria-controls="outline-dialog"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg><span>课程目录</span></button></nav>
 </div></header>
 <div class="doc-shell">
@@ -823,6 +901,7 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
         <p class="home-lead">看 3D 演示，按一次按钮，弄懂一种区别。</p>
         <div class="home-start-area">
           <button class="primary-button home-start" id="home-start" type="button" aria-describedby="home-start-caption">从基础开始<svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <a class="home-compare-link" href="#compare" data-open-comparison>三组一起试 <span aria-hidden="true">↗</span></a>
           <p id="home-start-caption" class="home-start-caption">从一个普通开关开始。</p>
         </div>
       </div>
@@ -883,6 +962,31 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
     </section>
     <p class="home-simulation-note">所有操作均为教学模拟，不连接真实设备。学习进度在本次页面打开期间保留，刷新后重新开始。</p>
   </section>
+  <section id="comparison-section" class="comparison-section" aria-labelledby="comparison-title" hidden>
+    <div class="comparison-heading">
+      <p class="home-eyebrow">三种搭配 · 同步对照</p>
+      <h1 id="comparison-title" tabindex="-1">同一次操作，三种结果。</h1>
+      <p>点任意一组的开关或手机，三组一起变化。</p>
+    </div>
+    <div class="comparison-controls" role="group" aria-label="同时操作三组搭配">
+      <div class="comparison-buttons">
+        <button id="comparison-wall" type="button">按墙壁开关</button>
+        <button id="comparison-app-on" type="button">App 开灯</button>
+        <button id="comparison-app-off" type="button">App 关灯</button>
+        <button id="comparison-reset" type="button">全部复位</button>
+      </div>
+      <p id="comparison-summary" role="status" aria-live="polite" aria-atomic="true"></p>
+    </div>
+    <p class="comparison-target-note">App 控制对象：A → 智能开关；B、C → 智能灯。C 默认已设为按键发指令，并保持供电。</p>
+    <div id="comparison-grid" class="comparison-grid"></div>
+    <details class="comparison-more">
+      <summary>继续试：断电、断连、调光和设置</summary>
+      <p>以下操作仍同时作用于三组；不支持的操作会在对应卡片说明原因。</p>
+      <div id="comparison-more-actions" class="comparison-more-actions"></div>
+      <p class="comparison-assumptions">教学条件：零火智能开关；设备已兼容并完成绑定；恢复供电默认亮灯；模拟调光不自动开灯。可在这里改变这些设置，观察差异。</p>
+    </details>
+    <p class="comparison-footer">想看接线与米家设置的完整步骤？<a href="#chapter-3" data-open-chapter="2">回到分步实验</a> · <a href="#home" data-comparison-home>课程首页</a></p>
+  </section>
   <p class="lesson-location" id="lesson-location">基础知识 · 第 1 章</p>
   <section class="course-heading" id="course-heading" aria-labelledby="lesson-title">
     <div class="chapter-meta"><span id="chapter-kicker">基础知识</span><span id="chapter-progress">1 / 6 章</span></div>
@@ -903,7 +1007,7 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
   </section>
   <div class="lesson-layout" id="lesson-layout">
     <section class="visual-column" aria-label="观察区域">
-      <div class="learning-mode" id="learning-mode" role="group" aria-label="学习方式" hidden><button id="mode-guided" type="button" aria-pressed="true">跟着学</button><button id="mode-explore" type="button" aria-pressed="false">自由对比 · 任意操作</button></div>
+      <div class="learning-mode" id="learning-mode" role="group" aria-label="学习方式" hidden><button id="mode-guided" type="button" aria-pressed="true">跟着学</button><button id="mode-explore" type="button" aria-pressed="false">单组自由操作</button><a href="#compare" data-open-comparison>三组同屏 ↗</a></div>
       <div class="visual-heading"><h2 id="visual-title">供电与发光</h2><div class="visual-tools"><button id="view-toggle" class="secondary-button" hidden aria-pressed="false">查看原理图</button><button id="reset-view" class="icon-button" hidden aria-label="恢复教具视角"><svg aria-hidden="true"><use href="#i-reset"/></svg></button></div></div>
       <div id="visual-stage" class="visual-stage">
         <div id="basic-switch-stage" class="basic-switch-stage"><svg class="basics-circuit" viewBox="0 0 360 238" role="img" aria-labelledby="basics-svg-title basics-svg-desc">
@@ -953,6 +1057,10 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
           </div>
           <section class="mechanism-panel" id="mechanism-panel" aria-label="触点与供电同步观察" hidden>
             <div class="explore-feedback" id="explore-feedback" aria-live="polite" aria-atomic="true" hidden><strong id="explore-result"></strong><p id="explore-reason"></p></div>
+            <div class="scene-app-status app-device-status" id="scene-app-status" aria-label="米家设备状态" hidden>
+              <div class="app-status-heading"><span>App · <strong id="scene-app-device">智能灯</strong></span><strong id="scene-app-online">在线</strong></div>
+              <p id="scene-app-detail">灯亮，仍可接收指令。</p>
+            </div>
             <div class="mechanism-cutaway" id="mechanism-cutaway">
               <div class="mechanism-heading"><span>开关内部 · 放大示意</span><strong id="mechanism-contact-state">触点接通</strong></div>
               <div class="mechanism-wire-labels"><span id="mechanism-feed-label">L 火线 · 始终有电</span><span id="mechanism-output-label">L1 灯线 · 有电</span></div>
@@ -1418,9 +1526,12 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
     const sourceN = cylinder(0.06, 0.09, blue, 0, -0.29, 0.11, source);
     const app = new T.Group(); bench.add(app);
     box(0.45, 0.73, 0.085, 0.065, dark, 0, 0, 0, app);
-    box(0.37, 0.61, 0.018, 0.035, material(0xe7e3f8), 0, 0.015, 0.055, app);
+    const appScreenMat = material(0xe7e3f8);
+    box(0.37, 0.61, 0.018, 0.035, appScreenMat, 0, 0.015, 0.055, app);
     cylinder(0.027, 0.02, purple, 0, -0.26, 0.07, app);
-    label('App', 0, 0.04, 0.09, app, { size: 12, width: 96, background: false, color: '#6852a4' });
+    label('App', 0, 0.21, 0.09, app, { size: 7, width: 72, background: false, color: '#5c536b' });
+    const appOnlineLabel = label('在线', 0, -0.025, 0.10, app, { size: 11, width: 72, background: false, color: '#23614f' });
+    const appOfflineLabel = label('离线', 0, -0.025, 0.10, app, { size: 11, width: 72, background: false, color: '#9d392d' });
     const appWaves = new T.Group(); app.add(appWaves);
     for (let i = 0; i < 3; i++) {
       const wave = mesh(new T.TorusGeometry(0.12 + i * 0.07, 0.012, 6, 24, Math.PI * 0.76), purple, appWaves);
@@ -1446,8 +1557,8 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
     function updateInteractionHints() {
       Object.keys(outlines).forEach(key => {
         const available = key === 'switch' ? switchGroup.visible : key === 'app' ? app.visible : lampGroup.visible;
-        const active = state.interactiveTarget === key || state.interactiveTarget === 'all';
-        outlines[key].object.visible = available && active;
+        const active = state.interactiveTarget === key || state.interactiveTarget === 'all' || (state.interactiveTarget === 'power-controls' && key !== 'lamp');
+        outlines[key].object.visible = available && active && (state.hintStyle !== 'quiet' || hoveredTarget === key);
         setColor(outlines[key].material, hoveredTarget === key ? 0x653ba5 : 0x8757cf);
         outlines[key].material.opacity = 1;
       });
@@ -1552,6 +1663,11 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       neutralBranch.visible = smartSwitch && state.visual !== 'lamp';
       receiver.visible = smartLamp; ordinaryDriver.visible = !smartLamp;
       app.visible = smartSwitch || smartLamp;
+      const appOnline = (smartLamp ? powered : mains) && state.connected !== false;
+      appOnlineLabel.visible = appOnline; appOfflineLabel.visible = !appOnline;
+      setColor(appScreenMat, appOnline ? 0xe8f4ed : 0xf3ded9);
+      canvas.dataset.appOnline = String(appOnline);
+      canvas.dataset.appDevice = smartLamp ? '智能灯' : '智能开关';
       const brightness = T.MathUtils.clamp(Number(state.brightness) / 100, 0.05, 1);
       const temperature = T.MathUtils.clamp(Number(state.temp) / 100, 0, 1);
       const lampTint = color(0xffcf86).lerp(color(0xdbedff), temperature);
@@ -1742,7 +1858,7 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
     }
     function pointerMove(event) {
       if (!gesture || gesture.id !== event.pointerId) {
-        if (event.pointerType === 'mouse') { const hit = overTarget(event); const activeHit = hit === state.interactiveTarget || state.interactiveTarget === 'all' ? hit : null; canvas.style.cursor = activeHit ? 'pointer' : 'grab'; setHovered(activeHit); }
+        if (event.pointerType === 'mouse') { const hit = overTarget(event); const activeHit = hit === state.interactiveTarget || state.interactiveTarget === 'all' || (state.interactiveTarget === 'power-controls' && hit !== 'lamp') ? hit : null; canvas.style.cursor = activeHit ? 'pointer' : 'grab'; setHovered(activeHit); }
         return;
       }
       const dx = event.clientX - gesture.x, dy = event.clientY - gesture.y;
@@ -2207,6 +2323,7 @@ window.courseReading = [
     if (action === 'automation-on' || action === 'automation-off') return s.scene === 0 ? relayCommand(s, before, action.endsWith('-on'), '本次联动的目标是智能开关。') : lightCommand(s, action.endsWith('-on'), '本次联动的目标是智能灯。');
     if (action.startsWith('brightness-') || action.startsWith('temp-') || action === 'brightness' || action === 'temperature') {
       s.commandTarget = 'lamp';
+      if (!smartLamp(s)) return blocked(s, '本例普通灯没有可接收调光指令的模块，通断型智能开关也不能改变它的亮度或冷暖。');
       const problem = remoteProblem(s, 'lamp');
       if (problem) return blocked(s, problem);
       const isBrightness = action.startsWith('brightness');
@@ -2281,7 +2398,21 @@ window.courseReading = [
       assumption: '常通保护是教学预设，并非所有设备功能；模式和保护设置不改变触点。指令链路、绑定和复电策略也可自行设定。'
     };
   }
-  return Object.freeze({ initial, transition, actions, describe });
+  // App device reachability follows the receiver's power, never light output.
+  // Guided lessons omit mains; the exercise model includes it explicitly.
+  function appStatus(s) {
+    const target = s.visual !== 'lamp' && Number(s.scene) === 0 ? 'switch' : 'lamp';
+    const device = target === 'switch' ? '智能开关' : '智能灯';
+    const mains = s.mains !== false, devicePowered = mains && (target === 'switch' || !!s.powered);
+    const online = devicePowered && s.connected !== false;
+    const detail = !mains ? '上游已断电，先恢复供电。'
+      : !devicePowered ? Number(s.scene) === 1 ? '灯已断电，先接通墙壁开关。' : '灯已断电，先恢复灯路供电。'
+      : !online ? '连接已中断，恢复连接后再试。'
+      : target === 'switch' ? s.powered ? '灯路接通，开关可接收指令。' : '灯路断开，开关仍可接收指令。'
+      : s.emitting ? '灯亮，仍可接收指令。' : '灯灭但仍待机，可用 App 开灯。';
+    return { target, device, online, status: online ? '在线' : '离线', detail };
+  }
+  return Object.freeze({ initial, transition, actions, describe, appStatus });
 });
 
 </script><script>
@@ -2384,6 +2515,277 @@ window.courseReading = [
     $('explore-reset').addEventListener('click', () => { states = [0, 1, 2].map(E.initial); history = [[], [], []]; onUpdate(); });
     document.querySelectorAll('[data-explore-scene]').forEach(b => b.addEventListener('click', () => onSelect(Number(b.dataset.exploreScene))));
     return api;
+  };
+}());
+
+</script><script>
+/* Three visible teaching benches, driven by one shared learner action. */
+(function () {
+  'use strict';
+  window.createComparison = function createComparison() {
+    const E = window.LightExplore, $ = id => document.getElementById(id);
+    const section = $('comparison-section'), grid = $('comparison-grid');
+    if (!E || !section || !grid) return null;
+    const names = ['普通灯＋智能开关', '智能灯＋普通开关', '智能灯＋智能开关'];
+    const policyNames = { on: '复电点亮', off: '复电关闭', restore: '恢复断电前状态' };
+    const SVG = 'http://www.w3.org/2000/svg';
+    let states = [0, 1, 2].map(E.initial), cards = [], mounted = false, disposed = false, visible = false;
+    const listeners = [];
+
+    function element(tag, className, text) {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text !== undefined) node.textContent = text;
+      return node;
+    }
+    function svgElement(tag, attributes) {
+      const node = document.createElementNS(SVG, tag);
+      Object.entries(attributes || {}).forEach(([key, value]) => node.setAttribute(key, String(value)));
+      return node;
+    }
+    function listen(node, event, handler) {
+      if (!node) return;
+      node.addEventListener(event, handler); listeners.push([node, event, handler]);
+    }
+    function sameIntent(action, scene) {
+      if (action === 'app-on' || action === 'app-off') return (scene === 0 ? 'app-switch-' : 'app-lamp-') + (action === 'app-on' ? 'on' : 'off');
+      return action;
+    }
+    function sharedApp() { run(states.some(s => s.emitting) ? 'app-off' : 'app-on'); }
+    function sharedLamp() { run(states.slice(1).some(s => s.brightness > 50) ? 'brightness-down' : 'brightness-up'); }
+    function singleSentence(text) { return text.replace(/[。]+$/u, '').replace(/。/gu, '；') + '。'; }
+
+    // These are complete causal statements, not clipped excerpts of long copy.
+    function reason(s, before, action) {
+      if (!action) return [
+        '普通灯靠智能开关通断供电，开关自身由火线和零线供电。',
+        '普通开关切断灯路，智能灯只有在有电时才能接收 App 指令。',
+        '本演示已绑定智能灯且灯路接通，墙键发指令而不切断灯路。'
+      ][s.scene];
+      if (s.outcome === 'blocked') {
+        if (s.scene === 0 && ['brightness', 'temperature'].includes(s.actionKind)) return '本例是通断型智能开关，只能通断供电，不能给普通灯调亮度或冷暖。';
+        if (s.commandTarget === 'lamp' && s.scene === 0) return '普通灯没有接收模块，这类指令必须改为控制智能开关。';
+        if (s.commandTarget === 'switch' && s.scene === 1) return '普通开关没有接收模块，App 不能让它改变触点。';
+        if (action === 'wall' && s.scene === 2 && s.mains && s.keyMode === 'command' && !s.bound) return '按键没有绑定目标灯，所以既没有切断灯路，也没有灯接收这次指令。';
+        if (!s.mains && ['wall', 'app', 'automation', 'brightness', 'temperature'].includes(s.actionKind)) return '上游电源已断，设备没有电，指令不能代替供电。';
+        if (s.commandTarget === 'lamp' && !s.powered) return '灯线已断，智能灯的接收模块也没电，所以这次指令不能执行。';
+        if (s.commandTarget && !s.connected) return '本次演示的指令链路中断，设备保留原状态，不会自动补发命令。';
+        if (action === 'app-switch-off' && s.scene === 2 && s.keyMode === 'command' && s.relayLocked) return '教学预设“常通保护”阻止切断灯路，关闭这项预设后才能比较独立继电器控制。';
+        if (action.startsWith('policy-')) return '普通灯没有智能复电策略，灯路重新通电就会发光。';
+        if (action === 'bind' || action === 'unbind') return s.scene === 0 ? '普通灯没有智能接收模块，不能成为智能按键绑定的灯具目标。' : '普通机械开关不会发无线指令，也不能绑定智能灯。';
+        if (action.startsWith('mode-') || action.startsWith('relay-')) return '此项教学条件仅用于第三组的兼容智能开关，本组设备不支持这种对照。';
+        return singleSentence(s.reason);
+      }
+      if (action === 'connection-off') return '本次指令链路中断只影响命令送达，现有供电和发光状态保持。';
+      if (action === 'connection-on') return '恢复链路不会补发失败命令，需要重新操作，灯才会响应。';
+      if (action === 'power-off' && s.outcome === 'unchanged') return '上游本来就没有供电，重复断电不会改变触点或灯的状态。';
+      if (action === 'power-off') return s.scene === 1 ? '上游断电使灯和接收模块停机，机械触点仍保留原来的位置。' : '上游断电使灯与智能开关自身都没电，触点位置仍保留。';
+      if (action === 'power-on') {
+        if (s.outcome === 'unchanged') return '上游供电本来就接通，重复恢复不会重新启动灯，也不会改变发光状态。';
+        if (!s.relay) return '上游虽恢复供电，触点仍断开，所以灯还没有电。';
+        return s.scene === 0 ? '上游恢复供电且触点接通，普通灯重新发光。' : '上游恢复供电且触点接通，灯按本次“' + policyNames[s.powerOnBehavior] + '”策略启动。';
+      }
+      if (action.startsWith('mode-')) return s.keyMode === 'command' ? '按键改为发指令，触点位置不变，已经断电的灯仍须另行接通灯路。' : '按键改为直接控制触点，切换这个条件本身不改变当前供电。';
+      if (action === 'relay-lock') return '教学预设仅阻止发指令模式下切断灯路，不会自动接通已有的断点。';
+      if (action === 'relay-unlock') return '允许独立控制继电器后，App 可以切断灯路，墙键仍按当前模式工作。';
+      if (action === 'bind' || action === 'unbind') return s.bound ? '墙键现在有了目标灯，直接 App 控灯和灯具联动仍按各自路径工作。' : '墙键已失去目标灯，直接 App 控灯和已设好的灯具联动不受这份绑定影响。';
+      if (action.startsWith('policy-')) return '已选“' + policyNames[s.powerOnBehavior] + '”，只在下一次从断电恢复供电时生效。';
+      if (action.startsWith('brightness-') || action.startsWith('temp-')) {
+        const parameter = action.startsWith('brightness-') ? '亮度 ' + s.brightness + '%' : '冷暖参数 ' + s.temp + '%';
+        if (s.outcome === 'unchanged') return parameter + ' 已到范围边界，灯路供电与发光开关都不改变。';
+        return parameter + (s.emitting ? ' 由灯内驱动调整，不需要改变触点或供电。' : ' 已被保存，接收模块待机，下一次开灯才显示变化。');
+      }
+      if (action === 'wall' && s.scene === 1 && !s.mains) return '机械触点能在无电时移动，但上游没有电，灯仍不会亮。';
+      const operatesRelay = action.startsWith('app-switch-') || (action.startsWith('automation-') && s.scene === 0) || (action === 'wall' && (s.scene !== 2 || s.keyMode === 'cut'));
+      if (operatesRelay) {
+        if (s.relay === before.relay) return s.relay ? '触点本就接通，重复接通不会额外改变灯的发光开关。' : '触点本就断开，重复切断不会改变现状，智能开关自身仍有电。';
+        if (!s.relay) return s.scene === 0 ? '智能开关断开灯线，普通灯断电，但开关自身仍有电。' : s.scene === 1 ? '普通开关断开灯线，智能灯和接收模块一起断电。' : '智能开关断开灯线，智能灯停机，但开关自身仍有电。';
+        return s.scene === 0 ? '触点接通使灯路通电，普通灯随之发光。' : '触点接通使智能灯复电，再按本次“' + policyNames[s.powerOnBehavior] + '”策略决定是否发光。';
+      }
+      if (s.emitting === before.emitting) return '目标已经是' + (s.emitting ? '亮灯' : '灭灯') + '，重复同一指令不会再切换状态，供电保持。';
+      const origin = action === 'wall' ? '墙键' : action.startsWith('automation-') ? '联动' : 'App';
+      return s.emitting ? origin + '只让智能灯恢复发光，触点和供电都保持。' : origin + '只关闭发光，灯路不断电，接收模块继续待机。';
+    }
+
+    function makeCard(scene) {
+      const card = element('article', 'comparison-card'); card.id = 'compare-card-' + scene; card.dataset.scene = String(scene);
+      const header = element('header', 'comparison-card-heading');
+      const title = element('h2', '', String.fromCharCode(65 + scene) + ' · ' + names[scene]); title.id = 'compare-title-' + scene;
+      card.setAttribute('aria-labelledby', title.id);
+      const target = element('p', 'comparison-target', scene === 0 ? 'App 控制智能开关' : 'App 直接控制智能灯');
+      header.append(title);
+      const wrap = element('div', 'comparison-canvas-wrap');
+      const canvas = element('canvas', 'comparison-canvas'); canvas.id = 'compare-canvas-' + scene; canvas.setAttribute('role', 'img');
+      const leaders = svgElement('svg', { class: 'comparison-leaders', 'aria-hidden': 'true', focusable: 'false' }); leaders.id = 'compare-wires-' + scene;
+      const leaderParts = {};
+      for (const wire of ['L', 'L1', 'N']) {
+        const group = svgElement('g', { 'data-wire': wire });
+        const line = svgElement('path', { fill: 'none', 'vector-effect': 'non-scaling-stroke' });
+        const dot = svgElement('circle', { r: 3 }); group.append(line, dot); leaders.append(group); leaderParts[wire] = { line, dot };
+      }
+      wrap.append(canvas, leaders);
+      const hitButtons = {};
+      const hitNames = { switch: '按墙壁开关', app: '点手机切换灯', lamp: '点灯调整亮度' };
+      for (const name of ['switch', 'app', 'lamp']) {
+        const hit = element('button', 'comparison-hit'); hit.type = 'button'; hit.dataset.target = name; hit.hidden = true;
+        hit.setAttribute('aria-label', '三组同时' + hitNames[name] + '，当前位于 ' + String.fromCharCode(65 + scene) + ' 组模型');
+        listen(hit, 'click', name === 'switch' ? () => run('wall') : name === 'app' ? sharedApp : sharedLamp);
+        wrap.append(hit); hitButtons[name] = hit;
+      }
+      const fallback = element('p', 'comparison-fallback', '3D 暂不可用，仍可用上方按钮对比结果。'); fallback.hidden = true; wrap.append(fallback);
+      const labels = element('div', 'comparison-wire-labels'); labels.setAttribute('aria-label', '线路标注');
+      for (const [wire, text] of [['L', 'L 火线'], ['L1', 'L1 灯线'], ['N', 'N 零线']]) {
+        const label = element('span', '', text); label.dataset.wire = wire; labels.append(label);
+      }
+      // The contact is a separate enlarged teaching view, never laid over the model.
+      const appStatus = element('div', 'app-device-status comparison-app-status');
+      const appHeading = element('div', 'app-status-heading');
+      const appDevice = element('span'), appOnline = element('strong'); appHeading.append(appDevice, appOnline);
+      const appDetail = element('p'); appDetail.className = 'sr-only'; appStatus.append(appHeading, appDetail); header.append(appStatus);
+      const cutaway = element('div', 'comparison-cutaway');
+      const cutawayCaption = element('p', 'comparison-cutaway-caption', '内部触点');
+      const contactSvg = svgElement('svg', { class: 'comparison-contact-diagram', viewBox: '0 0 200 44', role: 'img', focusable: 'false' });
+      const feed = svgElement('g', { class: 'comparison-contact-feed', fill: 'none', stroke: 'currentColor', 'stroke-width': 5, 'stroke-linecap': 'round' });
+      feed.append(svgElement('path', { d: 'M 10 32 H 75' }));
+      const output = svgElement('g', { class: 'comparison-contact-output', fill: 'none', stroke: 'currentColor', 'stroke-width': 5, 'stroke-linecap': 'round' });
+      output.append(svgElement('path', { d: 'M 125 32 H 190' }));
+      const blade = svgElement('g', { class: 'comparison-contact-blade', fill: 'none', stroke: 'currentColor', 'stroke-width': 5, 'stroke-linecap': 'round' });
+      blade.append(svgElement('path', { d: 'M 75 32 H 125' }), svgElement('circle', { cx: 125, cy: 32, r: 3, fill: '#fffdfa', 'stroke-width': 2 }));
+      const pivot = svgElement('circle', { class: 'comparison-contact-pivot', cx: 75, cy: 32, r: 4, fill: '#fffdfa', stroke: 'currentColor', 'stroke-width': 2.5 });
+      const fixed = svgElement('circle', { class: 'comparison-contact-fixed', cx: 125, cy: 32, r: 4, fill: '#fffdfa', stroke: 'currentColor', 'stroke-width': 2.5 });
+      const gap = svgElement('g', { class: 'comparison-contact-gap', fill: 'none', stroke: 'currentColor', 'stroke-width': 1.5 });
+      gap.append(svgElement('circle', { cx: 125, cy: 32, r: 10, 'stroke-dasharray': '2 2' }));
+      contactSvg.append(feed, output, fixed, blade, pivot, gap);
+      cutaway.append(cutawayCaption, contactSvg);
+      const status = element('div', 'comparison-status'); status.id = 'compare-status-' + scene;
+      const metrics = ['触点', '灯路', '灯与接收模块'].map(label => {
+        const item = element('span', 'comparison-metric'), caption = element('small', '', label), value = element('strong'); item.append(caption, value); status.append(item); return value;
+      });
+      const why = element('p', 'comparison-reason'); why.id = 'compare-reason-' + scene;
+      card.append(header, wrap, labels, cutaway, status, why); grid.append(card);
+      return { card, canvas, wrap, leaders, leaderParts, hitButtons, fallback, labels, appStatus, appDevice, appOnline, appDetail, cutaway, contactSvg, status, metrics, why, room: null, failed: false };
+    }
+    function overlaps(a, b) { return a.left < b.left + b.width && a.left + a.width > b.left && a.top < b.top + b.height && a.top + a.height > b.top; }
+    function project(scene, points) {
+      if (disposed || !cards[scene]) return;
+      const c = cards[scene], width = c.canvas.clientWidth, height = c.canvas.clientHeight;
+      if (c.failed || width < 1 || height < 1) return;
+      c.leaders.setAttribute('viewBox', `0 0 ${width} ${height}`);
+      [['L', 'wireL', 1 / 6], ['L1', 'wireL1', .5], ['N', 'wireN', 5 / 6]].forEach(([wire, key, fraction]) => {
+        const point = points[key], part = c.leaderParts[wire];
+        if (!point || !point.visible) { part.line.setAttribute('d', ''); part.dot.setAttribute('r', '0'); return; }
+        const x = Math.max(4, Math.min(width - 4, point.x)), y = Math.max(4, Math.min(height - 10, point.y)), end = width * fraction;
+        part.line.setAttribute('d', `M ${x} ${y} L ${x} ${Math.min(height - 10, y + 10)} L ${end} ${height - 5} L ${end} ${height}`);
+        part.dot.setAttribute('cx', x); part.dot.setAttribute('cy', y); part.dot.setAttribute('r', '3');
+      });
+      const occupied = [];
+      for (const name of ['switch', 'app', 'lamp']) {
+        const p = points[name], hit = c.hitButtons[name];
+        if (!visible || !p?.visible || width < 100 || height < 100) { hit.hidden = true; continue; }
+        // Central face target plus 44px phone/lamp targets; do not let invisible
+        // rectangles overlap and hijack a neighbouring physical object.
+        const w = name === 'switch' ? Math.max(44, Math.min(120, (p.width || 60) * .74)) : 44;
+        const h = name === 'switch' ? Math.max(44, Math.min(120, (p.height || 60) * .74)) : 44;
+        const rect = { left: Math.max(0, Math.min(width - w, p.x - w / 2)), top: Math.max(0, Math.min(height - h, p.y - h / 2)), width: w, height: h };
+        if (occupied.some(other => overlaps(rect, other))) { hit.hidden = true; continue; }
+        occupied.push(rect); hit.hidden = false;
+        hit.style.left = rect.left + 'px'; hit.style.top = rect.top + 'px'; hit.style.width = w + 'px'; hit.style.height = h + 'px';
+      }
+    }
+    function initRooms() {
+      cards.forEach((c, scene) => {
+        if (c.room || c.failed) return;
+        try {
+          if (typeof window.createRoom !== 'function') throw new Error('3D unavailable');
+          c.room = window.createRoom(c.canvas, { onSwitch: () => run('wall'), onApp: sharedApp, onLamp: sharedLamp, onProject: p => project(scene, p) });
+          c.card.dataset.renderer = '3d';
+        } catch (_) {
+          c.failed = true; c.card.dataset.renderer = 'fallback'; c.canvas.hidden = true; c.leaders.hidden = true; c.labels.hidden = true; c.fallback.hidden = false;
+          Object.values(c.hitButtons).forEach(button => { button.hidden = true; });
+        }
+      });
+    }
+    function update(before, actions) {
+      cards.forEach((c, i) => {
+        const s = states[i];
+        for (const key of ['powered', 'emitting', 'relay', 'mains', 'outcome']) c.card.dataset[key] = String(s[key]);
+        c.card.dataset.action = s.lastAction || '';
+        c.contactSvg.setAttribute('aria-label', `开关触点${s.relay ? '接通' : '断开'}，${s.mains ? '输入火线有电' : '上游已断电'}，${s.powered ? '灯线有电' : '灯线无供电'}。`);
+        const app = E.appStatus(s);
+        c.appStatus.dataset.online = String(app.online);
+        c.appDevice.textContent = 'App · ' + app.device; c.appOnline.textContent = app.status; c.appDetail.textContent = app.detail;
+        c.metrics[0].textContent = s.relay ? '接通' : '断开';
+        c.metrics[1].textContent = s.powered ? '有电' : '断电';
+        c.metrics[2].textContent = i === 0 ? s.emitting ? '普通灯亮' : '普通灯灭' : !s.powered ? '灯灭 · 模块断电' : !s.connected ? (s.emitting ? '灯亮' : '灯灭') + ' · 链路中断' : s.emitting ? '灯亮 · 接收在线' : '灯灭 · 接收待机';
+        c.why.textContent = reason(s, before?.[i] || s, actions?.[i] || '');
+        c.canvas.setAttribute('aria-label', `${names[i]}，${s.mains ? '总电源接通' : '总电源断开'}，触点${s.relay ? '接通' : '断开'}，灯路${s.powered ? '有电' : '断电'}，${c.metrics[2].textContent}；操作任意一组模型，会对三组同时执行。`);
+        c.room?.setState({ ...s, visual: 'lab', scene: i, principle: false, hintStyle: 'quiet', actionDone: !!s.lastAction, commandFailed: s.delivered === false, interactiveTarget: visible ? 'all' : null });
+      });
+    }
+    function mount() {
+      if (mounted || disposed) return;
+      mounted = true; cards = [0, 1, 2].map(makeCard);
+      if ($('comparison-summary')) $('comparison-summary').textContent = '点一次，三组一起变。';
+      listen($('comparison-wall'), 'click', () => run('wall'));
+      listen($('comparison-app-on'), 'click', () => run('app-on'));
+      listen($('comparison-app-off'), 'click', () => run('app-off'));
+      listen($('comparison-reset'), 'click', reset);
+      const host = $('comparison-more-actions');
+      if (host) {
+        const groups = new Map();
+        E.actions(E.initial(2)).forEach(action => {
+          let row = groups.get(action.group);
+          if (!row) {
+            const fieldset = element('fieldset', 'comparison-action-group'), legend = element('legend', '', action.group);
+            row = element('div', 'comparison-action-buttons'); fieldset.append(legend, row); host.append(fieldset); groups.set(action.group, row);
+          }
+          const button = element('button', '', action.label); button.type = 'button'; button.dataset.compareAction = action.id;
+          button.setAttribute('aria-label', '三组同时执行：' + action.label);
+          listen(button, 'click', () => run(action.id)); row.append(button);
+        });
+      }
+    }
+    function run(action) {
+      if (disposed) return;
+      mount();
+      const before = states, actions = states.map((_, i) => sameIntent(action, i));
+      states = states.map((s, i) => E.transition(s, actions[i]));
+      update(before, actions);
+      const label = action === 'app-on' ? 'App 开灯' : action === 'app-off' ? 'App 关灯' : E.actions(states[0]).find(a => a.id === action)?.label || action;
+      if ($('comparison-summary')) $('comparison-summary').textContent = label + ' · ' + states.map((s, i) => String.fromCharCode(65 + i) + ' ' + (!s.powered ? '断电' : s.emitting ? '亮灯' : s.connected ? '灭灯待机' : '灭灯失联')).join(' / ');
+      return states.map(s => ({ ...s }));
+    }
+    function reset() {
+      if (disposed) return;
+      mount(); states = [0, 1, 2].map(E.initial); update();
+      if ($('comparison-summary')) $('comparison-summary').textContent = '三组已复位 · A 亮灯 / B 亮灯 / C 亮灯';
+    }
+    function show() {
+      if (disposed) return;
+      visible = true; section.hidden = false; mount(); initRooms();
+      // Reopening preserves the last result instead of rewriting its explanation.
+      cards.forEach((c, i) => {
+        const text = c.why.textContent;
+        if (!text) c.why.textContent = reason(states[i], states[i], '');
+      });
+      const priorReasons = cards.map(c => c.why.textContent);
+      update(); cards.forEach((c, i) => { c.why.textContent = priorReasons[i]; });
+    }
+    function hide() {
+      if (!visible) { section.hidden = true; return; }
+      visible = false; section.hidden = true;
+      cards.forEach((c, i) => {
+        Object.values(c.hitButtons).forEach(hit => { hit.hidden = true; });
+        // Stop an in-flight teaching animation; createRoom otherwise has no idle RAF.
+        c.room?.setState({ ...states[i], visual: 'lab', scene: i, hintStyle: 'quiet', interactiveTarget: null, actionDone: false });
+      });
+    }
+    function dispose() {
+      if (disposed) return;
+      hide(); disposed = true;
+      cards.forEach(c => c.room?.dispose()); listeners.forEach(([node, event, handler]) => node.removeEventListener(event, handler));
+    }
+    return { show, hide, run, reset, dispose };
   };
 }());
 
@@ -2594,23 +2996,29 @@ window.courseReading = [
     copy.steps?.forEach((short, j) => Object.assign(c.steps[j], short));
   });
   const saved = chapters.map(c => ({ index: 0, records: c.steps.map(() => ({ done: false, value: null, reviewed: false })) }));
-  let explorer;
-  let chapterIndex = 0, home = true, hasVisited = false, principle = false, room, wiring, roomUnavailable = false, quiz = null, pausedQuiz = null, renderedReading = -1, actionVersion = 0, explanationTrigger = null;
+  let explorer, comparisonUI;
+  let chapterIndex = 0, home = true, comparing = false, hasVisited = false, principle = false, room, wiring, roomUnavailable = false, quiz = null, pausedQuiz = null, renderedReading = -1, actionVersion = 0, explanationTrigger = null;
   const chapter = () => chapters[chapterIndex];
   const progress = () => saved[chapterIndex];
   const step = () => chapter().steps[progress().index];
   const record = () => progress().records[progress().index];
   const menuNavigation = () => step()?.kind === 'menu' && step().effect.menu < 5;
   const observed = () => record().done && !menuNavigation();
-  const isExploring = () => !home && chapterIndex >= 2 && chapterIndex <= 4 && !!explorer?.enabled;
+  const isExploring = () => !home && !comparing && chapterIndex >= 2 && chapterIndex <= 4 && !!explorer?.enabled;
+  const isBPowerTrial = () => !home && !comparing && !isExploring() && chapterIndex === 3 && progress().index === 0;
   const sceneTarget = () => step()?.kind === 'wall' ? 'switch' : ['app', 'automation'].includes(step()?.kind) ? 'app' : ['brightness', 'temperature'].includes(step()?.kind) ? 'lamp' : null;
-  const directScene = () => !home && chapterIndex < 5 && !quiz && !principle && !roomUnavailable && (isExploring() || step()?.kind !== 'menu');
+  const interactiveSceneTarget = () => isBPowerTrial() ? 'power-controls' : sceneTarget();
+  const directScene = () => !home && !comparing && chapterIndex < 5 && !quiz && !principle && !roomUnavailable && (isExploring() || step()?.kind !== 'menu');
   const finished = i => i < 5 && saved[i].records.every(r => r.done);
   // Canvas hit targets and their native, projected buttons share one action.
   // A second tap replays this observation; only Next changes the lesson step.
   function sceneAction(target) {
     if (isExploring()) { explorer.sceneAction(target); return; }
-    if (!directScene() || target !== sceneTarget()) return;
+    if (!directScene()) return;
+    if (isBPowerTrial() && (target === 'switch' || target === 'app')) {
+      if (target === 'switch' || record().preview) { tryBPower(target); return; }
+    }
+    if (target !== sceneTarget()) return;
     if (target === 'lamp') {
       const kind = step().kind, s = currentState();
       const value = kind === 'brightness' ? (s.brightness > 50 ? 30 : 80) : (s.temp < 60 ? 80 : 20);
@@ -2621,9 +3029,35 @@ window.courseReading = [
     if (observed()) replay();
     act();
   }
+  // B's first task still ends with App-off. A wall-key trial may interrupt it,
+  // but an offline command cannot complete it or advance the lesson.
+  function tryBPower(target) {
+    const r = record(), before = r.preview || { ...window.LightExplore.initial(1), ...currentState() };
+    r.preview = window.LightExplore.transition(before, target === 'switch' ? 'wall' : before.powered ? 'app-lamp-off' : 'app-lamp-on');
+    r.done = target === 'app' && r.preview.delivered === true;
+    r.reviewed = false; actionVersion++;
+    // The successful state matches the existing first-step effect exactly.
+    // Drop trial metadata so later steps retain their original state/history.
+    if (r.done) delete r.preview;
+    render();
+  }
+  function bTrialFeedback(s) {
+    if (!isBPowerTrial() || !record().preview) return null;
+    if (s.actionKind === 'app') return {
+      result: '智能灯离线，App 开灯指令未送达。',
+      why: '灯的接收模块已断电；先按普通开关恢复供电，再用 App 关灯。'
+    };
+    return s.powered ? {
+      result: '供电已恢复，智能灯重新在线。',
+      why: '本演示省略复电重连等待并设为复电亮灯；现在点手机关灯，观察在线待机。'
+    } : {
+      result: '墙键切断供电，App 中的智能灯离线。',
+      why: '灯的接收模块也没电了；再按墙键恢复供电，才能继续用 App 关灯。'
+    };
+  }
   let mechanismAction = -1, mechanismRelay = null;
   function updateSceneUI(s) {
-    const exploring = isExploring(), active = directScene() || exploring, c = chapter(), item = exploring ? {kind:s.actionKind, effect:{}} : step(), done = exploring ? !!s.lastAction : observed();
+    const exploring = isExploring(), trial = isBPowerTrial(), preview = trial && record().preview, active = directScene() || exploring, c = chapter(), item = exploring ? {kind:s.actionKind, effect:{}} : preview ? {...step(), kind:s.actionKind} : step(), done = exploring ? !!s.lastAction : observed(), hasAction = done || !!preview;
     $('main').dataset.directScene = String(active);
     $('scene-ui').hidden = !active || roomUnavailable;
     if ($('wire-labels')) $('wire-labels').hidden = !directScene();
@@ -2632,6 +3066,12 @@ window.courseReading = [
     if ($('wire-labels')) $('wire-labels').dataset.mode = c.visual;
     $('scene-instruction').hidden = !active;
     $('mechanism-panel').hidden = !active;
+    const app = window.LightExplore.appStatus({...s, scene:c.scene, visual:c.visual});
+    $('scene-app-status').hidden = !active || c.visual === 'switch';
+    $('scene-app-status').dataset.online = String(app.online);
+    $('scene-app-device').textContent = app.device;
+    $('scene-app-online').textContent = app.status;
+    $('scene-app-detail').textContent = app.detail;
     if (!active) return;
     const smartLamp = c.visual === 'lamp' || (c.visual === 'lab' && c.scene !== 0);
     const smartSwitch = c.visual === 'lab' && c.scene !== 1;
@@ -2640,13 +3080,19 @@ window.courseReading = [
     const targetCopy = target === 'switch' ? '按开关' : target === 'lamp' ? item.kind === 'brightness' ? (s.brightness > 50 ? '点灯调暗' : '点灯调亮') : '点灯换光' : item.kind === 'automation' ? '执行离家' : done ? '重播指令' : item.effect.emitting === false ? '点手机关灯' : '点手机开灯';
     for (const name of ['switch', 'app', 'lamp']) {
       const button = $('scene-' + name);
-      button.hidden = !exploring && target !== name;
+      button.hidden = !exploring && !(trial && ['switch', 'app'].includes(name)) && target !== name;
       button.setAttribute('aria-label', name === target ? (done && target !== 'lamp' ? `再演示一次：${item.action}` : item.action) : name);
       if (exploring) button.setAttribute('aria-label', name === 'switch' ? '按墙壁开关，改变当前状态' : name === 'app' ? '点手机，切换灯的开关状态' : '点灯，尝试调整亮度');
       button.querySelector('.scene-target-label').textContent = targetCopy;
+      if (trial && ['switch', 'app'].includes(name)) {
+        const label = name === 'switch' ? s.powered ? '按普通开关，切断智能灯供电' : '按普通开关，恢复智能灯供电' : done ? '再演示一次：用 App 关灯' : s.powered ? '用 App 关灯，保持供电' : '智能灯离线，尝试用 App 开灯';
+        button.setAttribute('aria-label', label);
+        button.querySelector('.scene-target-label').textContent = name === 'switch' ? s.powered ? '切断供电' : '恢复供电' : done ? '重播关灯' : s.powered ? 'App 关灯' : '尝试开灯';
+      }
       button.dataset.complete = String(done);
     }
     $('scene-instruction').textContent = exploring ? roomUnavailable ? '使用下方操作，观察触点和供电状态' : '点开关切换 · 点手机控制 · 点灯调光' : done ? target === 'lamp' ? '再点灯，比较变化' : '结果已保留 · 再点可重播' : target === 'switch' ? s.keyMode === 'command' ? '点大面板：灯灭，供电会断吗？' : '点大面板，观察触点怎样动' : target === 'lamp' ? '点图中的灯，改变发光' : item.kind === 'automation' ? '点手机，执行离家联动' : '点手机，看谁接收到指令';
+    if (trial) $('scene-instruction').textContent = !s.powered ? '智能灯已离线 · 先按开关恢复供电，再用 App 关灯' : done ? 'App 关灯后仍在线 · 也可点墙键试试断电' : '点手机关灯；也可点墙键，比较待机与断电';
     function chip(id, text, tone, visible = true) {
       $(id).textContent = text; $(id).dataset.tone = tone; $(id).hidden = !visible;
     }
@@ -2682,7 +3128,7 @@ window.courseReading = [
       mechanismAction = actionVersion;
       const blade = $('mechanism-blade');
       if (blade.getAnimations) blade.getAnimations().forEach(animation => animation.cancel());
-      if (done && c.visual !== 'lamp' && blade.animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (hasAction && c.visual !== 'lamp' && blade.animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const angle = (s.relay ?? s.powered) ? 0 : -32;
         const movesContact = exploring ? mechanismRelay !== null && mechanismRelay !== s.relay : item.kind === 'wall' && s.keyMode !== 'command' || item.kind === 'app' && smartSwitch && !smartLamp;
         blade.animate([{ transform: `rotate(${movesContact ? (s.powered ? -32 : 0) : angle}deg)` }, { transform: `rotate(${angle}deg)` }], { duration: 650, easing: 'cubic-bezier(.25,.7,.25,1)' });
@@ -2690,15 +3136,16 @@ window.courseReading = [
     }
     mechanismRelay = s.relay ?? s.powered;
     const signal = ['app', 'automation', 'brightness', 'temperature'].includes(item.kind) || (item.kind === 'wall' && s.keyMode === 'command');
-    const failed = exploring ? s.delivered === false : smartLamp && (!s.powered || !s.connected);
+    const failed = exploring || preview ? s.delivered === false : smartLamp && (!s.powered || !s.connected);
     const origin = item.kind === 'wall' ? '按键' : item.kind === 'automation' ? '离家联动' : '手机';
     const destination = (exploring ? s.commandTarget === 'switch' : c.scene === 0) ? '开关' : '灯';
-    $('scene-signal-status').hidden = !done || !signal;
+    $('scene-signal-status').hidden = !hasAction || !signal;
     $('scene-signal-status').dataset.tone = failed ? 'error' : 'signal';
     $('scene-signal-status').textContent = exploring ? `${origin} → ${destination}：${failed ? '未执行，原因见上方' : '指令已送达'}` : failed ? `${origin} → 灯：未送达 · ${!s.powered ? '灯已断电' : '灯未连接'}` : `${origin} → ${destination}：指令已送达`;
   }
   function currentState() {
     if (isExploring()) return explorer.state(chapter().scene);
+    if (isBPowerTrial() && record().preview) return {...base, ...record().preview};
     const s = { ...base };
     chapter().steps.slice(0, progress().index + 1).forEach((item, i) => {
       const r = progress().records[i];
@@ -2715,18 +3162,25 @@ window.courseReading = [
     if (navigate) $(id).scrollIntoView({ block: 'start', behavior: 'instant' });
     $(id).focus({ preventScroll: true });
   }
-  function syncHash(replace = false) { const hash = home ? '#home' : `#chapter-${chapterIndex + 1}`; if (location.hash !== hash) history[replace ? 'replaceState' : 'pushState'](null, '', hash); }
+  function syncHash(replace = false) { const hash = comparing ? '#compare' : home ? '#home' : `#chapter-${chapterIndex + 1}`; if (location.hash !== hash) history[replace ? 'replaceState' : 'pushState'](null, '', hash); }
   function openHome(fromHistory = false) {
     if ($('explanation-dialog').open) $('explanation-dialog').close('navigate');
     if (quiz && quiz.index < questions.length) pausedQuiz = quiz;
-    quiz = null; home = true; principle = false; $('wire-details').open = false;
+    quiz = null; home = true; comparing = false; principle = false; $('wire-details').open = false;
     if (!fromHistory) syncHash(); render(); focusTitle(!fromHistory, 'home-title');
   }
   function openChapter(i, fromHistory = false, focus = true) {
     if ($('explanation-dialog').open) $('explanation-dialog').close('navigate');
     if (quiz && quiz.index < questions.length) pausedQuiz = quiz;
-    chapterIndex = Math.max(0, Math.min(5, i)); home = false; hasVisited = true; quiz = null; principle = false; $('wire-details').open = false;
+    chapterIndex = Math.max(0, Math.min(5, i)); home = false; comparing = false; hasVisited = true; quiz = null; principle = false; $('wire-details').open = false;
     if (!fromHistory) syncHash(); render(); if (focus) focusTitle(!fromHistory);
+  }
+  function openComparison(fromHistory = false) {
+    if ($('explanation-dialog').open) $('explanation-dialog').close('navigate');
+    if (quiz && quiz.index < questions.length) pausedQuiz = quiz;
+    quiz = null; home = false; comparing = true; principle = false;
+    if (!fromHistory) syncHash();
+    render(); focusTitle(!fromHistory, 'comparison-title');
   }
   function nextLabel() { return progress().index < chapter().steps.length - 1 ? '继续下一步' : '进入下一章'; }
   function showExplanation(trigger) {
@@ -2753,6 +3207,7 @@ window.courseReading = [
       else openChapter(chapterIndex + 1);
       return;
     }
+    if (isBPowerTrial() && record().preview) { tryBPower('app'); return; }
     if (['brightness', 'temperature'].includes(step().kind)) return;
     record().done = true; actionVersion++;
     // Menu pages advance in place without a second confirmation.
@@ -2767,7 +3222,7 @@ window.courseReading = [
     if (home) return;
     if (quiz) { startQuiz(true); return; }
     if (chapterIndex === 5) return;
-    record().done = false; record().value = null; record().reviewed = false; render();
+    record().done = false; record().value = null; record().reviewed = false; delete record().preview; render();
   }
   function back(navigate = true) {
     if (home) return;
@@ -2882,6 +3337,19 @@ window.courseReading = [
     $('chapter-next').setAttribute('aria-label', next === null ? '回到课程首页' : `下一章：${chapters[next].name}`);
   }
   function render() {
+    $('main').dataset.comparing = String(comparing);
+    document.querySelector('.doc-shell').dataset.comparing = String(comparing);
+    $('comparison-section').hidden = !comparing;
+    if (comparing) $('comparison-link').setAttribute('aria-current', 'page'); else $('comparison-link').removeAttribute('aria-current');
+    if (comparing) {
+      explorer?.show(false);
+      $('main').dataset.exploring = 'false'; $('main').dataset.directScene = 'false'; $('main').dataset.phase = 'comparison';
+      for (const id of ['home-section','course-heading','lesson-location','lesson-layout','summary-section','quiz-panel','course-sidebar','chapter-pagination','chapter-reading','experiment-heading','chapter-sections','action-dock','learning-mode']) $(id).hidden = true;
+      for (const id of ['home-link','brand-home']) $(id).removeAttribute('aria-current');
+      comparisonUI?.show();
+      return;
+    }
+    comparisonUI?.hide();
     explorer?.show(!home && chapterIndex >= 2 && chapterIndex <= 4);
     $('main').dataset.exploring = String(isExploring());
     if ($('wire-labels')) $('wire-labels').hidden = true;
@@ -2924,13 +3392,15 @@ window.courseReading = [
     if (quiz) { renderQuiz(); return; }
     if (summary) { $('lesson-action').textContent = pausedQuiz ? `继续小测 · 第 ${pausedQuiz.index + 1} 题` : '做 3 题小测'; return; }
     if (isExploring()) { renderExplorer(); return; }
-    const item = step(), r = record(), s = currentState(), menu = item.kind === 'menu', done = observed();
+    const item = step(), r = record(), s = currentState(), menu = item.kind === 'menu', done = observed(), trialFeedback = bTrialFeedback(s);
     if ($('visual-legend')) $('visual-legend').hidden = menu;
     $('legend-l1').hidden = c.visual === 'lamp';
     $('legend-signal').hidden = c.visual === 'switch';
-    $('step-title').textContent = item.title; $('step-description').textContent = item.description;
+    $('step-title').textContent = item.title; $('step-description').textContent = trialFeedback?.why || item.description;
+    if (trialFeedback) $('step-replay').hidden = false;
     $('result-title').textContent = item.kind === 'brightness' && r.done ? `灯仍有电，当前亮度 ${s.brightness}%。` : item.kind === 'temperature' && r.done ? `灯仍有电，当前是${s.temp < 34 ? '暖光' : s.temp < 67 ? '暖白' : '冷光'}。` : item.result;
-    $('result-text').textContent = item.why;
+    $('result-text').textContent = trialFeedback?.why || item.why;
+    if (trialFeedback) $('result-title').textContent = trialFeedback.result;
     $('lesson-action').textContent = done ? nextLabel() : item.action;
     $('lesson-action').disabled = !r.done && ['brightness', 'temperature'].includes(item.kind);
     $('step-replay').textContent = '重做本步';
@@ -2939,8 +3409,8 @@ window.courseReading = [
     $('view-toggle').hidden = c.visual !== 'lab' || menu; $('reset-view').hidden = c.visual !== 'lab' || menu || principle || roomUnavailable;
     $('wire-details').hidden = c.visual !== 'lab' || menu || !principle;
     $('visual-title').textContent = menu ? '跟着点 · 米家设置' : principle ? '线路示意' : window.courseReading[chapterIndex].visualTitle || '3D 拆解';
-    $('visual-caption').textContent = done ? $('result-title').textContent : window.courseReading[chapterIndex].takeaway;
-    $('visual-caption').classList.toggle('has-result', done);
+    $('visual-caption').textContent = trialFeedback?.result || (done ? $('result-title').textContent : window.courseReading[chapterIndex].takeaway);
+    $('visual-caption').classList.toggle('has-result', done || !!trialFeedback);
     $('demo-context').textContent = window.courseReading[chapterIndex].context;
     $('room').setAttribute('aria-label', `${c.name}，${s.powered ? '灯有电' : '灯已断电'}，${s.emitting ? '发光' : '不发光'}，${c.visual === 'switch' ? '无智能接收模块' : c.scene === 0 ? '智能开关仍有自己的供电' : s.powered ? '灯内接收模块仍在工作' : '灯内接收模块停止工作'}。`);
     $('view-toggle').textContent = principle ? '返回 3D' : '查看原理图'; $('view-toggle').setAttribute('aria-pressed', String(principle));
@@ -2956,14 +3426,14 @@ window.courseReading = [
     const appStep = item.kind === 'app', tuneStep = ['brightness', 'temperature'].includes(item.kind);
     $('app-simulator').hidden = !appStep && !tuneStep;
     if (appStep || tuneStep) {
-      const switchTarget = c.scene === 0, online = switchTarget || (s.powered && s.connected);
+      const app = window.LightExplore.appStatus({...s, scene:c.scene, visual:c.visual}), switchTarget = app.target === 'switch', online = app.online;
       $('app-device-title').textContent = switchTarget ? '客厅 · 智能开关' : '客厅 · 智能灯';
-      $('app-device-caption').textContent = done
+      $('app-device-caption').textContent = trialFeedback ? app.detail : done
         ? `${s.emitting ? '灯已亮' : '灯未发光'} · ${s.powered ? '供电接通' : '供电已断'}${!online ? '，无法接收指令' : switchTarget ? '，开关仍在线' : '，仍可接收指令'}`
         : switchTarget ? '控制普通灯的供电' : '控制智能灯的发光';
-      $('app-online').textContent = online ? '在线' : '已断电 · 无法接收';
+      $('app-online').textContent = app.status;
       $('app-online').classList.toggle('offline', !online);
-      $('app-power-label').textContent = done ? '再演示一次' : !online ? '尝试开灯' : s.emitting ? '关灯' : '开灯';
+      $('app-power-label').textContent = done ? '再演示一次' : isBPowerTrial() ? online ? '关灯' : '离线 · 尝试开灯' : !online ? '尝试开灯' : s.emitting ? '关灯' : '开灯';
       $('app-power').setAttribute('aria-label', done ? `${!online ? '未能开灯' : s.emitting ? '已开灯' : '已关灯'}，再演示一次` : $('app-power-label').textContent);
       $('app-power').disabled = !appStep;
       $('app-power').classList.toggle('review-action', appStep && done);
@@ -2989,7 +3459,7 @@ window.courseReading = [
     updateSceneUI(s);
     if (directScene() && !done) $('lesson-action').hidden = true;
     if (c.scene !== undefined) wiring?.setState({ ...s, scene: c.scene });
-    room?.setState({ ...s, visual: c.visual, scene: c.scene ?? (c.visual === 'lamp' ? 1 : 0), principle: false, actionKind: item.kind, actionVersion, actionDone: done, interactiveTarget: directScene() ? sceneTarget() : null });
+    room?.setState({ ...s, visual: c.visual, scene: c.scene ?? (c.visual === 'lamp' ? 1 : 0), principle: false, actionKind: trialFeedback ? s.actionKind : item.kind, actionVersion, actionDone: done || !!trialFeedback, commandFailed: trialFeedback ? s.delivered === false : false, interactiveTarget: directScene() ? interactiveSceneTarget() : null });
   }
   function renderExplorer() {
     const c = chapter(), s = explorer.state(c.scene);
@@ -3076,17 +3546,30 @@ window.courseReading = [
     const homeButton = document.createElement('button'); homeButton.id = 'outline-home'; homeButton.className = 'outline-home';
     homeButton.textContent = '课程首页'; if (home) homeButton.setAttribute('aria-current', 'page');
     homeButton.addEventListener('click', () => { $('outline-dialog').close('navigate'); openHome(); });
-    $('outline-list').replaceChildren(homeButton, ...chapters.map((c, i) => {
+    const compareButton = document.createElement('button'); compareButton.className = 'outline-home'; compareButton.id = 'outline-comparison';
+    compareButton.textContent = '三组同屏对比';
+    if (comparing) compareButton.setAttribute('aria-current', 'page');
+    compareButton.addEventListener('click', () => { $('outline-dialog').close('navigate'); openComparison(); });
+    $('outline-list').replaceChildren(homeButton, compareButton, ...chapters.map((c, i) => {
       const button = document.createElement('button'); button.className = 'outline-item';
-      const status = !home && i === chapterIndex ? '当前章节' : finished(i) ? '已完成' : i === 5 ? '随时查看' : saved[i].records.some(r => r.done) ? '已开始' : '未开始';
+      const status = !home && !comparing && i === chapterIndex ? '当前章节' : finished(i) ? '已完成' : i === 5 ? '随时查看' : saved[i].records.some(r => r.done) ? '已开始' : '未开始';
       button.innerHTML = `<span class="outline-number">${String(i + 1).padStart(2, '0')}</span><span><strong>${c.name}</strong><small>${status}</small></span><span aria-hidden="true">${finished(i) ? '✓' : '›'}</span>`;
-      if (!home && i === chapterIndex) button.setAttribute('aria-current', 'step');
+      if (!home && !comparing && i === chapterIndex) button.setAttribute('aria-current', 'step');
       button.addEventListener('click', () => { $('outline-dialog').close('navigate'); openChapter(i); }); return button;
     }));
     $('outline-dialog').showModal(); $('outline-dialog').scrollTop = 0; $('outline-title').focus({ preventScroll: true });
   }
   function ordinaryLink(event) { return !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && !(event.button > 0); }
   for (const id of ['home-link', 'brand-home', 'sidebar-home']) $(id).addEventListener('click', event => { if (ordinaryLink(event)) { event.preventDefault(); openHome(); } });
+  document.querySelectorAll('[data-open-comparison]').forEach(link => link.addEventListener('click', event => {
+    if (ordinaryLink(event)) { event.preventDefault(); openComparison(); }
+  }));
+  document.querySelectorAll('[data-open-chapter]').forEach(link => link.addEventListener('click', event => {
+    if (ordinaryLink(event)) { event.preventDefault(); openChapter(Number(link.dataset.openChapter)); }
+  }));
+  document.querySelectorAll('[data-comparison-home]').forEach(link => link.addEventListener('click', event => {
+    if (ordinaryLink(event)) { event.preventDefault(); openHome(); }
+  }));
   document.querySelectorAll('[data-home-chapter]').forEach(link => link.addEventListener('click', event => {
     if (ordinaryLink(event)) { event.preventDefault(); openChapter(Number(link.dataset.homeChapter)); }
   }));
@@ -3108,7 +3591,7 @@ window.courseReading = [
   });
   buildSidebar();
   $('lesson-action').addEventListener('click', act); $('lesson-back').addEventListener('click', back); $('step-replay').addEventListener('click', replay);
-  $('app-power').addEventListener('click', () => { if (!home && chapterIndex < 5 && step().kind === 'app') { if (observed()) replay(); act(); } });
+  $('app-power').addEventListener('click', () => { if (!home && chapterIndex < 5 && step().kind === 'app') { if (isBPowerTrial() && record().preview) { tryBPower('app'); return; } if (observed()) replay(); act(); } });
   for (const target of ['switch', 'app', 'lamp']) $('scene-' + target).addEventListener('click', () => sceneAction(target));
   $('show-explanation').addEventListener('click', () => showExplanation($('show-explanation')));
   $('close-explanation').addEventListener('click', () => $('explanation-dialog').close());
@@ -3152,10 +3635,11 @@ window.courseReading = [
   const chapterRoute = () => /^#chapter-([1-6])(?:-(reading|experiment))?$/.exec(location.hash);
   addEventListener('popstate', () => {
     const match = chapterRoute();
-    if (match) { openChapter(Number(match[1]) - 1, true, !match[2]); if (match[2] && chapterIndex < 5) focusTitle(true, match[2] === 'reading' ? 'reading-title' : 'experiment-title'); }
+    if (location.hash === '#compare') openComparison(true);
+    else if (match) { openChapter(Number(match[1]) - 1, true, !match[2]); if (match[2] && chapterIndex < 5) focusTitle(true, match[2] === 'reading' ? 'reading-title' : 'experiment-title'); }
     else if (!location.hash || location.hash === '#home') openHome(true);
   });
-  const initial = chapterRoute(); if (initial) { chapterIndex = Number(initial[1]) - 1; home = false; hasVisited = true; } else syncHash(true);
+  const initial = chapterRoute(); if (location.hash === '#compare') { home = false; comparing = true; } else if (initial) { chapterIndex = Number(initial[1]) - 1; home = false; hasVisited = true; } else syncHash(true);
   if (typeof ResizeObserver === 'function') {
     const dock = document.querySelector('.action-dock'), header = document.querySelector('.masthead');
     let lastDockHeight = 0;
@@ -3175,6 +3659,7 @@ window.courseReading = [
     if (header) measureDock.observe(header);
   }
   explorer = window.createExploreUI?.(() => { actionVersion++; render(); }, i => openChapter(i + 2, false, false));
+  comparisonUI = window.createComparison?.();
   wiring = window.createWiring(); render();
   try {
     if (typeof window.createRoom !== 'function') throw new Error('3D unavailable');
