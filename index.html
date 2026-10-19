@@ -714,6 +714,69 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
 .visual-course .mijia-device-online{color:#39734d}.visual-course .mijia-top-brand small{color:#52675a}
 .visual-course .mijia-power-note{color:#4f7059}.visual-course .mijia-review{color:#467657}
 
+/* External leader labels and a persistent, reversible exploration surface. */
+.wire-leaders{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.wire-leaders g{fill:#fff;stroke:currentColor;stroke-width:1.6}
+.wire-leaders path{fill:none;stroke-dasharray:3 3;filter:drop-shadow(0 0 1px #fff)}
+.lead-L{color:#ae3e40}.lead-L1{color:#a16c22}.lead-N{color:#3775a5}
+.wire-labels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));flex:none;background:#fffdf9;border-top:1px solid #dedbd2;padding:10px 4px 12px;gap:3px;text-align:center}
+.wire-labels[data-mode="lamp"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+.wire-labels strong{display:block;font-size:.85rem;font-weight:700}.wire-labels small{display:block;font-size:.67rem;margin-top:3px;line-height:1.5;color:#626872}
+#wire-label-L strong{color:#a72e37}#wire-label-L1 strong{color:#926021}#wire-label-N strong{color:#26679c}
+.visual-course #main[data-direct-scene="true"] .room-view{height:450px}
+.visual-course .room-canvas{min-height:190px}
+.learning-mode{display:flex;gap:5px;padding:4px;background:#eae7df;border-radius:12px;width:fit-content;margin-bottom:16px;max-width:100%}
+.learning-mode button{border:0;background:transparent;border-radius:9px;min-height:44px;padding:8px 18px;color:#626872;font-weight:650;font-size:.875rem}
+.learning-mode button[aria-pressed="true"]{background:#fffdf9;color:#a44c1c;box-shadow:0 1px 5px #40321e12}
+.explore-feedback{padding:14px 15px;background:#f1eee6;border-radius:12px;border-left:3px solid #ae612c}
+.explore-feedback strong{font-size:1.05rem;line-height:1.5}.explore-feedback p{margin:6px 0 0;font-size:.85rem;line-height:1.65;color:#53606a;text-wrap:pretty}
+.visual-course #main[data-exploring="true"] .mechanism-panel{gap:15px;justify-content:center}
+.explore-controls{border-top:1px solid #e4dfd7;margin-top:20px;padding-top:20px}
+.explore-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px}.explore-toolbar h2{font-size:1.15rem;margin:0}.explore-toolbar p{font-size:.85rem;color:#656e76;margin:5px 0 0}
+.explore-controls button{min-height:44px;border:1px solid #d8d4cb;border-radius:9px;padding:9px 12px;background:#fffdf9;color:#35424c;font:inherit;font-size:.8rem;line-height:1.5;cursor:pointer;touch-action:manipulation}
+.explore-controls button:hover{border-color:#a36136;background:#fbf3e9}.explore-controls button:focus-visible,.learning-mode button:focus-visible{outline:3px solid #1762b6;outline-offset:3px}
+.explore-controls button[aria-pressed="true"]{border-color:#a85b2f;background:#fbecdd;color:#934318}
+.explore-pairs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:18px 0 12px}.explore-pairs button{font-size:.78rem}
+.explore-state-summary{font-size:.8rem;line-height:1.7;padding:10px 12px;background:#eeece6;border-radius:9px;color:#55616b}
+.explore-action-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+.explore-action-groups fieldset{min-width:0;border:1px solid #dedbd3;border-radius:10px;margin:0;padding:10px}.explore-action-groups legend{font-size:.78rem;font-weight:650;padding:0 5px;color:#6b6052}
+.explore-button-row{display:flex;flex-wrap:wrap;gap:7px}.explore-button-row button{flex:1 1 auto}
+.explore-controls details{border-top:1px solid #dedbd4;padding:15px 0}.explore-controls summary{cursor:pointer;font-size:.9rem;font-weight:650;min-height:44px;align-content:center;line-height:1.7}.explore-controls details>p{font-size:.82rem;line-height:1.7;color:#626d74}
+.explore-assumptions{background:#f0ede7;padding:12px;border-radius:8px}
+.compare-row{padding:16px 0;border-bottom:1px solid #e1ddd5}.compare-row-heading{display:flex;align-items:center;justify-content:space-between;gap:15px}.compare-row h3{font-size:.92rem;margin:0}
+.compare-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}.compare-results>div{background:#f0eee8;border-radius:9px;padding:12px;min-width:0}.compare-results small{display:block;color:#81705c;font-size:.7rem}.compare-results strong{display:block;font-size:.82rem;margin:7px 0}.compare-results p{font-size:.76rem;line-height:1.7;color:#5d666c;margin:0}
+.explore-history ol{padding-left:1.5em}.explore-history li{font-size:.82rem;margin:10px 0}.explore-history p{color:#63717a;line-height:1.7;margin:4px 0}
+.mechanism-panel[data-relay="true"] .mechanism-blade{transform:rotate(0deg)}
+.mechanism-panel[data-relay="true"] .mechanism-gap{display:none}
+.mechanism-panel[data-relay="false"] .mechanism-blade{transform:rotate(-32deg)}
+.mechanism-panel[data-relay="false"] .mechanism-gap{display:block}
+.mechanism-panel[data-mains="false"] .mechanism-feed-wire,.mechanism-panel[data-mains="false"] .mechanism-blade path{stroke:#7b858d}
+.mechanism-panel[data-mains="false"] #mechanism-feed-label{color:#626d74}
+@media(max-width:760px){
+ .visual-course #main[data-direct-scene="true"] .room-view{height:350px}
+ .visual-course .room-canvas{min-height:190px}
+ .wire-labels{padding:7px 2px 9px}.wire-labels strong{font-size:.75rem}.wire-labels small{font-size:.60rem}
+ .learning-mode{width:100%;margin-bottom:10px}.learning-mode button{flex:1;padding:7px 10px;font-size:.82rem}
+ .explore-toolbar{align-items:flex-start}.explore-toolbar>button{flex:none;font-size:.7rem}
+ .explore-pairs{grid-template-columns:1fr;gap:6px}.explore-pairs button{text-align:left}
+ .explore-action-groups{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .explore-action-groups fieldset{padding:7px}.explore-controls button{font-size:.75rem}
+ .compare-results{grid-template-columns:1fr}.compare-row-heading{gap:8px}
+ .explore-feedback{padding:10px 12px}.explore-feedback p{font-size:.8rem}
+}
+@media(max-width:370px){.visual-course #main[data-direct-scene="true"] .room-view{height:330px}.wire-labels small{font-size:.57rem}}
+@media(min-width:1100px){.visual-course #main[data-direct-scene="true"] .room-view{height:480px}}
+@media(min-width:700px) and (max-width:1099px) and (max-height:600px){.visual-course #main[data-direct-scene="true"] .room-view{height:360px}}
+.large-text .visual-course #main[data-direct-scene="true"] .room-view{height:auto;min-height:410px}
+.large-text .room-canvas{flex:none;height:260px}
+.large-text .explore-action-groups,.large-text .compare-results{grid-template-columns:1fr}
+.explore-inline-feedback{position:sticky;top:calc(var(--course-nav-height,80px) + 4px);z-index:8;padding:12px 14px;background:#fffcf5;border:1px solid #d8c9b7;border-left:3px solid #ae612c;border-radius:10px;box-shadow:0 3px 10px #372c1610;margin:12px 0}
+.explore-inline-feedback strong{font-size:.9rem}.explore-inline-feedback p{font-size:.8rem;line-height:1.6;color:#5a656c;margin:4px 0 0}
+.large-text .explore-inline-feedback{position:static}
+@media(max-width:760px){.visual-course .scene-target.scene-app{width:44px;height:72px}.visual-course .scene-target.scene-lamp{width:48px;height:80px}}
+@media(max-width:760px){.visual-course .scene-target.scene-app{min-width:44px}}
+@media(max-width:370px){.visual-course .scene-target.scene-app{margin-left:1px}}
+
 </style>
 </head>
 <body class="visual-course">
@@ -840,6 +903,7 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
   </section>
   <div class="lesson-layout" id="lesson-layout">
     <section class="visual-column" aria-label="观察区域">
+      <div class="learning-mode" id="learning-mode" role="group" aria-label="学习方式" hidden><button id="mode-guided" type="button" aria-pressed="true">跟着学</button><button id="mode-explore" type="button" aria-pressed="false">自由对比 · 任意操作</button></div>
       <div class="visual-heading"><h2 id="visual-title">供电与发光</h2><div class="visual-tools"><button id="view-toggle" class="secondary-button" hidden aria-pressed="false">查看原理图</button><button id="reset-view" class="icon-button" hidden aria-label="恢复教具视角"><svg aria-hidden="true"><use href="#i-reset"/></svg></button></div></div>
       <div id="visual-stage" class="visual-stage">
         <div id="basic-switch-stage" class="basic-switch-stage"><svg class="basics-circuit" viewBox="0 0 360 238" role="img" aria-labelledby="basics-svg-title basics-svg-desc">
@@ -873,6 +937,7 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
           <p class="scene-instruction" id="scene-instruction" hidden></p>
           <div class="room-canvas">
           <canvas id="room" aria-label="三维教具：观察灯和开关的变化，下方按钮可完成操作" aria-describedby="visual-caption"></canvas>
+          <svg id="wire-leaders" class="wire-leaders" aria-hidden="true"><g class="lead-L"><path id="leader-L"/><circle id="leader-dot-L" r="3.5"/></g><g class="lead-L1"><path id="leader-L1"/><circle id="leader-dot-L1" r="3.5"/></g><g class="lead-N"><path id="leader-N"/><circle id="leader-dot-N" r="3.5"/></g></svg>
           <div class="scene-ui" id="scene-ui" role="group" aria-label="三维教具操作">
             <button class="scene-target scene-switch" id="scene-switch" type="button" aria-label="点按三维开关" hidden><span class="scene-target-label">点按开关</span></button>
             <button class="scene-target scene-app" id="scene-app" type="button" aria-label="点手机发送指令" hidden><span class="scene-target-label">点手机发指令</span></button>
@@ -884,11 +949,13 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
             <span class="scene-chip" id="scene-contact" hidden></span>
           </div>
           </div>
+          <div class="wire-labels" id="wire-labels" aria-label="线路标注"><div id="wire-label-L"><strong>L · 火线</strong><small>电源进入开关</small></div><div id="wire-label-L1"><strong>L1 · 灯线</strong><small>开关送电给灯</small></div><div id="wire-label-N"><strong>N · 零线</strong><small>直接连接灯的 N 端</small></div></div>
           </div>
           <section class="mechanism-panel" id="mechanism-panel" aria-label="触点与供电同步观察" hidden>
+            <div class="explore-feedback" id="explore-feedback" aria-live="polite" aria-atomic="true" hidden><strong id="explore-result"></strong><p id="explore-reason"></p></div>
             <div class="mechanism-cutaway" id="mechanism-cutaway">
               <div class="mechanism-heading"><span>开关内部 · 放大示意</span><strong id="mechanism-contact-state">触点接通</strong></div>
-              <div class="mechanism-wire-labels"><span>L 火线 · 始终有电</span><span id="mechanism-output-label">L1 灯线 · 有电</span></div>
+              <div class="mechanism-wire-labels"><span id="mechanism-feed-label">L 火线 · 始终有电</span><span id="mechanism-output-label">L1 灯线 · 有电</span></div>
               <svg class="mechanism-diagram" viewBox="0 0 360 80" role="img" aria-labelledby="mechanism-svg-title mechanism-svg-desc">
                 <title id="mechanism-svg-title">开关触点与灯线</title><desc id="mechanism-svg-desc">点按画面中的墙壁开关，同步观察触点是否分开，以及灯线是否仍然供电。</desc>
                 <path d="M15 65H125" class="mechanism-feed-wire"/>
@@ -1009,6 +1076,17 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
         <div id="light-metric" class="state-metric"><span>发光状态</span><strong id="light-state">正在发光</strong></div>
         <div id="control-metric" class="state-metric"><span>智能控制</span><strong id="control-state">无智能控制</strong></div>
       </div>
+
+      <section id="explore-controls" class="explore-controls" aria-label="自由实验操作" hidden>
+        <div class="explore-toolbar"><div><h2>换个操作，再看结果</h2><p>点模型可连续操作；也可明确选择开或关。</p></div><button id="explore-reset" type="button">重置三组实验</button></div>
+        <div class="explore-pairs" role="group" aria-label="切换实验搭配"><button type="button" data-explore-scene="0">A · 普通灯＋智能开关</button><button type="button" data-explore-scene="1">B · 智能灯＋普通开关</button><button type="button" data-explore-scene="2">C · 智能灯＋智能开关</button></div>
+        <div class="explore-inline-feedback"><strong id="explore-inline-result"></strong><p id="explore-inline-reason"></p></div>
+        <p id="explore-state-summary" class="explore-state-summary"></p>
+        <div id="explore-action-groups" class="explore-action-groups"></div>
+        <details class="explore-conditions" id="explore-conditions"><summary>改变实验条件：供电、连接与按键模式</summary><p>这些是模拟条件；真实设备可用功能以具体型号为准。</p><div id="explore-condition-groups" class="explore-action-groups"></div><p class="explore-assumptions">C 默认使用兼容设备、按键发指令并保持灯路接通。这里“连接中断”指本次指令链路不可用，不等于所有本地控制都失效。常通保护是可开关的教学条件，切换按键模式不会自动接通灯路。</p></details>
+        <details class="explore-matrix" id="explore-matrix"><summary>逐项对照：同一个操作，三种搭配为什么不同</summary><p>按各组当前状态预测结果，点击“同时执行”可给三组发送同一操作。改变条件后，预测也会更新。</p><div id="explore-matrix-list"></div></details>
+        <details class="explore-history"><summary>查看本组操作记录</summary><ol id="explore-history-list"></ol></details>
+      </section>
 
     </section>
     <aside class="lesson-card" aria-label="本步操作与结果">
@@ -1143,7 +1221,7 @@ window.KenneyLampModel = {"name":"lampRoundTable","author":"Kenney","license":"C
       s.lineTo(hw, hh - r); s.quadraticCurveTo(hw, hh, hw - r, hh);
       s.lineTo(-hw + r, hh); s.quadraticCurveTo(-hw, hh, -hw, hh - r);
       s.lineTo(-hw, -hh + r); s.quadraticCurveTo(-hw, -hh, -hw + r, -hh);
-      const g = new T.ExtrudeGeometry(s, { depth: Math.max(0.002, d - bevel * 2), bevelEnabled: true, bevelSegments: 3, steps: 1, bevelSize: bevel, bevelThickness: bevel, curveSegments: 6 });
+      const g = new T.ExtrudeGeometry(s, { depth: Math.max(0.002, d - bevel * 2), bevelEnabled: true, bevelSegments: 6, steps: 1, bevelSize: bevel, bevelThickness: bevel, curveSegments: 12 });
       g.translate(0, 0, -d / 2 + bevel); g.computeVertexNormals();
       return g;
     }
@@ -1160,7 +1238,7 @@ window.KenneyLampModel = {"name":"lampRoundTable","author":"Kenney","license":"C
     }
     function tube(points, radius, mat, parent) {
       const curve = new T.CatmullRomCurve3(points.map(p => Array.isArray(p) ? vec(p[0], p[1], p[2]) : p.clone()), false, 'centripetal');
-      const object = mesh(new T.TubeGeometry(curve, 30, radius, 7, false), mat, parent);
+      const object = mesh(new T.TubeGeometry(curve, 64, radius, 12, false), mat, parent);
       object.castShadow = false;
       return object;
     }
@@ -1187,11 +1265,16 @@ window.KenneyLampModel = {"name":"lampRoundTable","author":"Kenney","license":"C
       return sprite;
     }
     function terminal(parent, x, y, text, tint) {
-      cylinder(0.105, 0.13, steel, x, y, 0.24, parent);
-      cylinder(0.054, 0.135, dark, x, y, 0.25, parent);
-      const ring = mesh(new T.TorusGeometry(0.10, 0.016, 7, 32), tint, parent);
-      ring.position.set(x, y, 0.32);
-      // Keep the connection visible; the external legend and cutaway name each wire.
+      // Recessed teaching sockets: insulating collar, metal clamp and a screw head.
+      // They remain deliberately separate from the product-like front face.
+      cylinder(0.118, 0.075, dark, x, y, 0.22, parent);
+      cylinder(0.095, 0.085, steel, x, y, 0.255, parent);
+      cylinder(0.058, 0.012, brass, x, y, 0.307, parent);
+      const slot = box(0.068, 0.012, 0.005, 0.003, dark, x, y, 0.316, parent);
+      slot.rotation.z = Math.PI / 5;
+      const ring = mesh(new T.TorusGeometry(0.106, 0.012, 12, 48), tint, parent);
+      ring.position.set(x, y, 0.30);
+      // External labels name the wire without covering the connection.
       ring.name = 'terminal-' + text;
     }
     function chip(parent, x, y, z, w, h) {
@@ -1206,7 +1289,8 @@ window.KenneyLampModel = {"name":"lampRoundTable","author":"Kenney","license":"C
     const rim = material(0x9eafb7, { roughness: 0.57, metalness: 0.16 });
     const boardWhite = material(0xe7eff2, { roughness: 0.78 });
     const dark = material(0x253b4a, { roughness: 0.58 });
-    const steel = material(0xa3b7bf, { metalness: 0.65, roughness: 0.34 });
+    const steel = material(0xb2bec1, { metalness: 0.72, roughness: 0.28 });
+    const brass = material(0xa78a4e, { metalness: 0.72, roughness: 0.32 });
     const trace = material(0x9dcbac, { metalness: 0.34 });
     const red = material(0xba2630, { emissive: 0xba2630, emissiveIntensity: 0.18 });
     const orange = material(0xdb7815, { emissive: 0xdb7815, emissiveIntensity: 0.20 });
@@ -1234,16 +1318,21 @@ window.KenneyLampModel = {"name":"lampRoundTable","author":"Kenney","license":"C
     const switchGroup = new T.Group(); switchGroup.name = 'household-wall-switch'; bench.add(switchGroup);
     // Recognisable square face first. The synchronised enlarged contact diagram
     // lives beside/below the canvas, instead of obscuring the face with a PCB.
-    const faceMat = material(0xfffdf6, { roughness: 0.43 });
-    const seamMat = material(0x63717b, { roughness: 0.72 });
-    box(1.98, 1.98, 0.22, 0.13, rim, 0, 1.28, 0.02, switchGroup);
-    box(1.91, 1.91, 0.12, 0.105, faceMat, 0, 1.28, 0.16, switchGroup);
-    box(1.67, 1.67, 0.05, 0.065, seamMat, 0, 1.28, 0.235, switchGroup);
+    const faceMat = material(0xfffdf6, { roughness: 0.34 });
+    const edgeMat = material(0xd0d6d2, { roughness: 0.43 });
+    const seamMat = material(0x3e4b50, { roughness: 0.85 });
+    // A thin wall gasket and stepped moulded frame give the square plate depth.
+    box(2.00, 2.00, 0.07, 0.12, seamMat, 0, 1.28, -0.075, switchGroup);
+    box(1.98, 1.98, 0.20, 0.13, edgeMat, 0, 1.28, 0.02, switchGroup);
+    box(1.91, 1.91, 0.11, 0.105, faceMat, 0, 1.28, 0.155, switchGroup);
+    box(1.72, 1.72, 0.038, 0.070, edgeMat, 0, 1.28, 0.218, switchGroup);
+    box(1.655, 1.655, 0.045, 0.060, seamMat, 0, 1.28, 0.244, switchGroup);
     const rockerPivot = new T.Group(); rockerPivot.name = 'large-rocker'; rockerPivot.position.set(0, 1.28, 0.31); switchGroup.add(rockerPivot);
-    box(1.58, 1.58, 0.13, 0.055, faceMat, 0, 0, 0.04, rockerPivot);
+    box(1.58, 1.58, 0.13, 0.065, edgeMat, 0, 0, 0.025, rockerPivot);
+    box(1.555, 1.555, 0.052, 0.061, faceMat, 0, 0.006, 0.085, rockerPivot);
     box(0.30, 0.027, 0.018, 0.008, rim, 0, -0.55, 0.114, rockerPivot);
     const switchStatus = box(0.19, 0.024, 0.02, 0.007, onlineMat, 0, -0.55, 0.126, rockerPivot);
-    // These labelled leads are teaching connection points, not product terminals.
+    // These exposed sockets are teaching connection points, not product terminals.
     const inputTerminal = vec(-0.78, 0.16, 0.27), outputTerminal = vec(0.78, 0.16, 0.27), neutralTerminal = vec(0, 0.16, 0.27);
     terminal(switchGroup, -0.78, 0.16, 'L', red);
     terminal(switchGroup, 0.78, 0.16, 'L1', orange);
@@ -1262,18 +1351,48 @@ window.KenneyLampModel = {"name":"lampRoundTable","author":"Kenney","license":"C
     const lampScale = 1.42 / modelHeight;
     const centerX = (lampModel.min[0] + lampModel.max[0]) / 2;
     const centerZ = (lampModel.min[2] + lampModel.max[2]) / 2;
-    const position = lampModel.position.map((value, i) => (value - (i % 3 === 0 ? centerX : i % 3 === 1 ? lampModel.min[1] : centerZ)) * lampScale);
-    const shellMat = material(0xd6e1e1, { roughness: 0.48, metalness: 0.12 });
-    lampModel.primitives.forEach(primitive => {
-      const geometry = new T.BufferGeometry();
-      geometry.setAttribute('position', new T.Float32BufferAttribute(position, 3));
-      geometry.setAttribute('normal', new T.Float32BufferAttribute(lampModel.normal, 3));
-      geometry.setIndex(primitive.indices);
-      geometry.computeBoundingSphere();
-      const part = mesh(geometry, primitive.material === 'lamp' ? emitterMat : shellMat, lampShell);
-      part.name = 'kenney-' + primitive.material;
-    });
-    lampShell.rotation.y = Math.PI / 6;
+    const shellMat = material(0xb7c3c2, { roughness: 0.24, metalness: 0.72 });
+    const shadeRimMat = material(0xe6e3d8, { roughness: 0.65 });
+    // Adapt the CC0 lamp's radial silhouette into 96-segment lathed surfaces.
+    // The retained source asset supplies all dimensions; no external model is loaded.
+    function radialRows(materialName) {
+      const rows = new Map();
+      lampModel.primitives.filter(p => p.material === materialName).forEach(primitive => {
+        new Set(primitive.indices).forEach(i => {
+          const y = lampModel.position[i * 3 + 1] - lampModel.min[1];
+          const r = Math.hypot(lampModel.position[i * 3] - centerX, lampModel.position[i * 3 + 2] - centerZ);
+          const key = y.toFixed(5);
+          if (!rows.has(key)) rows.set(key, { y: y * lampScale, min: Infinity, max: 0 });
+          const row = rows.get(key); row.min = Math.min(row.min, r * lampScale); row.max = Math.max(row.max, r * lampScale);
+        });
+      });
+      return [...rows.values()].sort((a, b) => a.y - b.y);
+    }
+    function lathe(profile, mat, name) {
+      const part = mesh(new T.LatheGeometry(profile.map(p => new T.Vector2(p[0], p[1])), 96), mat, lampShell);
+      part.name = name;
+      return part;
+    }
+    function lampRing(radius, y, thickness, mat) {
+      const ring = mesh(new T.TorusGeometry(radius, thickness, 10, 96), mat, lampShell);
+      ring.rotation.x = Math.PI / 2; ring.position.y = y;
+      return ring;
+    }
+    const metalRows = radialRows('metal'), shadeRows = radialRows('lamp');
+    const baseFoot = metalRows[0], baseTop = metalRows[1], stemTop = metalRows[metalRows.length - 1];
+    lathe([[0, baseFoot.y], [baseFoot.max * 0.94, baseFoot.y], [baseFoot.max, baseFoot.y + 0.018],
+      [baseFoot.max * 0.99, baseFoot.y + 0.043], [baseTop.max, baseTop.y], [0, baseTop.y]], shellMat, 'kenney-profile-smooth-base');
+    lathe([[baseTop.min, baseTop.y], [stemTop.min, stemTop.y]], shellMat, 'kenney-profile-smooth-stem');
+    lampRing(baseFoot.max * 0.985, baseFoot.y + 0.034, 0.009, steel);
+    const shadeBottom = shadeRows[0], shadeTop = shadeRows[shadeRows.length - 1];
+    const shadeThickness = 0.009;
+    lathe([[shadeBottom.max - shadeThickness, shadeBottom.y], [shadeBottom.max, shadeBottom.y],
+      [shadeTop.max, shadeTop.y], [shadeTop.max - shadeThickness, shadeTop.y],
+      [shadeBottom.max - shadeThickness, shadeBottom.y]], emitterMat, 'kenney-profile-smooth-shade');
+    lampRing(shadeBottom.max - 0.003, shadeBottom.y + 0.004, 0.010, shadeRimMat);
+    lampRing(shadeTop.max - 0.003, shadeTop.y - 0.004, 0.008, shadeRimMat);
+    const bulb = mesh(new T.SphereGeometry(0.15, 32, 20), emitterMat, lampShell);
+    bulb.scale.set(0.83, 1.20, 0.83); bulb.position.y = shadeBottom.y + 0.15;
     lampShell.position.set(0, 0.94, 0.47);
     const lampGlow = cylinder(0.55, 0.018, glowMat, 0, 1.98, 0.22, lampGroup); lampGlow.castShadow = false;
     const lampL = vec(-0.66, 0.63, 0.32), lampN = vec(0.66, 0.63, 0.32);
@@ -1327,7 +1446,7 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
     function updateInteractionHints() {
       Object.keys(outlines).forEach(key => {
         const available = key === 'switch' ? switchGroup.visible : key === 'app' ? app.visible : lampGroup.visible;
-        const active = state.interactiveTarget === key;
+        const active = state.interactiveTarget === key || state.interactiveTarget === 'all';
         outlines[key].object.visible = available && active;
         setColor(outlines[key].material, hoveredTarget === key ? 0x653ba5 : 0x8757cf);
         outlines[key].material.opacity = 1;
@@ -1363,6 +1482,7 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       const curve = new T.CatmullRomCurve3(points.map(p => p.clone()), false, 'centripetal');
       if (list === feedWires) wireAnchors.feed = curve.getPoint(0.42);
       if (list === outputWires) wireAnchors.output = curve.getPoint(0.48);
+      if (list === neutralWires && owner === wireGroup) wireAnchors.neutral = curve.getPoint(0.60);
       return object;
     }
     function configureLayout() {
@@ -1425,7 +1545,9 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
     function applyState() {
       smartSwitch = state.visual === 'lab' && Number(state.scene) !== 1;
       smartLamp = state.visual === 'lamp' || (state.visual === 'lab' && Number(state.scene) !== 0);
-      const powered = Boolean(state.powered), lit = powered && Boolean(state.emitting);
+      const mains = state.mains !== false;
+      const powered = mains && Boolean(state.powered), lit = powered && Boolean(state.emitting);
+      const relay = state.relay === undefined ? Boolean(state.powered) : Boolean(state.relay);
       switchGroup.visible = state.visual !== 'lamp'; switchNeutral.visible = smartSwitch;
       neutralBranch.visible = smartSwitch && state.visual !== 'lamp';
       receiver.visible = smartLamp; ordinaryDriver.visible = !smartLamp;
@@ -1443,9 +1565,12 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       receiver.children[0].material = powered ? receiverBoardMat : boardInactive;
       setColor(orange, powered ? 0xdb7815 : 0x344553);
       orange.emissiveIntensity = powered ? 0.20 : 0;
-      red.emissiveIntensity = 0.18; blue.emissiveIntensity = 0.10;
+      setColor(red, mains ? 0xba2630 : 0x484d52);
+      red.emissiveIntensity = mains ? 0.18 : 0; blue.emissiveIntensity = mains ? 0.10 : 0;
+      setColor(onlineMat, mains ? 0x5cba9c : 0x354653);
+      onlineMat.emissiveIntensity = mains ? 1.05 : 0;
       // Smart keys return to rest: their physical position is not the relay state.
-      rockerRest = smartSwitch ? 0 : powered ? -0.12 : 0.12;
+      rockerRest = smartSwitch ? 0 : relay ? -0.12 : 0.12;
       rockerPivot.rotation.x = rockerRest;
       switchStatus.visible = smartSwitch;
       receiverStatus.visible = smartLamp;
@@ -1462,14 +1587,14 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       const menu = kind === 'menu';
       if (!commandFromSwitch && !commandFromApp && !menu) return;
       if (commandFromApp && !smartSwitch && !smartLamp) return;
-      const targetSwitch = menu || (commandFromApp && smartSwitch && !smartLamp);
+      const targetSwitch = state.commandTarget === 'switch' || (state.commandTarget !== 'lamp' && (menu || (commandFromApp && smartSwitch && !smartLamp)));
       const start = commandFromSwitch ? world(switchGroup, vec(0.84, 1.20, 0.69)) : world(app, vec(0.14, 0.18, 0.14));
       const end = targetSwitch ? world(switchGroup, vec(0.60, 0.85, 0.67)) : world(lampGroup, vec(0.35, 0.48, 0.70));
       const mid = start.clone().lerp(end, 0.5); mid.z = Math.max(start.z, end.z) + 0.50;
       // Lift a wall-key command above both receiver labels, below the phone.
       mid.y += commandFromSwitch ? (narrow ? 0.30 : 0.45) : (narrow ? 0.11 : 0.42);
       signalCurve = new T.CatmullRomCurve3([start, mid, end]);
-      signalFailed = !targetSwitch && (!state.powered || !state.connected);
+      signalFailed = Boolean(state.commandFailed) || state.mains === false || (!targetSwitch && (!state.powered || !state.connected));
       const limit = signalFailed ? 0.70 : 0.98;
       const steps = Math.max(7, Math.ceil(signalCurve.getLength() / 0.19));
       for (let i = 0; i < steps; i++) {
@@ -1493,8 +1618,9 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
     }
     function settle() {
       rockerPivot.rotation.x = rockerRest;
-      red.emissiveIntensity = 0.18; orange.emissiveIntensity = state.powered ? 0.20 : 0; blue.emissiveIntensity = 0.10;
-      onlineMat.emissiveIntensity = 1.05; receiverMat.emissiveIntensity = state.powered ? (state.emitting ? 0.95 : 1.35) : 0;
+      const mains = state.mains !== false, powered = mains && state.powered;
+      red.emissiveIntensity = mains ? 0.18 : 0; orange.emissiveIntensity = powered ? 0.20 : 0; blue.emissiveIntensity = mains ? 0.10 : 0;
+      onlineMat.emissiveIntensity = mains ? 1.05 : 0; receiverMat.emissiveIntensity = powered ? (state.emitting ? 0.95 : 1.35) : 0;
       settleSignal();
     }
     function animate(now) {
@@ -1506,9 +1632,10 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       rockerPivot.rotation.x = animation.rocker + (rockerRest - animation.rocker) * ease(pressT) - press;
       // A simultaneous whole-wire glow marks the available circuit. It is not a current-flow animation.
       const supplyPulse = animation.kind === 'wall' || animation.kind === 'menu' ? Math.sin(Math.min(1, t * 1.7) * Math.PI) * 0.65 : 0;
-      red.emissiveIntensity = 0.18 + supplyPulse;
-      orange.emissiveIntensity = state.powered ? 0.20 + supplyPulse : 0;
-      blue.emissiveIntensity = 0.10 + supplyPulse * 0.5;
+      const mains = state.mains !== false;
+      red.emissiveIntensity = mains ? 0.18 + supplyPulse : 0;
+      orange.emissiveIntensity = mains && state.powered ? 0.20 + supplyPulse : 0;
+      blue.emissiveIntensity = mains ? 0.10 + supplyPulse * 0.5 : 0;
       if (signalGroup.visible && signalCurve) {
         signalMat.opacity = 0.82 + Math.sin(t * Math.PI) * 0.18;
         const limit = signalFailed ? 0.69 : 1;
@@ -1555,6 +1682,9 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
           lamp: anchor(world(lampGroup, vec(0, 1.85, 0.88)), lampGroup.visible),
           feed: anchor(wireAnchors.feed || world(source, sourceL.position), true),
           output: anchor(wireAnchors.output || world(lampGroup, lampL), state.visual !== 'lamp'),
+          wireL: anchor(wireAnchors.feed || world(source, sourceL.position), true),
+          wireL1: anchor(wireAnchors.output || world(lampGroup, lampL), state.visual !== 'lamp'),
+          wireN: anchor(wireAnchors.neutral || world(source, sourceN.position), true),
           receiver: anchor(world(lampGroup, vec(0, 0.40, 0.51)), smartLamp),
           switchPower: anchor(world(switchGroup, vec(0, 0.73, 0.49)), false),
           contact: anchor(world(switchGroup, vec(0, 1.28, 0.58)), false)
@@ -1612,7 +1742,7 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
     }
     function pointerMove(event) {
       if (!gesture || gesture.id !== event.pointerId) {
-        if (event.pointerType === 'mouse') { const hit = overTarget(event); const activeHit = hit === state.interactiveTarget ? hit : null; canvas.style.cursor = activeHit ? 'pointer' : 'grab'; setHovered(activeHit); }
+        if (event.pointerType === 'mouse') { const hit = overTarget(event); const activeHit = hit === state.interactiveTarget || state.interactiveTarget === 'all' ? hit : null; canvas.style.cursor = activeHit ? 'pointer' : 'grab'; setHovered(activeHit); }
         return;
       }
       const dx = event.clientX - gesture.x, dy = event.clientY - gesture.y;
@@ -1653,7 +1783,10 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       setState(next) {
         if (disposed) return;
         const oldVisual = state.visual;
-        state = Object.assign({}, state, next);
+        state = Object.assign({}, state, next, {
+          mains: next.mains !== false, relay: next.relay,
+          commandFailed: Boolean(next.commandFailed), commandTarget: next.commandTarget
+        });
         if (!['switch', 'lamp', 'lab'].includes(state.visual)) state.visual = 'lab';
         state.scene = Number(state.scene);
         const actionChanged = lastAction !== null && state.actionVersion !== lastAction;
@@ -1951,6 +2084,310 @@ window.courseReading = [
 ];
 
 </script><script>
+/* Deterministic teaching model. This does not connect to real devices. */
+(function (root, factory) {
+  'use strict';
+  const api = factory();
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  if (root) root.LightExplore = api;
+})(typeof window === 'object' ? window : null, function () {
+  'use strict';
+
+  const SCENES = ['普通灯＋零火智能开关', '智能灯＋普通开关', '智能灯＋零火智能开关'];
+  const policies = { on: '复电亮灯', off: '复电保持关闭', restore: '恢复断电前的发光状态' };
+  const commands = [
+    ['wall', '按墙壁开关', '直接操作', 'wall'],
+    ['app-switch-on', 'App：接通开关灯路', 'App 控制开关', 'app'],
+    ['app-switch-off', 'App：切断开关灯路', 'App 控制开关', 'app'],
+    ['app-lamp-on', 'App：灯开', 'App 控制灯', 'app'],
+    ['app-lamp-off', 'App：灯关', 'App 控制灯', 'app'],
+    ['automation-on', '联动：开灯', '自动化', 'automation'],
+    ['automation-off', '联动：关灯', '自动化', 'automation'],
+    ['brightness-up', '调亮', '灯光参数', 'brightness'],
+    ['brightness-down', '调暗', '灯光参数', 'brightness'],
+    ['temp-up', '调冷', '灯光参数', 'temperature'],
+    ['temp-down', '调暖', '灯光参数', 'temperature']
+  ];
+
+  function copy(state) { return Object.assign({}, state); }
+  function smartLamp(s) { return s.scene !== 0; }
+  function smartSwitch(s) { return s.scene !== 1; }
+  function clamp(value, min, max) { return Math.max(min, Math.min(max, value)); }
+  function derive(s) {
+    s.powered = Boolean(s.mains && s.relay);
+    s.switchPowered = Boolean(smartSwitch(s) && s.mains);
+    s.receiverPowered = Boolean(smartLamp(s) && s.powered);
+    s.receiverOnline = Boolean(s.receiverPowered && s.connected);
+    if (!s.powered) s.emitting = false;
+    if (!smartLamp(s)) s.emitting = s.powered;
+    s.receiverState = !smartLamp(s) ? '无智能接收模块' : !s.powered ? '已断电' : !s.connected ? '链路不可用' : s.emitting ? '在线' : '待机';
+    s.result = s.title;
+    return s;
+  }
+  function initial(scene = 0) {
+    const id = typeof scene === 'string' && /^[ABC]$/i.test(scene) ? scene.toUpperCase().charCodeAt(0) - 65 : Number(scene);
+    if (![0, 1, 2].includes(id)) throw new RangeError('Unknown teaching scene');
+    return derive({
+      scene: id, mains: true, relay: true, powered: true, emitting: true,
+      brightness: 80, temp: 35, keyMode: id === 2 ? 'command' : 'cut', relayLocked: id === 2,
+      connected: true, bound: id === 2, powerOnBehavior: 'on', rememberedEmission: true,
+      actionVersion: 0, lastAction: '', actionKind: '', outcome: 'ready',
+      commandTarget: null, delivered: null, title: '从亮灯开始，自由试一试。',
+      reason: id === 2 ? '本演示已绑定智能灯，按键发指令，继电器保持接通。' : id === 0 ? '零火智能开关控制灯路，开关自身由火线和零线供电。' : '普通开关切断灯路，App 只能控制仍有电的智能灯。'
+    });
+  }
+  function applyPower(s, before) {
+    const now = Boolean(s.mains && s.relay);
+    if (before.powered && !now) {
+      s.rememberedEmission = before.emitting;
+      s.emitting = false;
+    } else if (!before.powered && now) {
+      s.emitting = !smartLamp(s) || s.powerOnBehavior === 'on' || (s.powerOnBehavior === 'restore' && s.rememberedEmission);
+    }
+    return derive(s);
+  }
+  function finish(s, title, reason, outcome) {
+    s.title = title; s.reason = reason; s.outcome = outcome || 'changed';
+    return derive(s);
+  }
+  function blocked(s, reason, title) {
+    if (s.commandTarget) s.delivered = false;
+    return finish(s, title || '操作未生效。', reason, 'blocked');
+  }
+  function remoteProblem(s, target) {
+    if (target === 'switch' && !smartSwitch(s)) return '普通开关没有接收模块，App 无法让它接通或断开触点。';
+    if (target === 'lamp' && !smartLamp(s)) return '普通灯没有智能接收模块，App 需要控制智能开关，不能直接控制这盏灯。';
+    if (!s.mains) return '上游供电已断，设备接收模块没有电；先恢复上游供电。';
+    if (target === 'lamp' && !s.powered) return '灯路已断，智能灯接收模块停机；指令无法替代供电，先接通灯路。';
+    if (!s.connected) return '本演示的指令链路不可用，命令未送达；恢复链路后再试。';
+    return '';
+  }
+  function lightCommand(s, desired, prefix) {
+    s.commandTarget = 'lamp';
+    const problem = remoteProblem(s, 'lamp');
+    if (problem) return blocked(s, problem);
+    const changed = s.emitting !== desired;
+    s.emitting = desired; s.delivered = true;
+    return finish(s, desired ? '灯亮，供电保持。' : '灯灭，接收模块仍待机。',
+      prefix + (changed ? '指令只改变发光状态；灯路始终有电，接收模块仍能收下一条指令。' : '目标发光状态已经相同，所以画面不再变化；供电保持。'), changed ? 'changed' : 'unchanged');
+  }
+  function relayCommand(s, before, desired, prefix) {
+    s.commandTarget = 'switch';
+    const problem = remoteProblem(s, 'switch');
+    if (problem) return blocked(s, problem);
+    if (!desired && s.scene === 2 && s.keyMode === 'command' && s.relayLocked) return blocked(s, '本演示开启了“常通保护”预设，发指令模式下阻止切断灯路；可关闭这项演示预设再试。真实设备是否限制继电器控制，以型号为准。');
+    const changed = s.relay !== desired;
+    s.relay = desired; s.delivered = true; applyPower(s, before);
+    if (!changed) return finish(s, desired ? '灯路本就接通。' : '灯路本就断开。', prefix + '重复相同的继电器命令不会再次改变触点，也不会替智能灯切换发光。', 'unchanged');
+    return finish(s, desired ? '触点接通，灯路恢复供电。' : '触点断开，灯具断电。',
+      prefix + (desired && smartLamp(s) ? '智能灯按本次选定的“' + policies[s.powerOnBehavior] + '”恢复；这不是所有型号的统一行为。' : desired ? '普通灯通电发光；智能开关自身一直由 L / N 供电。' : '切断的是通往灯的灯线 L1；零火智能开关自身仍由 L / N 供电。'));
+  }
+
+  function transition(state, action, value) {
+    if (!state || ![0, 1, 2].includes(state.scene)) throw new TypeError('A valid exploration state is required');
+    const s = copy(state), before = copy(state);
+    s.actionVersion = (state.actionVersion || 0) + 1;
+    s.lastAction = action; s.actionKind = ''; s.commandTarget = null; s.delivered = null;
+    const command = commands.find(c => c[0] === action);
+    if (command) s.actionKind = command[3];
+    if (action === 'wall') {
+      if (smartSwitch(s) && !s.mains) return blocked(s, '零火智能开关自身也已断电，按键与控制电路不能工作；先恢复上游供电。');
+      if (s.scene === 2 && s.keyMode === 'command') {
+        s.commandTarget = 'lamp';
+        if (!s.bound) return blocked(s, '按键尚未绑定目标灯；只按面板不会切断供电，也没有目标接收指令。');
+        return lightCommand(s, !s.emitting, '墙壁按键发出指令。');
+      }
+      s.relay = !s.relay; applyPower(s, before);
+      if (!s.mains) return finish(s, s.relay ? '机械触点接通，灯仍无电。' : '机械触点断开，灯仍无电。', '普通机械开关不需要自身供电，可以改变触点；上游没有电，接通触点也不会让灯亮。');
+      if (!s.relay) return finish(s, '触点断开，灯具断电。', smartSwitch(s) ? '墙键切断灯线 L1；开关自身仍由火线 L 与零线 N 供电。' : '普通开关切断灯线 L1；智能灯接收模块也停机，无法再接收指令。');
+      return finish(s, '触点接通，灯路恢复供电。', smartLamp(s) ? '恢复供电后，本演示采用“' + policies[s.powerOnBehavior] + '”；实际效果取决于灯具设置。' : '火线经闭合触点连到灯线；普通灯获得完整供电回路后亮起。');
+    }
+    if (action === 'app-switch-on' || action === 'app-switch-off') return relayCommand(s, before, action.endsWith('-on'), 'App 控制智能开关的继电器。');
+    if (action === 'app-lamp-on' || action === 'app-lamp-off') return lightCommand(s, action.endsWith('-on'), 'App 直接控制灯。');
+    if (action === 'automation-on' || action === 'automation-off') return s.scene === 0 ? relayCommand(s, before, action.endsWith('-on'), '本次联动的目标是智能开关。') : lightCommand(s, action.endsWith('-on'), '本次联动的目标是智能灯。');
+    if (action.startsWith('brightness-') || action.startsWith('temp-') || action === 'brightness' || action === 'temperature') {
+      s.commandTarget = 'lamp';
+      const problem = remoteProblem(s, 'lamp');
+      if (problem) return blocked(s, problem);
+      const isBrightness = action.startsWith('brightness');
+      const field = isBrightness ? 'brightness' : 'temp';
+      const numeric = Number(value);
+      const next = action === 'brightness' || action === 'temperature' ? numeric : s[field] + (action.endsWith('-up') ? 20 : -20);
+      if (!Number.isFinite(next)) return blocked(s, '请选择有效的灯光参数。');
+      s.actionKind = isBrightness ? 'brightness' : 'temperature';
+      s[field] = clamp(next, isBrightness ? 10 : 0, 100); s.delivered = true;
+      const changed = s[field] !== before[field];
+      return finish(s, (isBrightness ? '亮度' : '冷暖') + (changed ? '已调整。' : '已到当前范围边界。'),
+        !changed ? '参数没有越过允许范围，灯具供电与发光开关状态不变。' : s.emitting ? '指令调整灯内驱动参数；触点和供电线路都不需要改变。' : '本演示只保存灯光参数，不自动开灯；接收模块有电，下一次开灯会采用此参数。', changed ? 'changed' : 'unchanged');
+    }
+    if (action === 'power-off' || action === 'power-on') {
+      s.mains = action === 'power-on'; applyPower(s, before);
+      if (s.mains === before.mains) return finish(s, s.mains ? '上游供电已经接通。' : '上游供电已经断开。', '供电条件没有变化，设备状态也不变。', 'unchanged');
+      return finish(s, s.mains ? '上游供电恢复。' : '上游供电中断。', s.mains ? !s.relay ? '触点仍断开，恢复上游供电也不会给灯供电；先接通开关灯路。' : smartLamp(s) ? '本演示保留开关触点状态，智能灯按“' + policies[s.powerOnBehavior] + '”恢复；设备复电行为依型号与设置而定。' : '本演示保留开关触点状态；触点接通，所以普通灯重新发光。' : '上游电源中断后，灯和零火智能开关自身都失去供电；机械触点的位置仍保留。', 'condition');
+    }
+    if (action === 'connection-off' || action === 'connection-on') {
+      s.connected = action === 'connection-on';
+      return finish(s, s.connected ? '演示指令链路恢复。' : '演示指令链路不可用。', s.connected ? '恢复连接不会重放先前失败的命令；请重新操作，灯的现有发光状态保持。' : '本演示阻断 App、联动及绑定按键的指令路径，供电保持；机械或切电墙键仍可动作。实际本地联动能否离线运行，取决于设备和网关。', s.connected === before.connected ? 'unchanged' : 'condition');
+    }
+    if (action === 'mode-cut' || action === 'mode-command') {
+      if (s.scene !== 2) return blocked(s, '此项只用于支持按键与继电器分离控制的智能开关＋智能灯组合。');
+      s.keyMode = action === 'mode-command' ? 'command' : 'cut';
+      return finish(s, s.keyMode === 'command' ? '改为按键发指令。' : '改为按键切断供电。', s.keyMode === 'command' ? '这是演示条件：墙键只向已绑定的灯发指令，触点位置保持；若灯路已断，需另用 App 接通开关灯路。' : '这是演示条件：墙键直接控制触点，下一次按下会改变灯路供电；切换模式本身不改变触点。', 'condition');
+    }
+    if (action === 'relay-lock' || action === 'relay-unlock') {
+      if (s.scene !== 2) return blocked(s, '此演示预设只用于 C 搭配，比较发指令模式下是否仍允许独立切断开关灯路。');
+      s.relayLocked = action === 'relay-lock';
+      return finish(s, s.relayLocked ? '启用演示常通保护。' : '允许独立控制开关灯路。', s.relayLocked ? '这是教学预设，不代表米家都有此功能：发指令模式下阻止切断灯路，但仍可接通；当前触点不会自动改变。' : '解除教学预设后，墙键发指令与 App 控制继电器相互独立；App 仍可断开灯路，切断后智能灯也收不到墙键指令。', 'condition');
+    }
+    if (action === 'bind' || action === 'unbind') {
+      if (s.scene !== 2) return blocked(s, s.scene === 0 ? '本演示只在 C 搭配设置按键与目标灯的绑定；A 的普通灯没有智能接收模块，不能作为智能灯接收目标。' : '本演示只在 C 搭配设置按键与目标灯的绑定；B 的普通机械开关没有发指令和绑定功能。');
+      s.bound = action === 'bind';
+      return finish(s, s.bound ? '按键已有目标灯。' : '按键未绑定目标灯。', '这是演示条件，只改变智能按键的目标；App 直接控制灯及本次设定的灯具联动不依赖这份按键绑定。', 'condition');
+    }
+    if (action.startsWith('policy-')) {
+      const policy = action.slice(7);
+      if (!Object.hasOwn(policies, policy)) return blocked(s, '未识别的复电策略。');
+      if (!smartLamp(s)) return blocked(s, '普通灯没有智能复电策略；只要灯路重新供电，就会发光。');
+      s.powerOnBehavior = policy;
+      return finish(s, '复电策略：' + policies[policy] + '。', '此处选择的是教学假设；不会立刻改变发光，下次从断电恢复供电时才应用。实际灯具是否支持此设置依型号而定。', 'condition');
+    }
+    return blocked(s, '未识别的操作；当前供电和灯光状态保持不变。');
+  }
+  function actions(state) {
+    const list = commands.map(c => ({ id: c[0], label: c[1], group: c[2], kind: c[3] }));
+    // A stable catalog lets learners compare exactly the same attempted action
+    // on each combination, including actions the hardware cannot perform.
+    [
+      ['power-off', '模拟上游断电', '总电源'], ['power-on', '恢复上游供电', '总电源'],
+      ['connection-off', '模拟指令链路中断', '指令链路'], ['connection-on', '恢复指令链路', '指令链路'],
+      ['mode-cut', '改为按键切电', '按键模式'], ['mode-command', '改为按键发指令', '按键模式'],
+      ['relay-lock', '启用演示常通保护', '灯路常通保护'], ['relay-unlock', '允许独立控制灯路', '灯路常通保护'],
+      ['bind', '绑定目标灯', '按键绑定'], ['unbind', '取消按键绑定', '按键绑定']
+    ].forEach(c => list.push({ id: c[0], label: c[1], group: c[2], kind: 'condition' }));
+    Object.keys(policies).forEach(p => list.push({ id: 'policy-' + p, label: policies[p], group: '复电策略（教学假设）', kind: 'condition' }));
+    return list;
+  }
+  function describe(state) {
+    const s = derive(copy(state));
+    return {
+      name: SCENES[s.scene], smartLamp: smartLamp(s), smartSwitch: smartSwitch(s),
+      mains: s.mains, relay: s.relay, relayLocked: s.relayLocked, powered: s.powered, emitting: s.emitting,
+      switchPowered: s.switchPowered, receiverPowered: s.receiverPowered, receiverOnline: s.receiverOnline,
+      contact: s.relay ? '触点接通' : '触点断开',
+      feed: s.mains ? '火线有电' : '上游已断电', output: s.powered ? '灯线有电' : '灯线无供电',
+      light: s.emitting ? '亮灯' : '灭灯', receiver: s.receiverState,
+      switch: smartSwitch(s) ? s.switchPowered ? '开关自身有电' : '开关自身断电' : '机械开关无需自身供电',
+      policy: smartLamp(s) ? policies[s.powerOnBehavior] : '普通灯通电即亮',
+      assumption: '常通保护是教学预设，并非所有设备功能；模式和保护设置不改变触点。指令链路、绑定和复电策略也可自行设定。'
+    };
+  }
+  return Object.freeze({ initial, transition, actions, describe });
+});
+
+</script><script>
+/* Free exploration controls: the pure state engine owns every outcome. */
+(function () {
+  'use strict';
+  window.createExploreUI = function (onUpdate, onSelect) {
+    const E = window.LightExplore;
+    if (!E) return null;
+    const $ = id => document.getElementById(id);
+    const names = ['A · 普通灯＋智能开关', 'B · 智能灯＋普通开关', 'C · 智能灯＋智能开关'];
+    let states = [0, 1, 2].map(E.initial), history = [[], [], []], scene = 0;
+    const api = { enabled: false, state: i => states[i], render, run, sceneAction, actionKind, show };
+    function actionKind(action) {
+      if (action === 'wall') return 'wall';
+      if (action?.startsWith('automation')) return 'automation';
+      if (action?.startsWith('brightness')) return 'brightness';
+      if (action?.startsWith('temp')) return 'temperature';
+      if (action?.startsWith('app-')) return 'app';
+      return 'condition';
+    }
+    function run(action, all = false) {
+      const targets = all ? [0, 1, 2] : [scene];
+      targets.forEach(i => {
+        const label = E.actions(states[i]).find(a => a.id === action)?.label || action;
+        states[i] = E.transition(states[i], action);
+        history[i].push({ label, title: states[i].title, reason: states[i].reason });
+        history[i] = history[i].slice(-30);
+      });
+      onUpdate();
+    }
+    function sceneAction(target) {
+      const s = states[scene];
+      if (target === 'switch') run('wall');
+      else if (target === 'app') run(scene === 0 ? (s.powered ? 'app-switch-off' : 'app-switch-on') : (s.emitting ? 'app-lamp-off' : 'app-lamp-on'));
+      else if (target === 'lamp') run(s.brightness > 50 ? 'brightness-down' : 'brightness-up');
+    }
+    function show(available) {
+      $('learning-mode').hidden = !available;
+      $('explore-controls').hidden = !available || !api.enabled;
+      $('explore-feedback').hidden = !available || !api.enabled;
+      $('mode-guided').setAttribute('aria-pressed', String(!api.enabled));
+      $('mode-explore').setAttribute('aria-pressed', String(api.enabled));
+    }
+    function makeButton(action) {
+      const b = document.createElement('button'); b.type = 'button'; b.textContent = action.label;
+      b.dataset.exploreAction = action.id; b.addEventListener('click', () => run(action.id)); return b;
+    }
+    // Build once so focus and expanded disclosures survive every action.
+    const commands = ['wall', 'app-switch-on', 'app-switch-off', 'app-lamp-on', 'app-lamp-off', 'automation-on', 'automation-off', 'brightness-up', 'brightness-down', 'temp-up', 'temp-down'];
+    const allActions = E.actions(states[2]);
+    const groups = new Map();
+    allActions.forEach(a => {
+      const name = a.group || '其他操作';
+      if (!groups.has(name)) {
+        const box = document.createElement('fieldset'), legend = document.createElement('legend'), row = document.createElement('div');
+        legend.textContent = name; row.className = 'explore-button-row'; box.append(legend, row);
+        (commands.includes(a.id) ? $('explore-action-groups') : $('explore-condition-groups')).append(box);
+        groups.set(name, row);
+      }
+      groups.get(name).append(makeButton(a));
+    });
+    function render(i) {
+      scene = i; const s = states[i];
+      document.querySelectorAll('[data-explore-scene]').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.exploreScene) === i)));
+      $('explore-result').textContent = s.title;
+      $('explore-reason').textContent = s.reason;
+      $('explore-inline-result').textContent = s.title; $('explore-inline-reason').textContent = s.reason;
+      $('explore-state-summary').textContent = `${s.mains ? '总电源接通' : '总电源断开'} · ${s.connected ? '指令链路可用' : '指令链路中断'}${i === 2 ? ` · ${s.keyMode === 'command' ? '按键发指令' : '按键切电'} · ${s.bound ? '已绑定灯' : '未绑定灯'} · ${s.relayLocked ? '常通保护开' : '常通保护关'}` : ''}${i !== 0 ? ` · 复电：${{on:'点亮',off:'保持关闭',restore:'恢复断电前状态'}[s.powerOnBehavior]} · 亮度 ${s.brightness}%` : ''}`;
+      const active = new Set([s.mains ? 'power-on' : 'power-off', s.connected ? 'connection-on' : 'connection-off', s.bound ? 'bind' : 'unbind', 'mode-' + s.keyMode, s.relayLocked ? 'relay-lock' : 'relay-unlock', 'policy-' + s.powerOnBehavior]);
+      document.querySelectorAll('[data-explore-action]').forEach(b => {
+        if (!commands.includes(b.dataset.exploreAction)) b.setAttribute('aria-pressed', String(active.has(b.dataset.exploreAction)));
+      });
+      $('explore-history-list').replaceChildren(...history[i].slice().reverse().map(h => {
+        const li = document.createElement('li'); const strong = document.createElement('strong'), p = document.createElement('p');
+        strong.textContent = h.label + ' → ' + h.title; p.textContent = h.reason; li.append(strong, p); return li;
+      }));
+      if (!history[i].length) { const li = document.createElement('li'); li.textContent = '尚未操作，点一下模型开始。'; $('explore-history-list').append(li); }
+      updateMatrix();
+    }
+    function updateMatrix() {
+      // Reuse rows/buttons, updating only predictions to preserve keyboard focus.
+      allActions.forEach(a => {
+        let row = document.getElementById('compare-' + a.id);
+        if (!row) {
+          row = document.createElement('section'); row.id = 'compare-' + a.id; row.className = 'compare-row';
+          const head = document.createElement('div'), title = document.createElement('h3'), button = document.createElement('button');
+          head.className = 'compare-row-heading'; title.textContent = a.label; button.type = 'button'; button.textContent = '同时执行'; button.setAttribute('aria-label', '三组同时执行：' + a.label);
+          button.addEventListener('click', () => run(a.id, true)); head.append(title, button); row.append(head);
+          const results = document.createElement('div'); results.className = 'compare-results';
+          names.forEach(n => { const cell = document.createElement('div'); const name = document.createElement('small'), strong = document.createElement('strong'), reason = document.createElement('p'); name.textContent = n; cell.append(name, strong, reason); results.append(cell); });
+          row.append(results); $('explore-matrix-list').append(row);
+        }
+        const cells = row.querySelectorAll('.compare-results>div');
+        states.forEach((state, j) => { const next = E.transition(state, a.id); cells[j].querySelector('strong').textContent = next.title; cells[j].querySelector('p').textContent = next.reason; });
+      });
+    }
+    $('mode-guided').addEventListener('click', () => { api.enabled = false; onUpdate(); });
+    $('mode-explore').addEventListener('click', () => { api.enabled = true; onUpdate(); });
+    $('explore-reset').addEventListener('click', () => { states = [0, 1, 2].map(E.initial); history = [[], [], []]; onUpdate(); });
+    document.querySelectorAll('[data-explore-scene]').forEach(b => b.addEventListener('click', () => onSelect(Number(b.dataset.exploreScene))));
+    return api;
+  };
+}());
+
+</script><script>
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
@@ -2157,6 +2594,7 @@ window.courseReading = [
     copy.steps?.forEach((short, j) => Object.assign(c.steps[j], short));
   });
   const saved = chapters.map(c => ({ index: 0, records: c.steps.map(() => ({ done: false, value: null, reviewed: false })) }));
+  let explorer;
   let chapterIndex = 0, home = true, hasVisited = false, principle = false, room, wiring, roomUnavailable = false, quiz = null, pausedQuiz = null, renderedReading = -1, actionVersion = 0, explanationTrigger = null;
   const chapter = () => chapters[chapterIndex];
   const progress = () => saved[chapterIndex];
@@ -2164,12 +2602,14 @@ window.courseReading = [
   const record = () => progress().records[progress().index];
   const menuNavigation = () => step()?.kind === 'menu' && step().effect.menu < 5;
   const observed = () => record().done && !menuNavigation();
+  const isExploring = () => !home && chapterIndex >= 2 && chapterIndex <= 4 && !!explorer?.enabled;
   const sceneTarget = () => step()?.kind === 'wall' ? 'switch' : ['app', 'automation'].includes(step()?.kind) ? 'app' : ['brightness', 'temperature'].includes(step()?.kind) ? 'lamp' : null;
-  const directScene = () => !home && chapterIndex < 5 && !quiz && !principle && !roomUnavailable && step()?.kind !== 'menu';
+  const directScene = () => !home && chapterIndex < 5 && !quiz && !principle && !roomUnavailable && (isExploring() || step()?.kind !== 'menu');
   const finished = i => i < 5 && saved[i].records.every(r => r.done);
   // Canvas hit targets and their native, projected buttons share one action.
   // A second tap replays this observation; only Next changes the lesson step.
   function sceneAction(target) {
+    if (isExploring()) { explorer.sceneAction(target); return; }
     if (!directScene() || target !== sceneTarget()) return;
     if (target === 'lamp') {
       const kind = step().kind, s = currentState();
@@ -2181,27 +2621,32 @@ window.courseReading = [
     if (observed()) replay();
     act();
   }
-  let mechanismAction = -1;
+  let mechanismAction = -1, mechanismRelay = null;
   function updateSceneUI(s) {
-    const active = directScene(), c = chapter(), item = step(), done = observed();
+    const exploring = isExploring(), active = directScene() || exploring, c = chapter(), item = exploring ? {kind:s.actionKind, effect:{}} : step(), done = exploring ? !!s.lastAction : observed();
     $('main').dataset.directScene = String(active);
-    $('scene-ui').hidden = !active;
+    $('scene-ui').hidden = !active || roomUnavailable;
+    if ($('wire-labels')) $('wire-labels').hidden = !directScene();
+    if ($('wire-leaders')) $('wire-leaders').style.display = directScene() ? '' : 'none';
+    if ($('wire-label-L1')) $('wire-label-L1').hidden = c.visual === 'lamp';
+    if ($('wire-labels')) $('wire-labels').dataset.mode = c.visual;
     $('scene-instruction').hidden = !active;
     $('mechanism-panel').hidden = !active;
     if (!active) return;
     const smartLamp = c.visual === 'lamp' || (c.visual === 'lab' && c.scene !== 0);
     const smartSwitch = c.visual === 'lab' && c.scene !== 1;
-    const target = sceneTarget();
+    const target = exploring ? 'all' : sceneTarget();
     $('scene-instruction').hidden = false;
     const targetCopy = target === 'switch' ? '按开关' : target === 'lamp' ? item.kind === 'brightness' ? (s.brightness > 50 ? '点灯调暗' : '点灯调亮') : '点灯换光' : item.kind === 'automation' ? '执行离家' : done ? '重播指令' : item.effect.emitting === false ? '点手机关灯' : '点手机开灯';
     for (const name of ['switch', 'app', 'lamp']) {
       const button = $('scene-' + name);
-      button.hidden = target !== name;
+      button.hidden = !exploring && target !== name;
       button.setAttribute('aria-label', name === target ? (done && target !== 'lamp' ? `再演示一次：${item.action}` : item.action) : name);
+      if (exploring) button.setAttribute('aria-label', name === 'switch' ? '按墙壁开关，改变当前状态' : name === 'app' ? '点手机，切换灯的开关状态' : '点灯，尝试调整亮度');
       button.querySelector('.scene-target-label').textContent = targetCopy;
       button.dataset.complete = String(done);
     }
-    $('scene-instruction').textContent = done ? target === 'lamp' ? '再点灯，比较变化' : '结果已保留 · 再点可重播' : target === 'switch' ? s.keyMode === 'command' ? '点大面板：灯灭，供电会断吗？' : '点大面板，观察触点怎样动' : target === 'lamp' ? '点图中的灯，改变发光' : item.kind === 'automation' ? '点手机，执行离家联动' : '点手机，看谁接收到指令';
+    $('scene-instruction').textContent = exploring ? roomUnavailable ? '使用下方操作，观察触点和供电状态' : '点开关切换 · 点手机控制 · 点灯调光' : done ? target === 'lamp' ? '再点灯，比较变化' : '结果已保留 · 再点可重播' : target === 'switch' ? s.keyMode === 'command' ? '点大面板：灯灭，供电会断吗？' : '点大面板，观察触点怎样动' : target === 'lamp' ? '点图中的灯，改变发光' : item.kind === 'automation' ? '点手机，执行离家联动' : '点手机，看谁接收到指令';
     function chip(id, text, tone, visible = true) {
       $(id).textContent = text; $(id).dataset.tone = tone; $(id).hidden = !visible;
     }
@@ -2213,21 +2658,24 @@ window.courseReading = [
     chip('scene-contact', s.powered ? '触点接通' : '触点断开', s.powered ? 'power' : 'off', false);
     const panel = $('mechanism-panel');
     panel.dataset.powered = String(s.powered);
+    panel.dataset.relay = String(s.relay ?? s.powered);
+    panel.dataset.mains = String(s.mains !== false);
+    if ($('mechanism-feed-label')) $('mechanism-feed-label').textContent = s.mains === false ? 'L 火线 · 上游已断电' : 'L 火线 · 始终有电';
     panel.dataset.command = String(smartSwitch && s.keyMode === 'command');
     panel.dataset.smartSwitch = String(smartSwitch);
     panel.dataset.smartLamp = String(smartLamp);
     panel.dataset.emitting = String(s.powered && s.emitting);
     $('mechanism-cutaway').hidden = c.visual === 'lamp';
-    $('mechanism-contact-state').textContent = !s.powered ? '触点断开' : smartSwitch && s.keyMode === 'command' ? '保持接通' : '触点接通';
+    $('mechanism-contact-state').textContent = !(s.relay ?? s.powered) ? '触点断开' : smartSwitch && s.keyMode === 'command' ? '保持接通' : '触点接通';
     $('mechanism-output-label').textContent = `L1 灯线 · ${s.powered ? '有电' : '断电'}`;
-    $('mechanism-route-note').textContent = !s.powered ? '触点断开：灯断电，火线仍有电' : smartSwitch && s.keyMode === 'command' ? '只发指令，供电保持' : '触点接通：火线连到灯线';
+    $('mechanism-route-note').textContent = s.mains === false ? '上游断电：触点位置与有无供电是两回事' : !s.powered ? '触点断开：灯断电，火线仍有电' : smartSwitch && s.keyMode === 'command' ? '只发指令，供电保持' : '触点接通：火线连到灯线';
     $('mechanism-lamp-state').textContent = s.powered && s.emitting ? '亮灯' : '灭灯';
     $('mechanism-lamp-power').textContent = s.powered ? '灯具持续供电' : '灯具已断电';
     $('mechanism-receiver-result').hidden = !smartLamp;
     $('mechanism-receiver-state').textContent = !s.powered ? '已断电' : !s.connected ? '未连接' : s.emitting ? '在线' : '待机';
     $('mechanism-receiver-note').textContent = !s.powered ? '已停机，收不到指令' : !s.connected ? '等待连接' : s.emitting ? '可接收指令' : '等待下一条指令';
     $('mechanism-switch-result').hidden = !smartSwitch;
-    $('mechanism-switch-state').textContent = '仍有电';
+    $('mechanism-switch-state').textContent = s.mains === false ? '已断电' : '仍有电';
     // The magnified contact uses the same state as the 3D model. Replaying an
     // observation animates it again without scrolling or advancing the lesson.
     if (mechanismAction !== actionVersion) {
@@ -2235,20 +2683,22 @@ window.courseReading = [
       const blade = $('mechanism-blade');
       if (blade.getAnimations) blade.getAnimations().forEach(animation => animation.cancel());
       if (done && c.visual !== 'lamp' && blade.animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        const angle = s.powered ? 0 : -32;
-        const movesContact = item.kind === 'wall' && s.keyMode !== 'command' || item.kind === 'app' && smartSwitch && !smartLamp;
+        const angle = (s.relay ?? s.powered) ? 0 : -32;
+        const movesContact = exploring ? mechanismRelay !== null && mechanismRelay !== s.relay : item.kind === 'wall' && s.keyMode !== 'command' || item.kind === 'app' && smartSwitch && !smartLamp;
         blade.animate([{ transform: `rotate(${movesContact ? (s.powered ? -32 : 0) : angle}deg)` }, { transform: `rotate(${angle}deg)` }], { duration: 650, easing: 'cubic-bezier(.25,.7,.25,1)' });
       }
     }
+    mechanismRelay = s.relay ?? s.powered;
     const signal = ['app', 'automation', 'brightness', 'temperature'].includes(item.kind) || (item.kind === 'wall' && s.keyMode === 'command');
-    const failed = smartLamp && (!s.powered || !s.connected);
+    const failed = exploring ? s.delivered === false : smartLamp && (!s.powered || !s.connected);
     const origin = item.kind === 'wall' ? '按键' : item.kind === 'automation' ? '离家联动' : '手机';
-    const destination = c.scene === 0 ? '开关' : '灯';
+    const destination = (exploring ? s.commandTarget === 'switch' : c.scene === 0) ? '开关' : '灯';
     $('scene-signal-status').hidden = !done || !signal;
     $('scene-signal-status').dataset.tone = failed ? 'error' : 'signal';
-    $('scene-signal-status').textContent = failed ? `${origin} → 灯：未送达 · ${!s.powered ? '灯已断电' : '灯未连接'}` : `${origin} → ${destination}：指令已送达`;
+    $('scene-signal-status').textContent = exploring ? `${origin} → ${destination}：${failed ? '未执行，原因见上方' : '指令已送达'}` : failed ? `${origin} → 灯：未送达 · ${!s.powered ? '灯已断电' : '灯未连接'}` : `${origin} → ${destination}：指令已送达`;
   }
   function currentState() {
+    if (isExploring()) return explorer.state(chapter().scene);
     const s = { ...base };
     chapter().steps.slice(0, progress().index + 1).forEach((item, i) => {
       const r = progress().records[i];
@@ -2432,6 +2882,10 @@ window.courseReading = [
     $('chapter-next').setAttribute('aria-label', next === null ? '回到课程首页' : `下一章：${chapters[next].name}`);
   }
   function render() {
+    explorer?.show(!home && chapterIndex >= 2 && chapterIndex <= 4);
+    $('main').dataset.exploring = String(isExploring());
+    if ($('wire-labels')) $('wire-labels').hidden = true;
+    if ($('wire-leaders')) $('wire-leaders').style.display = 'none';
     $('main').dataset.directScene = 'false';
     $('scene-ui').hidden = true;
     $('scene-instruction').hidden = true;
@@ -2469,6 +2923,7 @@ window.courseReading = [
     $('app-simulator').hidden = true;
     if (quiz) { renderQuiz(); return; }
     if (summary) { $('lesson-action').textContent = pausedQuiz ? `继续小测 · 第 ${pausedQuiz.index + 1} 题` : '做 3 题小测'; return; }
+    if (isExploring()) { renderExplorer(); return; }
     const item = step(), r = record(), s = currentState(), menu = item.kind === 'menu', done = observed();
     if ($('visual-legend')) $('visual-legend').hidden = menu;
     $('legend-l1').hidden = c.visual === 'lamp';
@@ -2535,6 +2990,37 @@ window.courseReading = [
     if (directScene() && !done) $('lesson-action').hidden = true;
     if (c.scene !== undefined) wiring?.setState({ ...s, scene: c.scene });
     room?.setState({ ...s, visual: c.visual, scene: c.scene ?? (c.visual === 'lamp' ? 1 : 0), principle: false, actionKind: item.kind, actionVersion, actionDone: done, interactiveTarget: directScene() ? sceneTarget() : null });
+  }
+  function renderExplorer() {
+    const c = chapter(), s = explorer.state(c.scene);
+    principle = false;
+    $('main').dataset.mode = 'lesson';
+    $('main').dataset.phase = 'result';
+    for (const id of ['basic-switch-stage','basic-lamp-stage','mijia-panel','view-toggle','wire-details','wiring-stage','app-simulator','tuning-panel','action-dock']) $(id).hidden = true;
+    $('lab-stage').hidden = false; $('lab-stage').classList.remove('principle');
+    $('room').hidden = roomUnavailable; $('room-fallback').hidden = !roomUnavailable;
+    $('reset-view').hidden = roomUnavailable; $('room-switch').hidden = true; $('lamp-tag').hidden = true;
+    $('visual-title').textContent = '自由对比 · 可以任意连续操作';
+    $('visual-legend').hidden = true;
+    $('visual-caption').textContent = c.scene === 0 ? '普通灯听开关；智能开关改变灯路供电。' : c.scene === 1 ? '智能灯要有电，才能听 App 的指令。' : '切电改变供电；发指令只改变灯的状态。';
+    $('room').setAttribute('aria-label', `${c.name}，${s.mains ? '总电源接通' : '总电源断开'}，${s.relay ? '触点接通' : '触点断开'}，${s.powered ? '灯有电' : '灯无电'}，${s.emitting ? '发光' : '不发光'}。`);
+    explorer.render(c.scene);
+    updateSceneUI(s);
+    room?.setState({...s, visual:'lab', scene:c.scene, principle:false, commandFailed:s.delivered === false, actionDone:!!s.lastAction, actionVersion, interactiveTarget:roomUnavailable ? null : 'all'});
+  }
+  function updateWireLeaders(points) {
+    const canvas = $('room'), svg = $('wire-leaders');
+    if (!svg || !canvas.clientWidth || !canvas.clientHeight) return;
+    const w = canvas.clientWidth, h = canvas.clientHeight, lampOnly = chapter().visual === 'lamp';
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    for (const [name,key,fraction] of [['L','wireL',lampOnly?.25:1/6],['L1','wireL1',.5],['N','wireN',lampOnly?.75:5/6]]) {
+      const point = points[key];
+      if (!point || !point.visible) { $('leader-'+name).setAttribute('d',''); $('leader-dot-'+name).setAttribute('r','0'); continue; }
+      const x = Math.max(4,Math.min(w-4,point.x)), y = Math.max(4,Math.min(h-10,point.y));
+      const end = w*fraction;
+      $('leader-'+name).setAttribute('d',`M ${x} ${y} L ${x} ${Math.min(h-10,y+12)} L ${end} ${h-6} L ${end} ${h}`);
+      $('leader-dot-'+name).setAttribute('cx',x); $('leader-dot-'+name).setAttribute('cy',y); $('leader-dot-'+name).setAttribute('r','3.5');
+    }
   }
   function adjust(kind, event) {
     if (home || chapterIndex === 5 || step().kind !== kind) return;
@@ -2688,6 +3174,7 @@ window.courseReading = [
     if (dock) measureDock.observe(dock);
     if (header) measureDock.observe(header);
   }
+  explorer = window.createExploreUI?.(() => { actionVersion++; render(); }, i => openChapter(i + 2, false, false));
   wiring = window.createWiring(); render();
   try {
     if (typeof window.createRoom !== 'function') throw new Error('3D unavailable');
@@ -2696,6 +3183,7 @@ window.courseReading = [
       onApp() { sceneAction('app'); },
       onLamp() { sceneAction('lamp'); },
       onProject(points) {
+        updateWireLeaders(points);
         const width = $('room').clientWidth;
         for (const [key, id] of [['switch', 'scene-switch'], ['app', 'scene-app'], ['lamp', 'scene-lamp'], ['feed', 'scene-feed'], ['output', 'scene-output'], ['receiver', 'scene-receiver'], ['switchPower', 'scene-switch-power'], ['contact', 'scene-contact']]) {
           if (!points[key]) continue;
