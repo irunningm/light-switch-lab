@@ -509,6 +509,77 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
 @media(prefers-reduced-motion:reduce){.visual-course .scene-target,.visual-course .scene-target-label,.visual-course .scene-chip{animation:none!important;transition:none!important}}
 
 /* An independently drawn Mijia teaching flow, with the device in its expected place. */
+.room-view{height:100%;position:relative}
+.visual-course #main[data-direct-scene="true"] .lab-stage:not(.principle){height:auto!important;background:#f1eee7}
+.visual-course #main[data-direct-scene="true"] .room-view{height:350px}
+.visual-course .mechanism-panel{padding:16px 20px 10px;background:#fffdf9;border-top:1px solid #d9d5cb;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);column-gap:24px;align-items:center;overflow-anchor:none}
+.visual-course .mechanism-panel[hidden],.visual-course .mechanism-panel [hidden]{display:none!important}
+.mechanism-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#59636b;font-size:.75rem;line-height:1.5}
+.mechanism-heading strong{color:#895017;font-size:.8125rem}
+.mechanism-diagram{display:block;width:100%;height:auto;max-height:120px;overflow:visible;stroke:none}
+.mechanism-diagram text{font:500 12px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#715125}
+.mechanism-diagram #mechanism-route-note{font-size:11px;fill:#5e666d}
+.mechanism-diagram .mechanism-feed-label{fill:#a02c34}
+.mechanism-feed-wire,.mechanism-output-wire{fill:none;stroke-width:9;stroke-linecap:round}
+.mechanism-feed-wire{stroke:#bb3840}.mechanism-output-wire{stroke:#c47c22}
+.mechanism-blade{transform-origin:0 0;transform:rotate(0deg)}
+.mechanism-blade path{fill:none;stroke:#c47c22;stroke-width:10;stroke-linecap:round}
+.mechanism-blade circle{fill:#e4b35b;stroke:#875818;stroke-width:2}
+.mechanism-pivot{fill:#fff7eb;stroke:#a4333c;stroke-width:3}
+.mechanism-fixed-contact{fill:#fff7eb;stroke:#9a6320;stroke-width:3}
+.mechanism-gap{display:none;fill:none;stroke:#b23d36;stroke-width:2}
+.mechanism-gap circle{stroke-dasharray:3 4}.mechanism-gap path{stroke-width:3}
+.mechanism-wire-labels{display:flex;justify-content:space-between;gap:12px;margin-top:9px;font-size:.75rem;line-height:1.5;color:#925b1c}
+.mechanism-wire-labels>span:first-child{color:#a02c34}
+.mechanism-wire-labels>span:last-child{text-align:right}
+.mechanism-note{margin:2px 0 7px;font-size:.6875rem;line-height:1.6;color:#59616a;text-align:center}
+.mechanism-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:8px}
+.mechanism-result{min-width:0;display:flex;flex-direction:column;gap:3px;padding:10px 9px;background:#f5f3ee;border:1px solid #e3ded4;border-radius:10px}
+.mechanism-result>span{font-size:.6875rem;color:#59616a;line-height:1.5}
+.mechanism-result strong{font-size:1rem;line-height:1.4;font-weight:650;color:#74501d}
+.mechanism-result small{font-size:.625rem;line-height:1.5;color:#626a72;overflow-wrap:anywhere}
+#mechanism-receiver-result,#mechanism-switch-result{background:#edf6f2;border-color:#c1d8cd}
+#mechanism-receiver-result strong,#mechanism-switch-result strong{color:#24664c}
+.mechanism-panel[data-powered="false"] .mechanism-blade{transform:rotate(-32deg)}
+.mechanism-panel[data-powered="false"] .mechanism-output-wire{stroke:#7b858d;stroke-dasharray:8 7}
+.mechanism-panel[data-powered="false"] .mechanism-fixed-contact{stroke:#737c84;fill:#f3f4f3}
+.mechanism-panel[data-powered="false"] .mechanism-gap{display:block}
+.mechanism-panel[data-powered="false"] #mechanism-output-label,.mechanism-panel[data-powered="false"] #mechanism-contact-state{fill:#a33430;color:#a33430}
+.mechanism-panel[data-powered="false"] #mechanism-lamp-result,.mechanism-panel[data-powered="false"] #mechanism-receiver-result{background:#f0f1f1;border-color:#d0d4d6}
+.mechanism-panel[data-powered="false"] #mechanism-receiver-state,.mechanism-panel[data-emitting="false"] #mechanism-lamp-state{color:#555e67}
+.mechanism-panel[data-command="true"] #mechanism-contact-state{color:#31684c}
+.mechanism-signal-slot{grid-column:1/-1;min-height:32px;padding-top:5px}
+.visual-course .mechanism-panel .scene-signal-status{position:static;margin:0;padding:4px 7px;font-size:.6875rem;line-height:1.5;border:0;border-radius:5px;background:#f3edf9;color:#704995}
+.visual-course .mechanism-panel .scene-signal-status[data-tone="error"]{background:#fff0e9;color:#9e362b}
+.mechanism-panel:has(.mechanism-cutaway[hidden]){grid-template-columns:1fr}
+.visual-course .scene-target.scene-switch{border:0;border-radius:10px}
+.visual-course .scene-target.scene-switch .scene-target-label{top:43%;bottom:auto;transform:translate(-50%,-50%);background:#fffdf9f2;color:#7b4316;border-color:#c49a71}
+.visual-course #scene-feed{display:none!important}
+.visual-course .scene-app .scene-target-label{top:43%;bottom:auto;transform:translate(-50%,-50%);max-width:54px;padding:3px 4px;font-size:10px}
+@media(max-width:760px){
+  .visual-course #main[data-direct-scene="true"] .room-view{height:260px}
+  .visual-course .mechanism-panel{grid-template-columns:1fr;padding:10px 12px 8px;gap:7px}
+  .mechanism-heading{font-size:.6875rem}.mechanism-heading strong{font-size:.75rem}
+  .mechanism-diagram{max-height:98px}
+  .mechanism-result{padding:7px 8px;gap:2px}
+  .mechanism-result strong{font-size:.875rem}
+  .mechanism-signal-slot{padding-top:0;min-height:25px}
+}
+@media(max-width:370px){.visual-course #main[data-direct-scene="true"] .room-view{height:245px}.visual-course .mechanism-panel{padding-inline:9px}.mechanism-results{gap:5px}}
+.large-text .visual-course #main[data-direct-scene="true"] .room-view{height:295px}
+.large-text .mechanism-results{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+@media(min-width:1100px){
+  .visual-course #main[data-direct-scene="true"] .lab-stage:not(.principle){display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,1fr)}
+  .visual-course #main[data-direct-scene="true"] .room-view{height:400px;min-width:0}
+  .visual-course .mechanism-panel{grid-template-columns:1fr;align-content:center;padding:18px 16px;border-top:0;border-left:1px solid #d9d5cb;gap:12px}
+}
+@media(max-height:600px) and (min-width:700px) and (max-width:1099px){
+  .visual-course #main[data-direct-scene="true"] .lab-stage:not(.principle){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .visual-course #main[data-direct-scene="true"] .room-view{height:285px;min-width:0}
+  .visual-course .mechanism-panel{grid-template-columns:1fr;align-content:center;padding:12px;border-top:0;border-left:1px solid #d9d5cb;gap:6px}
+}
+@media(prefers-reduced-motion:reduce){.mechanism-blade{animation:none!important;transition:none!important}}
+
 .visual-course .visual-column:has(#mijia-panel:not([hidden]))>.visual-heading,.visual-course .visual-column:has(#mijia-panel:not([hidden]))>#visual-caption,.visual-course .lesson-layout:has(#mijia-panel:not([hidden])) .lesson-card>#step-title{display:none!important}
 .visual-course #mijia-panel{--mijia-green:#13895b;--mijia-pale:#edf8f2;min-block-size:34rem;min-height:0;max-width:600px;margin:0 auto;padding:21px 24px 16px;border:0;background:#fff;color:#252b2d;overflow-anchor:none}
 .visual-course #mijia-panel .phone-topline{margin:0 0 18px;align-items:center;color:#929996;font-size:.6875rem;line-height:1.6}
@@ -789,6 +860,7 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
           </div>
         </div>
         <div id="lab-stage" class="lab-stage" hidden>
+          <div class="room-view">
           <canvas id="room" aria-label="三维教具：观察灯和开关的变化，下方按钮可完成操作" aria-describedby="visual-caption"></canvas>
           <div class="scene-ui" id="scene-ui" role="group" aria-label="三维教具操作">
             <p class="scene-instruction" id="scene-instruction" hidden></p>
@@ -800,8 +872,29 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
             <span class="scene-chip" id="scene-receiver" hidden></span>
             <span class="scene-chip" id="scene-switch-power" hidden></span>
             <span class="scene-chip" id="scene-contact" hidden></span>
-            <p class="scene-signal-status" id="scene-signal-status" hidden></p>
           </div>
+          </div>
+          <section class="mechanism-panel" id="mechanism-panel" aria-label="触点与供电同步观察" hidden>
+            <div class="mechanism-cutaway" id="mechanism-cutaway">
+              <div class="mechanism-heading"><span>开关内部 · 放大示意</span><strong id="mechanism-contact-state">触点接通</strong></div>
+              <div class="mechanism-wire-labels"><span>L 火线 · 始终有电</span><span id="mechanism-output-label">L1 灯线 · 有电</span></div>
+              <svg class="mechanism-diagram" viewBox="0 0 360 80" role="img" aria-labelledby="mechanism-svg-title mechanism-svg-desc">
+                <title id="mechanism-svg-title">开关触点与灯线</title><desc id="mechanism-svg-desc">点按画面中的墙壁开关，同步观察触点是否分开，以及灯线是否仍然供电。</desc>
+                <path d="M15 65H125" class="mechanism-feed-wire"/>
+                <path d="M235 65H345" class="mechanism-output-wire"/>
+                <g transform="translate(125 65)"><g id="mechanism-blade" class="mechanism-blade"><path d="M0 0H110"/><circle cx="110" cy="0" r="6"/></g></g>
+                <circle cx="125" cy="65" r="7" class="mechanism-pivot"/><circle cx="235" cy="65" r="7" class="mechanism-fixed-contact"/>
+                <g class="mechanism-gap" aria-hidden="true"><circle cx="235" cy="49" r="23"/><path d="m226 40 18 18m0-18-18 18"/></g>
+              </svg>
+              <p class="mechanism-note" id="mechanism-route-note">触点接通：火线连到灯线</p>
+            </div>
+            <div class="mechanism-results" aria-live="polite" aria-atomic="true">
+              <div class="mechanism-result" id="mechanism-lamp-result"><span>灯的发光</span><strong id="mechanism-lamp-state">亮灯</strong><small id="mechanism-lamp-power">灯具持续供电</small></div>
+              <div class="mechanism-result" id="mechanism-receiver-result" hidden><span>灯内接收模块</span><strong id="mechanism-receiver-state">在线</strong><small id="mechanism-receiver-note">可接收指令</small></div>
+              <div class="mechanism-result" id="mechanism-switch-result" hidden><span>开关自身模块</span><strong id="mechanism-switch-state">仍有电</strong><small>L / N 独立供电</small></div>
+            </div>
+            <div class="mechanism-signal-slot"><p class="scene-signal-status" id="scene-signal-status" hidden></p></div>
+          </section>
           <span id="room-switch" class="room-switch-tag">墙上开关</span><span id="lamp-tag" class="lamp-tag">普通灯</span>
           <div id="room-fallback" class="room-fallback" hidden><svg aria-hidden="true"><use href="#i-bulb"/></svg><p>当前设备无法显示 3D 教具。<br>仍可操作并查看线路图。</p></div>
           <div id="wiring-stage" class="wiring-stage" hidden><!-- wiring-desktop:start -->
@@ -1004,7 +1097,7 @@ window.KenneyLampModel = {"name":"lampRoundTable","author":"Kenney","license":"C
     let state = { visual: 'lab', scene: 0, powered: true, emitting: true, brightness: 80, temp: 35, keyMode: 'cut', connected: true, actionKind: '', actionVersion: 0, interactiveTarget: null, actionDone: false };
     let width = 1, height = 1, narrow = false, frame = 0, disposed = false;
     let yaw = 0, animation = null, gesture = null, configuration = '', lastAction = null;
-    let relayAngle = 0, relayTarget = 0, rockerRest = 0;
+    let rockerRest = 0;
     let layoutBounds = { w: 6.8, minY: -0.35, maxY: 2.95, depth: 1.15 };
     let smartSwitch = true, smartLamp = false, hoveredTarget = null;
     const wireAnchors = {};
@@ -1102,8 +1195,6 @@ window.KenneyLampModel = {"name":"lampRoundTable","author":"Kenney","license":"C
     const boardWhite = material(0xe7eff2, { roughness: 0.78 });
     const dark = material(0x253b4a, { roughness: 0.58 });
     const steel = material(0xa3b7bf, { metalness: 0.65, roughness: 0.34 });
-    const copper = material(0xd59b51, { metalness: 0.72, roughness: 0.29 });
-    const teal = material(0x367b7b, { roughness: 0.64 });
     const trace = material(0x9dcbac, { metalness: 0.34 });
     const red = material(0xba2630, { emissive: 0xba2630, emissiveIntensity: 0.18 });
     const orange = material(0xdb7815, { emissive: 0xdb7815, emissiveIntensity: 0.20 });
@@ -1128,41 +1219,26 @@ window.KenneyLampModel = {"name":"lampRoundTable","author":"Kenney","license":"C
     backboard.visible = false;
     const plinth = box(6.85, 0.18, 1.45, 0.08, rim, 0, -0.28, 0.18);
     const plinthTop = box(6.73, 0.05, 1.36, 0.025, white, 0, -0.165, 0.18);
-    const switchGroup = new T.Group(); bench.add(switchGroup);
-    box(1.52, 2.20, 0.19, 0.12, rim, 0, 1.13, 0.02, switchGroup);
-    box(1.42, 2.10, 0.12, 0.10, white, 0, 1.13, 0.15, switchGroup);
-    const rockerPivot = new T.Group(); rockerPivot.position.set(0, 1.94, 0.30); switchGroup.add(rockerPivot);
-    box(1.10, 0.46, 0.11, 0.07, white, 0, 0, 0.02, rockerPivot);
-    box(0.28, 0.025, 0.016, 0.007, rim, 0, -0.14, 0.083, rockerPivot);
-    box(1.12, 0.70, 0.08, 0.06, dark, 0, 1.25, 0.23, switchGroup);
-    box(1.02, 0.59, 0.065, 0.045, material(0x8099a6), 0, 1.25, 0.275, switchGroup);
-    const inputTerminal = vec(-0.68, 1.35, 0.32), outputTerminal = vec(0.68, 1.35, 0.32), neutralTerminal = vec(-0.68, 0.46, 0.32);
-    terminal(switchGroup, -0.68, 1.35, 'L', red);
-    terminal(switchGroup, 0.68, 1.35, 'L1', orange);
-    tube([[-0.68, 1.35, 0.33], [-0.46, 1.35, 0.37], [-0.35, 1.18, 0.38]], 0.045, copper, switchGroup);
-    tube([[0.35, 1.18, 0.38], [0.47, 1.35, 0.37], [0.68, 1.35, 0.33]], 0.045, copper, switchGroup);
-    cylinder(0.085, 0.11, copper, -0.35, 1.18, 0.35, switchGroup);
-    cylinder(0.085, 0.11, copper, 0.35, 1.18, 0.35, switchGroup);
-    const contactPivot = new T.Group(); contactPivot.name = 'relay-contact'; contactPivot.position.set(-0.35, 1.18, 0.43); switchGroup.add(contactPivot);
-    box(0.70, 0.075, 0.075, 0.018, copper, 0.35, 0, 0, contactPivot);
-    cylinder(0.06, 0.07, steel, 0, 0, 0.02, contactPivot);
-    const contactBreak = new T.Group(); contactBreak.name = 'contact-open-marker'; switchGroup.add(contactBreak); contactBreak.position.set(0.30, 1.39, 0.61);
-    const breakMat = basic(0xc7444a, { depthTest: false });
-    const breakBack = cylinder(0.15, 0.018, basic(0xfff4ed, { depthTest: false }), 0, 0, -0.02, contactBreak); breakBack.castShadow = false; breakBack.renderOrder = 10;
-    const breakA = box(0.25, 0.052, 0.025, 0.012, breakMat, 0, 0, 0, contactBreak); breakA.rotation.z = Math.PI / 4; breakA.renderOrder = 12;
-    const breakB = box(0.25, 0.052, 0.025, 0.012, breakMat, 0, 0, 0, contactBreak); breakB.rotation.z = -Math.PI / 4; breakB.renderOrder = 12;
-    contactBreak.renderOrder = 12;
-
-    const switchElectronics = new T.Group(); switchElectronics.name = 'switch-electronics'; switchGroup.add(switchElectronics);
-    box(0.98, 0.47, 0.08, 0.045, teal, 0.06, 0.48, 0.27, switchElectronics);
-    chip(switchElectronics, -0.10, 0.48, 0.34, 0.25, 0.21);
-    tube([[0.11, 0.48, 0.32], [0.22, 0.48, 0.32], [0.22, 0.61, 0.32], [0.39, 0.61, 0.32]], 0.011, trace, switchElectronics);
-    const switchStatus = cylinder(0.080, 0.030, onlineMat, 0.38, 0.39, 0.34, switchElectronics);
-    terminal(switchElectronics, -0.68, 0.46, 'N', blue);
-    tube([[-0.68, 1.35, 0.30], [-0.83, 1.15, 0.31], [-0.83, 0.65, 0.33], [-0.42, 0.59, 0.33]], 0.040, red, switchElectronics);
-    tube([[-0.68, 0.46, 0.33], [-0.45, 0.38, 0.34], [-0.20, 0.38, 0.34]], 0.038, blue, switchElectronics);
+    const switchGroup = new T.Group(); switchGroup.name = 'household-wall-switch'; bench.add(switchGroup);
+    // Recognisable square face first. The synchronised enlarged contact diagram
+    // lives beside/below the canvas, instead of obscuring the face with a PCB.
+    const faceMat = material(0xfffdf6, { roughness: 0.43 });
+    const seamMat = material(0x63717b, { roughness: 0.72 });
+    box(1.98, 1.98, 0.22, 0.13, rim, 0, 1.28, 0.02, switchGroup);
+    box(1.91, 1.91, 0.12, 0.105, faceMat, 0, 1.28, 0.16, switchGroup);
+    box(1.67, 1.67, 0.05, 0.065, seamMat, 0, 1.28, 0.235, switchGroup);
+    const rockerPivot = new T.Group(); rockerPivot.name = 'large-rocker'; rockerPivot.position.set(0, 1.28, 0.31); switchGroup.add(rockerPivot);
+    box(1.58, 1.58, 0.13, 0.055, faceMat, 0, 0, 0.04, rockerPivot);
+    box(0.30, 0.027, 0.018, 0.008, rim, 0, -0.55, 0.114, rockerPivot);
+    const switchStatus = box(0.19, 0.024, 0.02, 0.007, onlineMat, 0, -0.55, 0.126, rockerPivot);
+    // These labelled leads are teaching connection points, not product terminals.
+    const inputTerminal = vec(-0.78, 0.16, 0.27), outputTerminal = vec(0.78, 0.16, 0.27), neutralTerminal = vec(0, 0.16, 0.27);
+    terminal(switchGroup, -0.78, 0.16, 'L', red);
+    terminal(switchGroup, 0.78, 0.16, 'L1', orange);
+    const switchNeutral = new T.Group(); switchNeutral.name = 'neutral-connection'; switchGroup.add(switchNeutral);
+    terminal(switchNeutral, 0, 0.16, 'N', blue);
     const hitMaterial = basic(0xffffff, { transparent: true, opacity: 0, depthWrite: false, colorWrite: false });
-    const switchHit = mesh(new T.BoxGeometry(1.58, 2.23, 0.75), hitMaterial, switchGroup); switchHit.position.set(0, 1.15, 0.22); switchHit.userData.target = 'switch';
+    const switchHit = mesh(new T.BoxGeometry(1.98, 1.98, 0.62), hitMaterial, switchGroup); switchHit.position.set(0, 1.28, 0.28); switchHit.userData.target = 'switch';
 
     const lampGroup = new T.Group(); bench.add(lampGroup);
     // Generic CC0 table lamp, shared by ordinary/smart variants. The exposed
@@ -1234,7 +1310,7 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       return { object: group, material: mat };
     }
     const outlines = {
-      switch: frameOutline(switchGroup, 1.23, 0.60, 0, 1.94, 0.43),
+      switch: frameOutline(switchGroup, 2.04, 2.04, 0, 1.28, 0.53),
       app: frameOutline(app, 0.52, 0.80, 0, 0, 0.10),
       lamp: frameOutline(lampGroup, 1.04, 1.54, 0, 1.65, 0.88)
     };
@@ -1298,20 +1374,20 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
         if (narrow) { backboard.scale.x = 3.05 / 6.65; plinth.scale.x = 3.25 / 6.85; plinthTop.scale.x = 3.13 / 6.73; }
         layoutBounds = { w: narrow ? 3.3 : 4.5, minY: -0.40, maxY: 2.98, depth: 1.12 };
       } else if (narrow) {
-        switchGroup.position.set(-1.07, 0.10, 0);
-        lampGroup.position.set(1.10, 0.10, 0);
-        source.position.set(-2.06, 0, 0.10); source.scale.setScalar(1); sourceBody.visible = false;
-        sourceL.position.set(0, 2.29, 0.11); sourceN.position.set(0, 0.12, 0.11);
-        sourceLLabel.position.set(0, 2.53, 0.18); sourceNLabel.position.set(0, -0.08, 0.18);
-        app.position.set(0.04, 2.14, 0.47);
-        backboard.scale.set(4.55 / 6.65, 2.77 / 2.77, 1); backboard.position.set(0, 1.21, -0.35);
-        plinth.scale.set(4.64 / 6.85, 1, 1); plinthTop.scale.set(4.52 / 6.73, 1, 1);
-        layoutBounds = { w: 4.90, minY: -0.48, maxY: 3.20, depth: 1.22 };
+        switchGroup.position.set(-1.16, 0.10, 0);
+        lampGroup.position.set(1.27, 0.10, 0);
+        source.position.set(-2.43, 0, 0.10); source.scale.setScalar(1); sourceBody.visible = false;
+        sourceL.position.set(0, 1.67, 0.11); sourceN.position.set(0, 0.12, 0.11);
+        sourceLLabel.position.set(0, 1.91, 0.18); sourceNLabel.position.set(0, -0.08, 0.18);
+        app.position.set(0.30, 2.02, 0.47);
+        backboard.scale.set(5.15 / 6.65, 2.77 / 2.77, 1); backboard.position.set(0, 1.21, -0.35);
+        plinth.scale.set(5.24 / 6.85, 1, 1); plinthTop.scale.set(5.12 / 6.73, 1, 1);
+        layoutBounds = { w: 5.45, minY: -0.48, maxY: 3.05, depth: 1.05 };
       } else {
         switchGroup.position.set(-1.40, 0.08, 0);
         lampGroup.position.set(1.58, 0.08, 0);
         source.position.set(-2.88, 1.08, 0.12); source.scale.setScalar(1);
-        app.position.set(0.04, 2.05, 0.38);
+        app.position.set(0.22, 2.02, 0.38);
         backboard.scale.set(1, 1, 1); backboard.position.set(0, 1.21, -0.35);
         plinth.scale.set(1, 1, 1); plinthTop.scale.set(1, 1, 1);
         layoutBounds = { w: 6.90, minY: -0.48, maxY: 3.15, depth: 1.22 };
@@ -1325,15 +1401,15 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
         cable([fromL, vec(fromL.x + 0.18, fromL.y, 0.38), vec(fromL.x + 0.18, toL.y, 0.38), toL], red, feedWires);
         cable([fromN, vec(fromN.x, 0.18, 0.48), vec(toN.x + 0.30, 0.18, 0.48), vec(toN.x + 0.30, toN.y, 0.35), toN], blue, neutralWires);
       } else if (narrow) {
-        cable([fromL, vec(-1.84, fromL.y, 0.32), vec(-1.84, inL.y, 0.32), inL], red, feedWires);
+        cable([fromL, vec(-2.35, fromL.y, 0.32), vec(-2.35, inL.y, 0.32), inL], red, feedWires);
         cable([outL, vec(-0.11, outL.y, 0.34), vec(-0.11, 0.30, 0.46), vec(toL.x - 0.20, 0.30, 0.46), vec(toL.x - 0.20, toL.y, 0.34), toL], orange, outputWires);
         cable([fromN, vec(-1.80, 0.10, 0.55), vec(toN.x + 0.22, 0.10, 0.55), vec(toN.x + 0.22, toN.y, 0.36), toN], blue, neutralWires);
         cable([vec(-1.80, 0.10, 0.55), vec(-1.80, inN.y, 0.36), inN], blue, neutralWires, neutralBranch);
       } else {
         cable([fromL, vec(-2.49, fromL.y, 0.30), vec(-2.49, inL.y, 0.32), inL], red, feedWires);
         cable([outL, vec(-0.46, outL.y, 0.34), vec(-0.46, 0.25, 0.49), vec(toL.x - 0.18, 0.25, 0.49), vec(toL.x - 0.18, toL.y, 0.34), toL], orange, outputWires);
-        cable([fromN, vec(-2.60, fromN.y, 0.32), vec(-2.60, 0.36, 0.58), vec(-2.60, 0.09, 0.70), vec(toN.x + 0.28, 0.09, 0.70), vec(toN.x + 0.28, toN.y, 0.34), toN], blue, neutralWires);
-        cable([vec(-2.60, 0.36, 0.58), vec(-2.60, inN.y, 0.34), inN], blue, neutralWires, neutralBranch);
+        cable([fromN, vec(-2.60, fromN.y, 0.32), vec(-2.60, 0.36, 0.58), vec(-2.60, 0.09, 0.70), vec(inN.x, 0.09, 0.70), vec(toN.x + 0.28, 0.09, 0.70), vec(toN.x + 0.28, toN.y, 0.34), toN], blue, neutralWires);
+        cable([vec(inN.x, 0.09, 0.70), vec(inN.x, inN.y, 0.45), inN], blue, neutralWires, neutralBranch);
       }
       updateCamera();
     }
@@ -1342,7 +1418,7 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       smartSwitch = state.visual === 'lab' && Number(state.scene) !== 1;
       smartLamp = state.visual === 'lamp' || (state.visual === 'lab' && Number(state.scene) !== 0);
       const powered = Boolean(state.powered), lit = powered && Boolean(state.emitting);
-      switchGroup.visible = state.visual !== 'lamp'; switchElectronics.visible = smartSwitch;
+      switchGroup.visible = state.visual !== 'lamp'; switchNeutral.visible = smartSwitch;
       neutralBranch.visible = smartSwitch && state.visual !== 'lamp';
       receiver.visible = smartLamp; ordinaryDriver.visible = !smartLamp;
       app.visible = smartSwitch || smartLamp;
@@ -1356,14 +1432,12 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       lampLight.position.copy(world(lampGroup, vec(0, 1.56, 1.10)));
       setColor(receiverMat, !powered ? 0x354653 : state.connected ? 0x49e3bc : 0xe2a44c);
       receiverMat.emissive.copy(color(state.connected ? 0x49e3bc : 0xd39b43)); receiverMat.emissiveIntensity = powered ? (lit ? 0.95 : 1.35) : 0;
-      setColor(teal, 0x367b7b);
       receiver.children[0].material = powered ? receiverBoardMat : boardInactive;
       setColor(orange, powered ? 0xdb7815 : 0x344553);
       orange.emissiveIntensity = powered ? 0.20 : 0;
       red.emissiveIntensity = 0.18; blue.emissiveIntensity = 0.10;
-      relayTarget = powered ? 0 : 0.70;
-      contactBreak.visible = !powered;
-      rockerRest = state.keyMode === 'command' && smartSwitch ? 0 : powered ? -0.055 : 0.075;
+      // Smart keys return to rest: their physical position is not the relay state.
+      rockerRest = smartSwitch ? 0 : powered ? -0.12 : 0.12;
       rockerPivot.rotation.x = rockerRest;
       switchStatus.visible = smartSwitch;
       receiverStatus.visible = smartLamp;
@@ -1381,11 +1455,11 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       if (!commandFromSwitch && !commandFromApp && !menu) return;
       if (commandFromApp && !smartSwitch && !smartLamp) return;
       const targetSwitch = menu || (commandFromApp && smartSwitch && !smartLamp);
-      const start = commandFromSwitch ? world(switchGroup, vec(0.40, 0.50, 0.69)) : world(app, vec(0.14, 0.18, 0.14));
-      const end = targetSwitch ? world(switchGroup, vec(0.38, 0.45, 0.67)) : world(lampGroup, vec(0.35, 0.48, 0.70));
+      const start = commandFromSwitch ? world(switchGroup, vec(0.84, 1.20, 0.69)) : world(app, vec(0.14, 0.18, 0.14));
+      const end = targetSwitch ? world(switchGroup, vec(0.60, 0.85, 0.67)) : world(lampGroup, vec(0.35, 0.48, 0.70));
       const mid = start.clone().lerp(end, 0.5); mid.z = Math.max(start.z, end.z) + 0.50;
       // Lift a wall-key command above both receiver labels, below the phone.
-      mid.y += commandFromSwitch ? (narrow ? 0.95 : 0.85) : (narrow ? 0.11 : 0.42);
+      mid.y += commandFromSwitch ? (narrow ? 0.30 : 0.45) : (narrow ? 0.11 : 0.42);
       signalCurve = new T.CatmullRomCurve3([start, mid, end]);
       signalFailed = !targetSwitch && (!state.powered || !state.connected);
       const limit = signalFailed ? 0.70 : 0.98;
@@ -1410,7 +1484,7 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       appWaves.visible = signalGroup.visible && state.actionKind !== 'wall';
     }
     function settle() {
-      relayAngle = relayTarget; contactPivot.rotation.z = relayAngle; rockerPivot.rotation.x = rockerRest;
+      rockerPivot.rotation.x = rockerRest;
       red.emissiveIntensity = 0.18; orange.emissiveIntensity = state.powered ? 0.20 : 0; blue.emissiveIntensity = 0.10;
       onlineMat.emissiveIntensity = 1.05; receiverMat.emissiveIntensity = state.powered ? (state.emitting ? 0.95 : 1.35) : 0;
       settleSignal();
@@ -1419,11 +1493,9 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       if (!animation) return false;
       const t = Math.min(1, (now - animation.start) / animation.duration);
       const ease = p => 1 - Math.pow(1 - p, 3);
-      const contactT = ease(Math.min(1, t * 4));
-      relayAngle = animation.contact + (relayTarget - animation.contact) * contactT;
-      contactPivot.rotation.z = relayAngle;
-      const press = animation.kind === 'wall' ? Math.sin(Math.min(1, t * 5) * Math.PI) * 0.14 : 0;
-      rockerPivot.rotation.x = rockerRest - press;
+      const pressT = Math.min(1, (now - animation.start) / 600);
+      const press = animation.kind === 'wall' ? Math.sin(pressT * Math.PI) * 0.22 : 0;
+      rockerPivot.rotation.x = animation.rocker + (rockerRest - animation.rocker) * ease(pressT) - press;
       // A simultaneous whole-wire glow marks the available circuit. It is not a current-flow animation.
       const supplyPulse = animation.kind === 'wall' || animation.kind === 'menu' ? Math.sin(Math.min(1, t * 1.7) * Math.PI) * 0.65 : 0;
       red.emissiveIntensity = 0.18 + supplyPulse;
@@ -1456,6 +1528,13 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       const p = point.clone().project(camera);
       return { x: (p.x + 1) * width / 2, y: (1 - p.y) * height / 2 };
     }
+    function projectedSwitchFace() {
+      // Match the accessible button to the visible face at every viewport size.
+      const corners = [-1.02, 1.02].flatMap(x => [0.26, 2.30].map(y => project(world(switchGroup, vec(x, y, 0.53)))));
+      const minX = Math.min(...corners.map(p => p.x)), maxX = Math.max(...corners.map(p => p.x));
+      const minY = Math.min(...corners.map(p => p.y)), maxY = Math.max(...corners.map(p => p.y));
+      return { x: (minX + maxX) / 2, y: (minY + maxY) / 2, width: maxX - minX, height: maxY - minY, visible: switchGroup.visible };
+    }
     function render(now) {
       frame = 0; if (disposed) return;
       const moving = animate(now || performance.now());
@@ -1463,14 +1542,14 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       if (callbacks.onProject) {
         const anchor = (point, visible) => Object.assign(project(point), { visible: Boolean(visible) });
         callbacks.onProject({
-          switch: anchor(world(switchGroup, vec(0, 1.94, 0.43)), switchGroup.visible),
+          switch: projectedSwitchFace(),
           app: anchor(world(app, vec(0, 0, 0.14)), app.visible),
           lamp: anchor(world(lampGroup, vec(0, 1.85, 0.88)), lampGroup.visible),
           feed: anchor(wireAnchors.feed || world(source, sourceL.position), true),
           output: anchor(wireAnchors.output || world(lampGroup, lampL), state.visual !== 'lamp'),
           receiver: anchor(world(lampGroup, vec(0, 0.40, 0.51)), smartLamp),
-          switchPower: anchor(world(switchGroup, vec(0.04, 0.36, 0.49)), smartSwitch && switchGroup.visible),
-          contact: anchor(world(switchGroup, vec(0.08, 1.08, 0.58)), switchGroup.visible)
+          switchPower: anchor(world(switchGroup, vec(0, 0.73, 0.49)), false),
+          contact: anchor(world(switchGroup, vec(0, 1.28, 0.58)), false)
         });
       }
       if (moving) requestRender();
@@ -1480,7 +1559,7 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       const centerY = (layoutBounds.minY + layoutBounds.maxY) / 2;
       const target = vec(0, centerY, 0.05);
       const angle = (narrow ? 0.035 : 0.15) + yaw;
-      camera.position.set(Math.sin(angle) * 12, centerY + (narrow ? 2.2 : 3.8), Math.cos(angle) * 12);
+      camera.position.set(Math.sin(angle) * 12, centerY + (narrow ? 1.5 : 2.4), Math.cos(angle) * 12);
       camera.lookAt(target); camera.updateMatrixWorld(true);
       let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
       [-layoutBounds.w / 2, layoutBounds.w / 2].forEach(x => [layoutBounds.minY, layoutBounds.maxY].forEach(y => [-0.5, layoutBounds.depth].forEach(z => {
@@ -1570,7 +1649,7 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
         if (!['switch', 'lamp', 'lab'].includes(state.visual)) state.visual = 'lab';
         state.scene = Number(state.scene);
         const actionChanged = lastAction !== null && state.actionVersion !== lastAction;
-        const previousAngle = relayAngle;
+        const previousAngle = rockerPivot.rotation.x;
         const changedConfiguration = oldVisual !== state.visual;
         if (changedConfiguration) { configuration = ''; yaw = 0; }
         configureLayout(); applyState();
@@ -1578,7 +1657,7 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
         if (state.actionDone) buildSignal(state.actionKind);
         else { signalValid = false; signalCurve = null; }
         if (actionChanged && state.actionDone && !reduced.matches) {
-          animation = { start: performance.now(), duration: 1450, contact: changedConfiguration ? relayTarget : previousAngle, kind: state.actionKind };
+          animation = { start: performance.now(), duration: 1450, rocker: changedConfiguration ? rockerRest : previousAngle, kind: state.actionKind };
         } else settle();
         lastAction = state.actionVersion;
         requestRender();
@@ -2094,10 +2173,12 @@ window.courseReading = [
     if (observed()) replay();
     act();
   }
+  let mechanismAction = -1;
   function updateSceneUI(s) {
     const active = directScene(), c = chapter(), item = step(), done = observed();
     $('main').dataset.directScene = String(active);
     $('scene-ui').hidden = !active;
+    $('mechanism-panel').hidden = !active;
     if (!active) return;
     const smartLamp = c.visual === 'lamp' || (c.visual === 'lab' && c.scene !== 0);
     const smartSwitch = c.visual === 'lab' && c.scene !== 1;
@@ -2111,15 +2192,44 @@ window.courseReading = [
       button.querySelector('.scene-target-label').textContent = targetCopy;
       button.dataset.complete = String(done);
     }
-    $('scene-instruction').textContent = done ? target === 'lamp' ? '再点灯，比较变化' : '变化已保留 · 再点设备可重播' : target === 'switch' ? s.keyMode === 'command' ? '点图中的开关，看指令怎样到灯' : '点图中的开关，看供电怎样变化' : target === 'lamp' ? '点图中的灯，改变发光' : item.kind === 'automation' ? '点图中的手机，执行离家联动' : '点图中的手机，看指令发给谁';
+    $('scene-instruction').textContent = done ? target === 'lamp' ? '再点灯，比较变化' : '结果已保留 · 再点可重播' : target === 'switch' ? s.keyMode === 'command' ? '点大面板：灯灭，供电会断吗？' : '点大面板，观察触点怎样动' : target === 'lamp' ? '点图中的灯，改变发光' : item.kind === 'automation' ? '点手机，执行离家联动' : '点手机，看谁接收到指令';
     function chip(id, text, tone, visible = true) {
       $(id).textContent = text; $(id).dataset.tone = tone; $(id).hidden = !visible;
     }
     chip('scene-feed', '火线 L · 有电', 'power');
     chip('scene-output', `灯线 L1 · ${s.powered ? '有电' : '断电'}`, s.powered ? 'power' : 'off', c.visual !== 'lamp');
     chip('scene-receiver', `接收模块 · ${!s.powered ? '已断电' : s.emitting ? '在线' : '待机'}`, !s.powered ? 'off' : s.emitting ? 'signal' : 'standby', smartLamp);
-    chip('scene-switch-power', '开关模块 · 仍有电', 'standby', smartSwitch);
-    chip('scene-contact', s.powered ? '触点接通' : '触点断开', s.powered ? 'power' : 'off', c.visual !== 'lamp');
+    chip('scene-switch-power', '开关模块 · 仍有电', 'standby', false);
+    chip('scene-contact', s.powered ? '触点接通' : '触点断开', s.powered ? 'power' : 'off', false);
+    const panel = $('mechanism-panel');
+    panel.dataset.powered = String(s.powered);
+    panel.dataset.command = String(smartSwitch && s.keyMode === 'command');
+    panel.dataset.smartSwitch = String(smartSwitch);
+    panel.dataset.smartLamp = String(smartLamp);
+    panel.dataset.emitting = String(s.powered && s.emitting);
+    $('mechanism-cutaway').hidden = c.visual === 'lamp';
+    $('mechanism-contact-state').textContent = !s.powered ? '触点断开' : smartSwitch && s.keyMode === 'command' ? '保持接通' : '触点接通';
+    $('mechanism-output-label').textContent = `L1 灯线 · ${s.powered ? '有电' : '断电'}`;
+    $('mechanism-route-note').textContent = !s.powered ? '触点断开：灯断电，火线仍有电' : smartSwitch && s.keyMode === 'command' ? '只发指令，供电保持' : '触点接通：火线连到灯线';
+    $('mechanism-lamp-state').textContent = s.powered && s.emitting ? '亮灯' : '灭灯';
+    $('mechanism-lamp-power').textContent = s.powered ? '灯具持续供电' : '灯具已断电';
+    $('mechanism-receiver-result').hidden = !smartLamp;
+    $('mechanism-receiver-state').textContent = !s.powered ? '已断电' : !s.connected ? '未连接' : s.emitting ? '在线' : '待机';
+    $('mechanism-receiver-note').textContent = !s.powered ? '已停机，收不到指令' : !s.connected ? '等待连接' : s.emitting ? '可接收指令' : '等待下一条指令';
+    $('mechanism-switch-result').hidden = !smartSwitch;
+    $('mechanism-switch-state').textContent = '仍有电';
+    // The magnified contact uses the same state as the 3D model. Replaying an
+    // observation animates it again without scrolling or advancing the lesson.
+    if (mechanismAction !== actionVersion) {
+      mechanismAction = actionVersion;
+      const blade = $('mechanism-blade');
+      if (blade.getAnimations) blade.getAnimations().forEach(animation => animation.cancel());
+      if (done && c.visual !== 'lamp' && blade.animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const angle = s.powered ? 0 : -32;
+        const movesContact = item.kind === 'wall' && s.keyMode !== 'command' || item.kind === 'app' && smartSwitch && !smartLamp;
+        blade.animate([{ transform: `rotate(${movesContact ? (s.powered ? -32 : 0) : angle}deg)` }, { transform: `rotate(${angle}deg)` }], { duration: 650, easing: 'cubic-bezier(.25,.7,.25,1)' });
+      }
+    }
     const signal = ['app', 'automation', 'brightness', 'temperature'].includes(item.kind) || (item.kind === 'wall' && s.keyMode === 'command');
     const failed = smartLamp && (!s.powered || !s.connected);
     const origin = item.kind === 'wall' ? '按键' : item.kind === 'automation' ? '离家联动' : '手机';
@@ -2314,6 +2424,7 @@ window.courseReading = [
   function render() {
     $('main').dataset.directScene = 'false';
     $('scene-ui').hidden = true;
+    $('mechanism-panel').hidden = true;
     $('scene-signal-status').hidden = true;
     renderDocument();
     $('home-section').hidden = !home;
@@ -2582,6 +2693,10 @@ window.courseReading = [
           const half = width <= 320 ? 64 : 72;
           const x = isControl || !width ? points[key].x : Math.max(half, Math.min(width - half, points[key].x));
           node.style.left = `${x}px`; node.style.top = `${points[key].y + (key === 'output' && width < 480 ? 42 : 0)}px`;
+          if (key === 'switch' && points[key].width && points[key].height) {
+            node.style.width = `${Math.max(48, points[key].width)}px`;
+            node.style.height = `${Math.max(48, points[key].height)}px`;
+          }
         }
       }
     });
