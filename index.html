@@ -580,6 +580,15 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
 }
 @media(prefers-reduced-motion:reduce){.mechanism-blade{animation:none!important;transition:none!important}}
 
+/* Keep all instructional text outside the model's drawing and hit area. */
+.room-view{display:flex;flex-direction:column;min-height:0}
+.room-canvas{position:relative;flex:1;min-height:0;width:100%}
+.visual-course .room-view>.scene-instruction{position:static;flex:none;margin:10px 12px 0;padding:8px 11px;font-size:.8125rem;line-height:1.5}
+.visual-course .scene-target-label,.visual-course .scene-chip{display:none!important}
+.visual-course .scene-target{background:transparent!important;border:0!important;box-shadow:none!important}
+.visual-course .scene-target:focus-visible{outline:3px solid #1762b6;outline-offset:4px}
+@media(max-width:760px){.visual-course .room-view>.scene-instruction{margin:8px 9px 0;padding:7px 8px}}
+
 .visual-course .visual-column:has(#mijia-panel:not([hidden]))>.visual-heading,.visual-course .visual-column:has(#mijia-panel:not([hidden]))>#visual-caption,.visual-course .lesson-layout:has(#mijia-panel:not([hidden])) .lesson-card>#step-title{display:none!important}
 .visual-course #mijia-panel{--mijia-green:#13895b;--mijia-pale:#edf8f2;min-block-size:34rem;min-height:0;max-width:600px;margin:0 auto;padding:21px 24px 16px;border:0;background:#fff;color:#252b2d;overflow-anchor:none}
 .visual-course #mijia-panel .phone-topline{margin:0 0 18px;align-items:center;color:#929996;font-size:.6875rem;line-height:1.6}
@@ -861,9 +870,10 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
         </div>
         <div id="lab-stage" class="lab-stage" hidden>
           <div class="room-view">
+          <p class="scene-instruction" id="scene-instruction" hidden></p>
+          <div class="room-canvas">
           <canvas id="room" aria-label="三维教具：观察灯和开关的变化，下方按钮可完成操作" aria-describedby="visual-caption"></canvas>
           <div class="scene-ui" id="scene-ui" role="group" aria-label="三维教具操作">
-            <p class="scene-instruction" id="scene-instruction" hidden></p>
             <button class="scene-target scene-switch" id="scene-switch" type="button" aria-label="点按三维开关" hidden><span class="scene-target-label">点按开关</span></button>
             <button class="scene-target scene-app" id="scene-app" type="button" aria-label="点手机发送指令" hidden><span class="scene-target-label">点手机发指令</span></button>
             <button class="scene-target scene-lamp" id="scene-lamp" type="button" aria-label="点灯调节亮度和冷暖" hidden><span class="scene-target-label">点灯调节</span></button>
@@ -872,6 +882,7 @@ html:has(.doc-shell){scroll-padding-block-end:24px}
             <span class="scene-chip" id="scene-receiver" hidden></span>
             <span class="scene-chip" id="scene-switch-power" hidden></span>
             <span class="scene-chip" id="scene-contact" hidden></span>
+          </div>
           </div>
           </div>
           <section class="mechanism-panel" id="mechanism-panel" aria-label="触点与供电同步观察" hidden>
@@ -1180,7 +1191,8 @@ window.KenneyLampModel = {"name":"lampRoundTable","author":"Kenney","license":"C
       cylinder(0.054, 0.135, dark, x, y, 0.25, parent);
       const ring = mesh(new T.TorusGeometry(0.10, 0.016, 7, 32), tint, parent);
       ring.position.set(x, y, 0.32);
-      label(text, x, y + 0.22, 0.36, parent, { size: 14, width: text === 'L1' ? 66 : 54 });
+      // Keep the connection visible; the external legend and cutaway name each wire.
+      ring.name = 'terminal-' + text;
     }
     function chip(parent, x, y, z, w, h) {
       box(w || 0.25, h || 0.22, 0.065, 0.025, dark, x, y, z, parent);
@@ -1285,8 +1297,6 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
     const sourceBody = box(0.35, 1.14, 0.12, 0.07, white, 0, 0, 0, source);
     const sourceL = cylinder(0.06, 0.09, red, 0, 0.29, 0.11, source);
     const sourceN = cylinder(0.06, 0.09, blue, 0, -0.29, 0.11, source);
-    const sourceLLabel = label('L', 0, 0.51, 0.18, source, { size: 13, width: 54 });
-    const sourceNLabel = label('N', 0, -0.50, 0.18, source, { size: 13, width: 54 });
     const app = new T.Group(); bench.add(app);
     box(0.45, 0.73, 0.085, 0.065, dark, 0, 0, 0, app);
     box(0.37, 0.61, 0.018, 0.035, material(0xe7e3f8), 0, 0.015, 0.055, app);
@@ -1362,7 +1372,6 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
       configuration = key;
       clearWireGeometry();
       sourceBody.visible = true; sourceL.position.set(0, 0.29, 0.11); sourceN.position.set(0, -0.29, 0.11);
-      sourceLLabel.position.set(0, 0.51, 0.18); sourceNLabel.position.set(0, -0.50, 0.18);
       if (mode === 'lamp') {
         switchGroup.position.set(-1.4, 0.1, 0);
         lampGroup.position.set(narrow ? 0.10 : 0, 0.26, 0);
@@ -1378,7 +1387,6 @@ const lampHit = mesh(new T.BoxGeometry(1.60, 2.23, 0.90), hitMaterial, lampGroup
         lampGroup.position.set(1.27, 0.10, 0);
         source.position.set(-2.43, 0, 0.10); source.scale.setScalar(1); sourceBody.visible = false;
         sourceL.position.set(0, 1.67, 0.11); sourceN.position.set(0, 0.12, 0.11);
-        sourceLLabel.position.set(0, 1.91, 0.18); sourceNLabel.position.set(0, -0.08, 0.18);
         app.position.set(0.30, 2.02, 0.47);
         backboard.scale.set(5.15 / 6.65, 2.77 / 2.77, 1); backboard.position.set(0, 1.21, -0.35);
         plinth.scale.set(5.24 / 6.85, 1, 1); plinthTop.scale.set(5.12 / 6.73, 1, 1);
@@ -2178,6 +2186,7 @@ window.courseReading = [
     const active = directScene(), c = chapter(), item = step(), done = observed();
     $('main').dataset.directScene = String(active);
     $('scene-ui').hidden = !active;
+    $('scene-instruction').hidden = !active;
     $('mechanism-panel').hidden = !active;
     if (!active) return;
     const smartLamp = c.visual === 'lamp' || (c.visual === 'lab' && c.scene !== 0);
@@ -2196,9 +2205,10 @@ window.courseReading = [
     function chip(id, text, tone, visible = true) {
       $(id).textContent = text; $(id).dataset.tone = tone; $(id).hidden = !visible;
     }
-    chip('scene-feed', '火线 L · 有电', 'power');
-    chip('scene-output', `灯线 L1 · ${s.powered ? '有电' : '断电'}`, s.powered ? 'power' : 'off', c.visual !== 'lamp');
-    chip('scene-receiver', `接收模块 · ${!s.powered ? '已断电' : s.emitting ? '在线' : '待机'}`, !s.powered ? 'off' : s.emitting ? 'signal' : 'standby', smartLamp);
+    // Status belongs to the observation panel, leaving the 3D wires unobscured.
+    chip('scene-feed', '火线 L · 有电', 'power', false);
+    chip('scene-output', `灯线 L1 · ${s.powered ? '有电' : '断电'}`, s.powered ? 'power' : 'off', false);
+    chip('scene-receiver', `接收模块 · ${!s.powered ? '已断电' : s.emitting ? '在线' : '待机'}`, !s.powered ? 'off' : s.emitting ? 'signal' : 'standby', false);
     chip('scene-switch-power', '开关模块 · 仍有电', 'standby', false);
     chip('scene-contact', s.powered ? '触点接通' : '触点断开', s.powered ? 'power' : 'off', false);
     const panel = $('mechanism-panel');
@@ -2424,6 +2434,7 @@ window.courseReading = [
   function render() {
     $('main').dataset.directScene = 'false';
     $('scene-ui').hidden = true;
+    $('scene-instruction').hidden = true;
     $('mechanism-panel').hidden = true;
     $('scene-signal-status').hidden = true;
     renderDocument();
